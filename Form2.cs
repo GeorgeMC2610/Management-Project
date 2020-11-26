@@ -79,41 +79,7 @@ namespace Management_Project
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            try
-            {
-                StreamReader sr = new StreamReader("Questions.txt");
-                string Everything = sr.ReadToEnd();
-                string[] AllLines = Everything.Split('\n');
-
-                if (AllLines.Length < 1)
-                {
-                    label1.Text = "Το αρχείο των ερωτήσεων είναι άδειο!";
-
-                }
-                else
-                {
-                    foreach (string a in AllLines)
-                    {
-                        string[] Attributes = a.Split('|');
-                        if (Attributes.Length != 0)
-                        {
-                            try
-                            {
-                                Question q = new Question(Attributes[0], Attributes[1], Attributes[2], Attributes[3], Attributes[4], int.Parse(Attributes[5]), int.Parse(Attributes[6]));
-                                questions.Add(q);
-                            }
-                            catch (IndexOutOfRangeException ex)
-                            {
-                                Console.WriteLine(ex.ToString());
-                            }
-                        }
-                    }
-                } 
-            }
-            catch (IOException ex)
-            {
-                Console.Write(ex.ToString());
-            }
+            
 
             updateQuestions();
             updateButtons();
