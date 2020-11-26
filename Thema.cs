@@ -11,6 +11,18 @@ namespace Management_Project
     {
         public static List<Thema> AllQuestions = new List<Thema>();
 
+        public Thema(int difficulty, int rightAnswerIndex, string Question, params string[] Answers)
+        {
+            this.difficulty       = difficulty;
+            this.rightAnswerIndex = rightAnswerIndex;
+            this.Question         = Question;
+
+            foreach (string Answer in Answers)
+                this.Answers.Add(Answer);
+
+            AllQuestions.Add(this);
+        }
+
         public string Question { get; set; }
         public List<string> Answers = new List<string>();
 

@@ -27,5 +27,11 @@ namespace Management_Project
             Hide();
             new Form2().Show();
         }
+
+        private void deleteAllQuestionsButton_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Έχετε σιγουρευτεί ότι θέλετε να σβήσετε ΟΛΑ τα θέματα από την τράπεζα; (" + Thema.AllQuestions.Count.ToString() + " θέματα).\n\n Δεν υπάρχει τρόπος για την επαναφορά τους, αν σβησθούν.", "ΣΒΗΣΙΜΟ ΟΛΩΝ ΤΩΝ ΘΕΜΑΤΩΝ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Thema.AllQuestions.Clear();
+        }
     }
 }

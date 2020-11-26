@@ -13,9 +13,7 @@ namespace Management_Project
 {
     public partial class Form2 : Form
     {
-        List<Question> questions = new List<Question>();
         int index = 0;
-
         public Form2()
         {
             InitializeComponent();
@@ -23,15 +21,15 @@ namespace Management_Project
 
         private void updateQuestions()
         {
-            label1.Text = (index + 1).ToString() + ") " + questions[index].Ques;
-            label2.Text = "Α: " + questions[index].Ans1;
-            label3.Text = "Β: " + questions[index].Ans2;
-            label4.Text = "Γ: " + questions[index].Ans3;
-            label5.Text = "Δ: " + questions[index].Ans4;
-            label6.Text = "Βαθμός δυσκολίας: " + questions[index].Difficulty.ToString();
+            label1.Text = (index + 1).ToString() + ") " + Thema.AllQuestions[index].Question;
+            label2.Text = "Α: " + Thema.AllQuestions[index].Answers[0];
+            label3.Text = "Β: " + Thema.AllQuestions[index].Answers[1];
+            label4.Text = "Γ: " + Thema.AllQuestions[index].Answers[2];
+            label5.Text = "Δ: " + Thema.AllQuestions[index].Answers[3];
+            label6.Text = "Βαθμός δυσκολίας: " + Thema.AllQuestions[index].Difficulty.ToString();
 
             label2.BackColor = label3.BackColor = label4.BackColor = label5.BackColor = default;
-            switch(questions[index].RightAnswer)
+            switch(Thema.AllQuestions[index].RightAnswerIndex)
             {
                 case 1:
                     label2.BackColor = Color.LightGreen;
@@ -71,7 +69,7 @@ namespace Management_Project
             else
                 button1.Enabled = true;
 
-            if (index == questions.Count - 1)
+            if (index == Thema.AllQuestions.Count - 1)
                 button3.Enabled = false;
             else
                 button3.Enabled = true;

@@ -75,6 +75,7 @@
             this.deleteAllQuestionsButton.TabIndex = 2;
             this.deleteAllQuestionsButton.Text = "ΔΙΑΓΡΑΦΗ ΟΛΩΝ ΤΩΝ ΘΕΜΑΤΩΝ";
             this.deleteAllQuestionsButton.UseVisualStyleBackColor = false;
+            this.deleteAllQuestionsButton.Click += new System.EventHandler(this.deleteAllQuestionsButton_Click);
             // 
             // Form1
             // 
