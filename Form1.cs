@@ -21,5 +21,11 @@ namespace Management_Project
         {
             
         }
+
+        private void editQuestionsButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new Form2().Show();
+        }
     }
 }
