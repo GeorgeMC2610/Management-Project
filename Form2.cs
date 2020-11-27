@@ -13,20 +13,42 @@ namespace Management_Project
 {
     public partial class Form2 : Form
     {
+        //global variable for question index.
         int index = 0;
         public Form2()
         {
             InitializeComponent();
         }
 
+        //to update the questions, I set all the labels to be the corresponding properties
         private void updateQuestions()
         {
+            //but if there are no questions available, nothing happens.
+            if (Thema.AllQuestions.Count == 0)
+            {
+                label1.Text = "Η τράπεζα θεμάτων είναι άδεια.";
+                return;
+            }
+
             label1.Text = (index + 1).ToString() + ") " + Thema.AllQuestions[index].Question;
             label2.Text = "Α: " + Thema.AllQuestions[index].Answers[0];
             label3.Text = "Β: " + Thema.AllQuestions[index].Answers[1];
             label4.Text = "Γ: " + Thema.AllQuestions[index].Answers[2];
             label5.Text = "Δ: " + Thema.AllQuestions[index].Answers[3];
-            label6.Text = "Βαθμός δυσκολίας: " + Thema.AllQuestions[index].Difficulty.ToString();
+            label7.Text = "Κεφάλαιο: " + Thema.AllQuestions[index].Chapter;
+
+            switch (Thema.AllQuestions[index].Difficulty)
+            {
+                case 1:
+                    label6.Text = "Βαθμός δυσκολίας: Εύκολος";
+                    break;
+                case 2:
+                    label6.Text = "Βαθμός δυσκολίας: Μέτριος";
+                    break;
+                case 3:
+                    label6.Text = "Βαθμός δυσκολίας: Δύσκολος";
+                    break;
+            }
 
             label2.BackColor = label3.BackColor = label4.BackColor = label5.BackColor = default;
             switch(Thema.AllQuestions[index].RightAnswerIndex)
@@ -64,21 +86,15 @@ namespace Management_Project
 
         private void updateButtons()
         {
-            if (index == 0)
-                button1.Enabled = false;
-            else
-                button1.Enabled = true;
-
-            if (index == Thema.AllQuestions.Count - 1)
-                button3.Enabled = false;
-            else
-                button3.Enabled = true;
+            if (Thema.AllQuestions.Count == 0)
+            {
+                button1.Enabled = button2.Enabled = false;
+                return;
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
-
             updateQuestions();
             updateButtons();
         }
@@ -115,14 +131,16 @@ namespace Management_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            index--;
+            
+            index = (index == 0)? Thema.AllQuestions.Count -1 : index - 1;
+
             updateButtons();
             updateQuestions();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            index++;
+            index = (index == Thema.AllQuestions.Count - 1)? 0 : index + 1;
             updateButtons();
             updateQuestions();
         }
