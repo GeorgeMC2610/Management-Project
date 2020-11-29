@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Management_Project
 {
@@ -57,7 +58,7 @@ namespace Management_Project
             }
         }
 
-        //STARTING OF STATIC METHODS
+        //START OF STATIC METHODS
         public static void SaveQuestions()
         {
             IFormatter formatter = new BinaryFormatter();
@@ -69,10 +70,21 @@ namespace Management_Project
 
         public static void AcquireQuestions()
         {
-            IFormatter formatter = new BinaryFormatter();
-            Stream     stream    = new FileStream("Questions.ser", FileMode.Open, FileAccess.Read);
+            try
+            {
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream("Questions.ser", FileMode.Open, FileAccess.Read);
 
-            AllQuestions = (List<Thema>)formatter.Deserialize(stream);
+                AllQuestions = (List<Thema>)formatter.Deserialize(stream);
+            }
+            catch (FileNotFoundException e1)
+            {
+                MessageBox.Show("Μήνυμα σφάλματος: " + e1.Message + "\n\nΤο αρχείο με τις ερωτήσεις (Questions.ser) δεν βρέθηκε. Θέλετε να τρέξετε την εφαρμογή, ώστε να φτιάξει από μόνη της νέο αρχείο;", "Αρχείο Ερωτήσεων", MessageBoxButtons.OKCancel);
+            }
+            catch (SerializationException)
+            {
+                //do nothing.
+            }
         }
     }
 }

@@ -19,9 +19,7 @@ namespace Management_Project
 
         private void Form1_Load(object sender, EventArgs e) 
         {
-            Console.WriteLine(Thema.AllQuestions.Count);
-            Thema th1 = new Thema(3, 3, "Πόσες φορές την ημέρα πρέπει να προσεύχονται οι Μουσουλμάνοι;", "---", "Μία", "Δύο", "Πέντε", "Επτά");
-            Thema th2 = new Thema(2, 4, "Με πόσα κουμπιά χρειάζεται να φτιαχτεί η ερώτηση;", "---", "Δύο", "Τέσσερα", "Πέντε", "Όσα θέλει ο Χρήστης");
+            Thema.AcquireQuestions();
         }
 
         private void editQuestionsButton_Click(object sender, EventArgs e)
