@@ -20,6 +20,24 @@ namespace Management_Project
         private void Form1_Load(object sender, EventArgs e) 
         {
             Thema.AcquireQuestions();
+            checkButton();
+            labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + " Διαθέσιμες Ερωτήσεις";
+        }
+
+        private void checkButton()
+        {
+            if (Thema.AllQuestions.Count == 0)
+            {
+                wordFileButton.Enabled = false;
+                wordFileButton.BackColor = Color.Gray;
+                wordFileButton.ForeColor = Color.Black;
+            }
+            else
+            {
+                wordFileButton.Enabled = true;
+                wordFileButton.BackColor = SystemColors.HotTrack;
+                wordFileButton.ForeColor = Color.White;
+            }
         }
 
         private void editQuestionsButton_Click(object sender, EventArgs e)
@@ -32,6 +50,12 @@ namespace Management_Project
         {
             if(MessageBox.Show("Έχετε σιγουρευτεί ότι θέλετε να σβήσετε ΟΛΑ τα θέματα από την τράπεζα; (" + Thema.AllQuestions.Count.ToString() + " θέματα).\n\n Δεν υπάρχει τρόπος για την επαναφορά τους, αν σβησθούν.", "ΣΒΗΣΙΜΟ ΟΛΩΝ ΤΩΝ ΘΕΜΑΤΩΝ", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 Thema.AllQuestions.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new FormAddQuestion().Show();
+            Hide();
         }
     }
 }

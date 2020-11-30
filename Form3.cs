@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Management_Project
 {
-    public partial class Form3 : Form
+    public partial class FormAddQuestion : Form
     {
-        public Form3()
+        public FormAddQuestion()
         {
             InitializeComponent();
         }
