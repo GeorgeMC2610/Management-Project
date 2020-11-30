@@ -76,6 +76,7 @@ namespace Management_Project
                 Stream stream = new FileStream("Questions.ser", FileMode.Open, FileAccess.Read);
 
                 AllQuestions = (List<Thema>)formatter.Deserialize(stream);
+                stream.Close();
             }
             catch (FileNotFoundException e1)
             {
