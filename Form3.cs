@@ -106,7 +106,7 @@ namespace Management_Project
         {
             if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
+                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
             }
         }
 
@@ -150,7 +150,9 @@ namespace Management_Project
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.OpenForms[0].Show();
+            Thema.SaveQuestions();
+
+            new Form1().Show();
             Close();
         }
 

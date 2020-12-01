@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.buttonEditQuestion = new System.Windows.Forms.Button();
             this.buttonDeleteQuestion = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -115,16 +116,26 @@
             // 
             // buttonDeleteQuestion
             // 
-            this.buttonDeleteQuestion.BackColor = System.Drawing.Color.DarkRed;
             resources.ApplyResources(this.buttonDeleteQuestion, "buttonDeleteQuestion");
+            this.buttonDeleteQuestion.BackColor = System.Drawing.Color.DarkRed;
             this.buttonDeleteQuestion.ForeColor = System.Drawing.Color.White;
             this.buttonDeleteQuestion.Name = "buttonDeleteQuestion";
             this.buttonDeleteQuestion.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DarkRed;
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonDeleteQuestion);
             this.Controls.Add(this.buttonEditQuestion);
             this.Controls.Add(this.label7);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonEditQuestion;
         private System.Windows.Forms.Button buttonDeleteQuestion;
+        private System.Windows.Forms.Button button4;
     }
 }

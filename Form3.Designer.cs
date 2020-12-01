@@ -67,8 +67,7 @@
             // 
             // buttonAddQuestion
             // 
-            this.buttonAddQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddQuestion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddQuestion.BackColor = System.Drawing.SystemColors.HotTrack;
             this.buttonAddQuestion.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddQuestion.ForeColor = System.Drawing.Color.White;
@@ -195,8 +194,7 @@
             // 
             // buttonReviewThema
             // 
-            this.buttonReviewThema.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonReviewThema.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonReviewThema.BackColor = System.Drawing.Color.Green;
             this.buttonReviewThema.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReviewThema.ForeColor = System.Drawing.Color.White;
@@ -221,6 +219,7 @@
             // 
             // buttonExit
             // 
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExit.BackColor = System.Drawing.Color.Maroon;
             this.buttonExit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.White;

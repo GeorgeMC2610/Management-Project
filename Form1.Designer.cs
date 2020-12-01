@@ -134,7 +134,7 @@
             // 
             this.labelAvailableQuestions.AutoSize = true;
             this.labelAvailableQuestions.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvailableQuestions.Location = new System.Drawing.Point(6, 181);
+            this.labelAvailableQuestions.Location = new System.Drawing.Point(2, 234);
             this.labelAvailableQuestions.Name = "labelAvailableQuestions";
             this.labelAvailableQuestions.Size = new System.Drawing.Size(189, 19);
             this.labelAvailableQuestions.TabIndex = 5;
@@ -156,6 +156,8 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Κύριο Μενού";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

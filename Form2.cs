@@ -144,5 +144,11 @@ namespace Management_Project
             updateButtons();
             updateQuestions();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms[0].Show();
+            Close();
+        }
     }
 }

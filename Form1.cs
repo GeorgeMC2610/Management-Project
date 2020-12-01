@@ -57,5 +57,18 @@ namespace Management_Project
             new FormAddQuestion().Show();
             Hide();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Thema.SaveQuestions();
+
+            for (int i = Application.OpenForms.Count - 1; i > 0; i--)
+                Application.OpenForms[i].Close();
+        }
     }
 }
