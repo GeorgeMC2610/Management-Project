@@ -13,7 +13,7 @@ namespace Management_Project
     public partial class FormAddQuestion : Form
     {
         List<string> possibleAnswers = new List<string>();
-        int answerIndex = 1;
+        int answerIndex = 1, rightAnswerIndex = 1;
 
         public FormAddQuestion()
         {
@@ -66,6 +66,7 @@ namespace Management_Project
 
             //μετά αμέσως απανεργοποιώ το κουμπί (όλα τα πεδία είναι άδεια)
             CheckIfButtonCanBeEnabled();
+            checkBoxIsRightAnswer.Checked = true;
         }
 
         private void buttonPrev_Click(object sender, EventArgs e)
@@ -76,6 +77,9 @@ namespace Management_Project
 
             //όπως επίσης πηγαίνοντας από την μία απάντηση στην άλλη θέλουμε να δείχνουμε στον χρήστη την παρούσα απάντηση
             textBoxAnswer.Text = possibleAnswers[answerIndex - 1];
+
+            //ελέγχουμε και αν πρέπει να τικάρουμε το τσεκ μποξ
+            checkBoxIsRightAnswer.Checked = (rightAnswerIndex == answerIndex);
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -86,6 +90,9 @@ namespace Management_Project
 
             //όπως επίσης πηγαίνοντας από την μία απάντηση στην άλλη θέλουμε να δείχνουμε στον χρήστη την παρούσα απάντηση
             textBoxAnswer.Text = possibleAnswers[answerIndex - 1];
+
+            //ελέγχουμε κι αν πρέπει να τικάρουμε το τσεκμποξ
+            checkBoxIsRightAnswer.Checked = (rightAnswerIndex == answerIndex);
         }
 
         private void buttonConfirmAnswer_Click(object sender, EventArgs e)
@@ -97,30 +104,60 @@ namespace Management_Project
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
-            
+            if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
+            }
         }
 
         private void textBoxChapter_TextChanged(object sender, EventArgs e)
         {
+            //κάθε φορά που αλλάζει το textbox μπορούμε να δούμε αν μπορεί να ενεργοποιηθεί το κουμπί.
             CheckIfButtonCanBeEnabled();
         }
 
         private void buttonReviewThema_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append("ΕΡΩΤΗΣΗ: "  + textBox1.Text       + Environment.NewLine + Environment.NewLine);
+            sb.Append("ΚΕΦΑΛΑΙΟ: " + textBoxChapter.Text + Environment.NewLine + Environment.NewLine);
+
             foreach (string s in possibleAnswers)
             {
                 sb.Append(s + Environment.NewLine);
             }
 
             string message = sb.ToString();
-            MessageBox.Show(message);
+            MessageBox.Show(message, "Επισκόπηση Ερώτησης");
         }
 
         private void buttonAddPossibleAnswer_Click(object sender, EventArgs e)
         {
+            //βάλε μια κενή ερώτηση
             possibleAnswers.Add("");
-            buttonNext.PerformClick();
+            
+            //αν είναι ήδη στο τέλος ο χρήστης, απλά «πάτα» το κουμπί του επομένου, θα κάνει όλη τη δουλειά για εμάς
+            if (answerIndex == possibleAnswers.Count - 1) 
+                buttonNext.PerformClick();
+            //αν δεν είναι ήδη, τον πάμε εμείς
+            else
+            {
+                answerIndex = possibleAnswers.Count - 1;
+                buttonNext.PerformClick();
+            }
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms[0].Show();
+            Close();
+        }
+
+        private void checkBoxIsRightAnswer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxIsRightAnswer.Checked)
+                rightAnswerIndex = answerIndex;
         }
     }
 }

@@ -171,7 +171,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 198</value>
+    <value>790, 198</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -207,7 +207,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 255</value>
+    <value>790, 255</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -243,7 +243,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 308</value>
+    <value>790, 308</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -279,7 +279,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 362</value>
+    <value>790, 362</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -318,7 +318,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 718</value>
+    <value>93, 698</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -345,7 +345,7 @@
     <value>Microsoft Sans Serif, 20.25pt, style=Bold</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2617, 211</value>
+    <value>2300, 211</value>
   </data>
   <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -354,7 +354,7 @@
     <value>No</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 993</value>
+    <value>93, 973</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -420,13 +420,13 @@
     <value>NoControl</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2115, 196</value>
+    <value>1798, 196</value>
   </data>
   <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 718</value>
+    <value>93, 698</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -486,7 +486,7 @@
     <value>Roboto, 15.75pt, style=Bold</value>
   </data>
   <data name="buttonEditQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 1006</value>
+    <value>524, 986</value>
   </data>
   <data name="buttonEditQuestion.Size" type="System.Drawing.Size, System.Drawing">
     <value>399, 43</value>
@@ -516,7 +516,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonDeleteQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1037, 1006</value>
+    <value>929, 986</value>
   </data>
   <data name="buttonDeleteQuestion.Size" type="System.Drawing.Size, System.Drawing">
     <value>399, 43</value>
@@ -546,7 +546,7 @@
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>2221, 1061</value>
+    <value>1904, 1041</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Roboto, 9.75pt</value>

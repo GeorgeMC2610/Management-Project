@@ -15,7 +15,7 @@ namespace Management_Project
     {
         public static List<Thema> AllQuestions = new List<Thema>();
 
-        public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, params string[] Answers)
+        public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, string[] Answers)
         {
             this.difficulty       = difficulty;
             this.rightAnswerIndex = rightAnswerIndex;

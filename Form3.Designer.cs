@@ -42,12 +42,14 @@
             this.labelDifficulty = new System.Windows.Forms.Label();
             this.buttonAddPossibleAnswer = new System.Windows.Forms.Button();
             this.buttonReviewThema = new System.Windows.Forms.Button();
+            this.checkBoxIsRightAnswer = new System.Windows.Forms.CheckBox();
+            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 59);
+            this.textBox1.Location = new System.Drawing.Point(45, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(966, 23);
             this.textBox1.TabIndex = 0;
@@ -57,7 +59,7 @@
             // 
             this.labelQuestion.AutoSize = true;
             this.labelQuestion.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuestion.Location = new System.Drawing.Point(41, 37);
+            this.labelQuestion.Location = new System.Drawing.Point(41, 22);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(80, 19);
             this.labelQuestion.TabIndex = 1;
@@ -82,7 +84,7 @@
             // 
             this.labelChapter.AutoSize = true;
             this.labelChapter.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChapter.Location = new System.Drawing.Point(41, 109);
+            this.labelChapter.Location = new System.Drawing.Point(41, 94);
             this.labelChapter.Name = "labelChapter";
             this.labelChapter.Size = new System.Drawing.Size(88, 19);
             this.labelChapter.TabIndex = 3;
@@ -90,7 +92,7 @@
             // 
             // textBoxChapter
             // 
-            this.textBoxChapter.Location = new System.Drawing.Point(45, 131);
+            this.textBoxChapter.Location = new System.Drawing.Point(45, 116);
             this.textBoxChapter.Name = "textBoxChapter";
             this.textBoxChapter.Size = new System.Drawing.Size(339, 23);
             this.textBoxChapter.TabIndex = 4;
@@ -98,7 +100,7 @@
             // 
             // textBoxAnswer
             // 
-            this.textBoxAnswer.Location = new System.Drawing.Point(45, 217);
+            this.textBoxAnswer.Location = new System.Drawing.Point(45, 202);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(339, 23);
             this.textBoxAnswer.TabIndex = 5;
@@ -107,7 +109,7 @@
             // 
             this.labelAnswer.AutoSize = true;
             this.labelAnswer.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnswer.Location = new System.Drawing.Point(41, 195);
+            this.labelAnswer.Location = new System.Drawing.Point(41, 180);
             this.labelAnswer.Name = "labelAnswer";
             this.labelAnswer.Size = new System.Drawing.Size(95, 19);
             this.labelAnswer.TabIndex = 6;
@@ -116,7 +118,7 @@
             // buttonPrev
             // 
             this.buttonPrev.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrev.Location = new System.Drawing.Point(16, 217);
+            this.buttonPrev.Location = new System.Drawing.Point(16, 202);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(23, 23);
             this.buttonPrev.TabIndex = 7;
@@ -127,7 +129,7 @@
             // buttonNext
             // 
             this.buttonNext.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNext.Location = new System.Drawing.Point(390, 216);
+            this.buttonNext.Location = new System.Drawing.Point(390, 201);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(23, 24);
             this.buttonNext.TabIndex = 8;
@@ -139,7 +141,7 @@
             // 
             this.buttonConfirmAnswer.BackColor = System.Drawing.Color.PaleGreen;
             this.buttonConfirmAnswer.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmAnswer.Location = new System.Drawing.Point(45, 246);
+            this.buttonConfirmAnswer.Location = new System.Drawing.Point(45, 256);
             this.buttonConfirmAnswer.Name = "buttonConfirmAnswer";
             this.buttonConfirmAnswer.Size = new System.Drawing.Size(339, 24);
             this.buttonConfirmAnswer.TabIndex = 9;
@@ -149,7 +151,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(494, 131);
+            this.numericUpDown1.Location = new System.Drawing.Point(494, 116);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             3,
             0,
@@ -173,7 +175,7 @@
             // 
             this.labelDifficulty.AutoSize = true;
             this.labelDifficulty.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDifficulty.Location = new System.Drawing.Point(490, 109);
+            this.labelDifficulty.Location = new System.Drawing.Point(490, 94);
             this.labelDifficulty.Name = "labelDifficulty";
             this.labelDifficulty.Size = new System.Drawing.Size(167, 19);
             this.labelDifficulty.TabIndex = 11;
@@ -183,7 +185,7 @@
             // 
             this.buttonAddPossibleAnswer.BackColor = System.Drawing.SystemColors.Control;
             this.buttonAddPossibleAnswer.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddPossibleAnswer.Location = new System.Drawing.Point(190, 188);
+            this.buttonAddPossibleAnswer.Location = new System.Drawing.Point(190, 173);
             this.buttonAddPossibleAnswer.Name = "buttonAddPossibleAnswer";
             this.buttonAddPossibleAnswer.Size = new System.Drawing.Size(194, 26);
             this.buttonAddPossibleAnswer.TabIndex = 12;
@@ -206,11 +208,37 @@
             this.buttonReviewThema.UseVisualStyleBackColor = false;
             this.buttonReviewThema.Click += new System.EventHandler(this.buttonReviewThema_Click);
             // 
+            // checkBoxIsRightAnswer
+            // 
+            this.checkBoxIsRightAnswer.AutoSize = true;
+            this.checkBoxIsRightAnswer.Location = new System.Drawing.Point(45, 231);
+            this.checkBoxIsRightAnswer.Name = "checkBoxIsRightAnswer";
+            this.checkBoxIsRightAnswer.Size = new System.Drawing.Size(197, 19);
+            this.checkBoxIsRightAnswer.TabIndex = 14;
+            this.checkBoxIsRightAnswer.Text = "Αυτή είναι η σωστή απάντηση";
+            this.checkBoxIsRightAnswer.UseVisualStyleBackColor = true;
+            this.checkBoxIsRightAnswer.CheckedChanged += new System.EventHandler(this.checkBoxIsRightAnswer_CheckedChanged);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.Maroon;
+            this.buttonExit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Location = new System.Drawing.Point(1028, 22);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(164, 35);
+            this.buttonExit.TabIndex = 15;
+            this.buttonExit.Text = "Επιστροφή στο Μενού";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 563);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.checkBoxIsRightAnswer);
             this.Controls.Add(this.buttonReviewThema);
             this.Controls.Add(this.buttonAddPossibleAnswer);
             this.Controls.Add(this.labelDifficulty);
@@ -253,5 +281,7 @@
         private System.Windows.Forms.Label labelDifficulty;
         private System.Windows.Forms.Button buttonAddPossibleAnswer;
         private System.Windows.Forms.Button buttonReviewThema;
+        private System.Windows.Forms.CheckBox checkBoxIsRightAnswer;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
