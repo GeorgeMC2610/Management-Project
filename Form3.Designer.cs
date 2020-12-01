@@ -44,6 +44,7 @@
             this.buttonReviewThema = new System.Windows.Forms.Button();
             this.checkBoxIsRightAnswer = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonDeleteAnswer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(339, 23);
             this.textBoxAnswer.TabIndex = 5;
+            this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
             // 
             // labelAnswer
             // 
@@ -223,7 +225,7 @@
             this.buttonExit.BackColor = System.Drawing.Color.Maroon;
             this.buttonExit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(1028, 22);
+            this.buttonExit.Location = new System.Drawing.Point(1028, 32);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(164, 35);
             this.buttonExit.TabIndex = 15;
@@ -231,11 +233,27 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // buttonDeleteAnswer
+            // 
+            this.buttonDeleteAnswer.BackColor = System.Drawing.Color.Maroon;
+            this.buttonDeleteAnswer.Enabled = false;
+            this.buttonDeleteAnswer.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteAnswer.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteAnswer.Location = new System.Drawing.Point(248, 228);
+            this.buttonDeleteAnswer.Name = "buttonDeleteAnswer";
+            this.buttonDeleteAnswer.Size = new System.Drawing.Size(136, 24);
+            this.buttonDeleteAnswer.TabIndex = 16;
+            this.buttonDeleteAnswer.Text = "Διαγραφή Απάντησης";
+            this.buttonDeleteAnswer.UseVisualStyleBackColor = false;
+            this.buttonDeleteAnswer.Visible = false;
+            this.buttonDeleteAnswer.Click += new System.EventHandler(this.buttonDeleteAnswer_Click);
+            // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 563);
+            this.Controls.Add(this.buttonDeleteAnswer);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.checkBoxIsRightAnswer);
             this.Controls.Add(this.buttonReviewThema);
@@ -282,5 +300,6 @@
         private System.Windows.Forms.Button buttonReviewThema;
         private System.Windows.Forms.CheckBox checkBoxIsRightAnswer;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonDeleteAnswer;
     }
 }

@@ -80,6 +80,18 @@ namespace Management_Project
 
             //ελέγχουμε και αν πρέπει να τικάρουμε το τσεκ μποξ
             checkBoxIsRightAnswer.Checked = (rightAnswerIndex == answerIndex);
+
+            //ενεργοποιούμε το κουμπί αν και μόνο αν είναι μεγαλύτερο του 2 το ίντεξ
+            if (answerIndex > 2)
+            {
+                buttonDeleteAnswer.Enabled = true;
+                buttonDeleteAnswer.Visible = true;
+            }
+            else
+            {
+                buttonDeleteAnswer.Enabled = false;
+                buttonDeleteAnswer.Visible = false;
+            }
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -93,6 +105,18 @@ namespace Management_Project
 
             //ελέγχουμε κι αν πρέπει να τικάρουμε το τσεκμποξ
             checkBoxIsRightAnswer.Checked = (rightAnswerIndex == answerIndex);
+
+            //ενεργοποιούμε το κουμπί αν και μόνο αν είναι μεγαλύτερο του 2 το ίντεξ
+            if (answerIndex > 2)
+            {
+                buttonDeleteAnswer.Enabled = true;
+                buttonDeleteAnswer.Visible = true;
+            }
+            else
+            {
+                buttonDeleteAnswer.Enabled = false;
+                buttonDeleteAnswer.Visible = false;
+            }
         }
 
         private void buttonConfirmAnswer_Click(object sender, EventArgs e)
@@ -146,6 +170,7 @@ namespace Management_Project
                 buttonNext.PerformClick();
             }
 
+            CheckIfButtonCanBeEnabled();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -154,6 +179,21 @@ namespace Management_Project
 
             new Form1().Show();
             Close();
+        }
+
+        private void textBoxAnswer_TextChanged(object sender, EventArgs e)
+        {
+            CheckIfButtonCanBeEnabled();
+        }
+
+        private void buttonDeleteAnswer_Click(object sender, EventArgs e)
+        {
+            if (rightAnswerIndex == answerIndex)
+                rightAnswerIndex--;
+
+            possibleAnswers.RemoveAt(answerIndex - 1);
+            buttonPrev.PerformClick();
+
         }
 
         private void checkBoxIsRightAnswer_CheckedChanged(object sender, EventArgs e)
