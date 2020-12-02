@@ -34,19 +34,19 @@ namespace Management_Project
 
             label1.Text = (index + 1).ToString() + ") " + th.Question;
 
-            string stringGreekNumerals = "αβγδεζηθικλμνξοπρστυφχψω";
-            char[] GreekNumerals = stringGreekNumerals.ToCharArray();
+            string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
+            string[] GreekNumerals = stringGreekNumerals.Split(',');
 
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < th.Answers.Count; i++)
             {
-                sb.Append(GreekNumerals[i].ToString() + ") ");
+                sb.Append(GreekNumerals[i] + ") ");
                 sb.Append(th.Answers[i]);
                 sb.Append(Environment.NewLine);
             }
 
             label2.Text = sb.ToString();
-            label3.Text = GreekNumerals[th.RightAnswerIndex].ToString() + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
+            label3.Text = GreekNumerals[th.RightAnswerIndex] + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
 
             label7.Text = "Κεφάλαιο: " + th.Chapter;
 
