@@ -27,6 +27,8 @@ namespace Management_Project
             if (Thema.AllQuestions.Count == 0)
             {
                 label1.Text = "Η τράπεζα θεμάτων είναι άδεια.";
+                label7.Text = "Πηγαίνετε στο κύριο μενου, πατήστε \"Προσθήκη Θέματος\" κι όταν φτιάξετε το θέμα σας, θα το βρείτε εδώ!";
+                label3.Text = label6.Text = label2.Text = "";
                 return;
             }
 
@@ -89,7 +91,13 @@ namespace Management_Project
                 buttonDeleteQuestion.BackColor = Color.DarkGray;
                 buttonDeleteQuestion.ForeColor = Color.Black;
             }
-                
+            else if (Thema.AllQuestions.Count == 1)
+            {
+                button1.Enabled = button3.Enabled = false;
+                buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = true;
+                buttonDeleteQuestion.BackColor = Color.DarkRed;
+                buttonDeleteQuestion.ForeColor = Color.White;
+            }
             else
             {
                 button1.Enabled = button3.Enabled = buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = true;
@@ -152,8 +160,24 @@ namespace Management_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Thema.SaveQuestions();
             new Form1().Show();
             Close();
+        }
+
+        private void buttonDeleteQuestion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.Yes && Thema.AllQuestions.Count > 1)
+            {
+                Thema.AllQuestions.RemoveAt(index);
+                button1.PerformClick();
+            }
+            else
+            {
+                Thema.AllQuestions.RemoveAt(index);
+                updateButtons();
+                updateQuestions();
+            }
         }
     }
 }

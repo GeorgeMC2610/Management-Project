@@ -37,7 +37,6 @@
             this.labelAnswer = new System.Windows.Forms.Label();
             this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonConfirmAnswer = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.labelDifficulty = new System.Windows.Forms.Label();
             this.buttonAddPossibleAnswer = new System.Windows.Forms.Button();
@@ -138,18 +137,6 @@
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonConfirmAnswer
-            // 
-            this.buttonConfirmAnswer.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonConfirmAnswer.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmAnswer.Location = new System.Drawing.Point(45, 256);
-            this.buttonConfirmAnswer.Name = "buttonConfirmAnswer";
-            this.buttonConfirmAnswer.Size = new System.Drawing.Size(339, 24);
-            this.buttonConfirmAnswer.TabIndex = 9;
-            this.buttonConfirmAnswer.Text = "Επιβεβαίωση Απάντησης";
-            this.buttonConfirmAnswer.UseVisualStyleBackColor = false;
-            this.buttonConfirmAnswer.Click += new System.EventHandler(this.buttonConfirmAnswer_Click);
             // 
             // numericUpDown1
             // 
@@ -276,7 +263,6 @@
             this.Controls.Add(this.buttonAddPossibleAnswer);
             this.Controls.Add(this.labelDifficulty);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.buttonConfirmAnswer);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.labelAnswer);
@@ -309,7 +295,6 @@
         private System.Windows.Forms.Label labelAnswer;
         private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonConfirmAnswer;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label labelDifficulty;
         private System.Windows.Forms.Button buttonAddPossibleAnswer;

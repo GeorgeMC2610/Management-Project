@@ -108,6 +108,7 @@
             this.buttonDeleteQuestion.ForeColor = System.Drawing.Color.White;
             this.buttonDeleteQuestion.Name = "buttonDeleteQuestion";
             this.buttonDeleteQuestion.UseVisualStyleBackColor = false;
+            this.buttonDeleteQuestion.Click += new System.EventHandler(this.buttonDeleteQuestion_Click);
             // 
             // button4
             // 

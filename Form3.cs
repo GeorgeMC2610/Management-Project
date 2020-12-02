@@ -121,9 +121,7 @@ namespace Management_Project
 
         private void buttonConfirmAnswer_Click(object sender, EventArgs e)
         {
-            //θέτουμε την ερώτηση σε αυτήν που ήδη είμαστε και μετά ελέγχουμε αν το κουμπί μπορεί να πατηθεί
-            possibleAnswers[answerIndex - 1] = textBoxAnswer.Text;
-            CheckIfButtonCanBeEnabled();
+            
         }
 
         private void ClearFields()
@@ -161,9 +159,18 @@ namespace Management_Project
             sb.Append("ΕΡΩΤΗΣΗ: "  + textBox1.Text       + Environment.NewLine + Environment.NewLine);
             sb.Append("ΚΕΦΑΛΑΙΟ: " + textBoxChapter.Text + Environment.NewLine + Environment.NewLine);
 
+            string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
+            string[] GreekNumerals = stringGreekNumerals.Split(',');
+
+            int count = 0;
             foreach (string s in possibleAnswers)
             {
-                sb.Append(s + Environment.NewLine);
+                if (s.Equals(possibleAnswers[rightAnswerIndex - 1]))
+                    sb.Append(GreekNumerals[count] + ") " + s + " (Σ)" + Environment.NewLine);
+                else
+                    sb.Append(GreekNumerals[count] + ") " + s + Environment.NewLine);
+
+                count++;
             }
 
             string message = sb.ToString();
@@ -198,6 +205,8 @@ namespace Management_Project
 
         private void textBoxAnswer_TextChanged(object sender, EventArgs e)
         {
+            //θέτουμε την ερώτηση σε αυτήν που ήδη είμαστε και μετά ελέγχουμε αν το κουμπί μπορεί να πατηθεί
+            possibleAnswers[answerIndex - 1] = textBoxAnswer.Text;
             CheckIfButtonCanBeEnabled();
         }
 
