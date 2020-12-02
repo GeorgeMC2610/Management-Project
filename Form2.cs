@@ -30,14 +30,27 @@ namespace Management_Project
                 return;
             }
 
-            label1.Text = (index + 1).ToString() + ") " + Thema.AllQuestions[index].Question;
-            label2.Text = "Α: " + Thema.AllQuestions[index].Answers[0];
-            label3.Text = "Β: " + Thema.AllQuestions[index].Answers[1];
-            label4.Text = "Γ: " + Thema.AllQuestions[index].Answers[2];
-            label5.Text = "Δ: " + Thema.AllQuestions[index].Answers[3];
-            label7.Text = "Κεφάλαιο: " + Thema.AllQuestions[index].Chapter;
+            Thema th = Thema.AllQuestions[index];
 
-            switch (Thema.AllQuestions[index].Difficulty)
+            label1.Text = (index + 1).ToString() + ") " + th.Question;
+
+            string stringGreekNumerals = "αβγδεζηθικλμνξοπρστυφχψω";
+            char[] GreekNumerals = stringGreekNumerals.ToCharArray();
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < th.Answers.Count; i++)
+            {
+                sb.Append(GreekNumerals[i].ToString() + ") ");
+                sb.Append(th.Answers[i]);
+                sb.Append(Environment.NewLine);
+            }
+
+            label2.Text = sb.ToString();
+            label3.Text = GreekNumerals[th.RightAnswerIndex].ToString() + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
+
+            label7.Text = "Κεφάλαιο: " + th.Chapter;
+
+            switch (th.Difficulty)
             {
                 case 1:
                     label6.Text = "Βαθμός δυσκολίας: Εύκολος";
@@ -50,22 +63,6 @@ namespace Management_Project
                     break;
             }
 
-            label2.BackColor = label3.BackColor = label4.BackColor = label5.BackColor = default;
-            switch(Thema.AllQuestions[index].RightAnswerIndex)
-            {
-                case 1:
-                    label2.BackColor = Color.LightGreen;
-                    break;
-                case 2:
-                    label3.BackColor = Color.LightGreen;
-                    break;
-                case 3:
-                    label4.BackColor = Color.LightGreen;
-                    break;
-                case 4:
-                    label5.BackColor = Color.LightGreen;
-                    break;
-            }
 
             if (label1.Text.Length < 100)
             {

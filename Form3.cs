@@ -144,7 +144,7 @@ namespace Management_Project
         {
             if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
+                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
                 ClearFields();
             }
         }
@@ -208,7 +208,6 @@ namespace Management_Project
 
             possibleAnswers.RemoveAt(answerIndex - 1);
             buttonPrev.PerformClick();
-
         }
 
         private void buttonClearFields_Click(object sender, EventArgs e)
