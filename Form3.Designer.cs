@@ -45,6 +45,7 @@
             this.checkBoxIsRightAnswer = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonDeleteAnswer = new System.Windows.Forms.Button();
+            this.buttonClearFields = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,11 +249,26 @@
             this.buttonDeleteAnswer.Visible = false;
             this.buttonDeleteAnswer.Click += new System.EventHandler(this.buttonDeleteAnswer_Click);
             // 
+            // buttonClearFields
+            // 
+            this.buttonClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonClearFields.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearFields.ForeColor = System.Drawing.Color.White;
+            this.buttonClearFields.Location = new System.Drawing.Point(1028, 73);
+            this.buttonClearFields.Name = "buttonClearFields";
+            this.buttonClearFields.Size = new System.Drawing.Size(164, 35);
+            this.buttonClearFields.TabIndex = 17;
+            this.buttonClearFields.Text = "Καθαρισμός Πεδίων";
+            this.buttonClearFields.UseVisualStyleBackColor = false;
+            this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
+            // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 563);
+            this.Controls.Add(this.buttonClearFields);
             this.Controls.Add(this.buttonDeleteAnswer);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.checkBoxIsRightAnswer);
@@ -301,5 +317,6 @@
         private System.Windows.Forms.CheckBox checkBoxIsRightAnswer;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonDeleteAnswer;
+        private System.Windows.Forms.Button buttonClearFields;
     }
 }

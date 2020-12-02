@@ -126,11 +126,26 @@ namespace Management_Project
             CheckIfButtonCanBeEnabled();
         }
 
+        private void ClearFields()
+        {
+            textBox1.Text = textBoxChapter.Text = "";
+            numericUpDown1.Value = 1;
+
+            while (buttonDeleteAnswer.Enabled)
+                buttonDeleteAnswer.PerformClick();
+
+            possibleAnswers[0] = possibleAnswers[1] = "";
+            rightAnswerIndex = 1;
+            answerIndex = 2;
+            buttonPrev.PerformClick();
+        }
+
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
+                ClearFields();
             }
         }
 
@@ -194,6 +209,11 @@ namespace Management_Project
             possibleAnswers.RemoveAt(answerIndex - 1);
             buttonPrev.PerformClick();
 
+        }
+
+        private void buttonClearFields_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
 
         private void checkBoxIsRightAnswer_CheckedChanged(object sender, EventArgs e)

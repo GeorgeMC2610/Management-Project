@@ -88,8 +88,16 @@ namespace Management_Project
         {
             if (Thema.AllQuestions.Count == 0)
             {
-                button1.Enabled = button2.Enabled = false;
-                return;
+                button1.Enabled = button3.Enabled = buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = false;
+                buttonDeleteQuestion.BackColor = Color.DarkGray;
+                buttonDeleteQuestion.ForeColor = Color.Black;
+            }
+                
+            else
+            {
+                button1.Enabled = button3.Enabled = buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = true;
+                buttonDeleteQuestion.BackColor = Color.DarkRed;
+                buttonDeleteQuestion.ForeColor = Color.White;
             }
         }
 
@@ -147,7 +155,7 @@ namespace Management_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Application.OpenForms[0].Show();
+            new Form1().Show();
             Close();
         }
     }
