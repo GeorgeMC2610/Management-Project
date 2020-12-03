@@ -167,16 +167,17 @@ namespace Management_Project
 
         private void buttonDeleteQuestion_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.Yes && Thema.AllQuestions.Count > 1)
+            if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Thema.AllQuestions.RemoveAt(index);
-                button1.PerformClick();
-            }
-            else
-            {
-                Thema.AllQuestions.RemoveAt(index);
-                updateButtons();
-                updateQuestions();
+
+                if (Thema.AllQuestions.Count > 1)
+                    button1.PerformClick();
+                else if (Thema.AllQuestions.Count == 1)
+                {
+                    updateButtons();
+                    updateQuestions();
+                }
             }
         }
     }
