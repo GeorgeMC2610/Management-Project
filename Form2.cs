@@ -173,11 +173,9 @@ namespace Management_Project
 
                 if (Thema.AllQuestions.Count > 1)
                     button1.PerformClick();
-                else if (Thema.AllQuestions.Count == 1)
-                {
-                    updateButtons();
-                    updateQuestions();
-                }
+
+                updateButtons();
+                updateQuestions();
             }
         }
     }

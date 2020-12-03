@@ -171,19 +171,19 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>498, 209</value>
+    <value>362, 209</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 24</value>
+    <value>114, 24</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>α) σωστή απάντηση</value>
+    <value>απαντήσεις</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -207,19 +207,19 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>826, 209</value>
+    <value>1035, 209</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 24</value>
+    <value>160, 24</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>β) απάντηση 2</value>
+    <value>σωστή απάντηση</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
