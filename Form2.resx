@@ -474,7 +474,7 @@
     <value>1</value>
   </data>
   <data name="button4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 9.75pt, style=Bold</value>
+    <value>Arial, 8.25pt, style=Bold</value>
   </data>
   <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
