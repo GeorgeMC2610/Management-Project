@@ -44,7 +44,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonDeleteAnswer = new System.Windows.Forms.Button();
             this.buttonClearFields = new System.Windows.Forms.Button();
-            this.listBoxChapters = new System.Windows.Forms.ListBox();
+            this.domainUpDownChapters = new System.Windows.Forms.DomainUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -242,20 +242,20 @@
             this.buttonClearFields.UseVisualStyleBackColor = false;
             this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
             // 
-            // listBoxChapters
+            // domainUpDownChapters
             // 
-            this.listBoxChapters.ItemHeight = 15;
-            this.listBoxChapters.Location = new System.Drawing.Point(45, 116);
-            this.listBoxChapters.Name = "listBoxChapters";
-            this.listBoxChapters.Size = new System.Drawing.Size(372, 34);
-            this.listBoxChapters.TabIndex = 1;
+            this.domainUpDownChapters.AllowDrop = true;
+            this.domainUpDownChapters.Location = new System.Drawing.Point(45, 116);
+            this.domainUpDownChapters.Name = "domainUpDownChapters";
+            this.domainUpDownChapters.Size = new System.Drawing.Size(339, 23);
+            this.domainUpDownChapters.TabIndex = 2;
             // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 563);
-            this.Controls.Add(this.listBoxChapters);
+            this.Controls.Add(this.domainUpDownChapters);
             this.Controls.Add(this.buttonClearFields);
             this.Controls.Add(this.buttonDeleteAnswer);
             this.Controls.Add(this.buttonExit);
@@ -302,6 +302,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonDeleteAnswer;
         private System.Windows.Forms.Button buttonClearFields;
-        private System.Windows.Forms.ListBox listBoxChapters;
+        private System.Windows.Forms.DomainUpDown domainUpDownChapters;
     }
 }

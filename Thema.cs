@@ -23,7 +23,8 @@ namespace Management_Project
             this.Question         = Question;
             this.Chapter          = Chapter;
 
-            AllChapters.Add(this.Chapter);
+            if (!AllChapters.Contains(this.Chapter))
+                AllChapters.Add(this.Chapter);
 
             foreach (string Answer in Answers)
                 this.Answers.Add(Answer);

@@ -38,7 +38,7 @@ namespace Management_Project
             }
 
             //μετά τσεκάρω αν το κουμπί μπορεί να ενεργοποιηθεί, δηλαδή αν δεν είναι άδεια τα πεδία της ερώτησης και του κεφαλαίου, κι αν υπάρχουν πιθανές απαντήσεις.
-            if (textBox1.Text.Equals("") || listBoxChapters.SelectedItem.Equals("") || CheckEmptyAnswer())
+            if (textBox1.Text.Equals("") || domainUpDownChapters.Text.Equals("") || CheckEmptyAnswer())
             {
                 buttonAddQuestion.Enabled   = false;
                 buttonAddQuestion.BackColor = Color.Gray;
@@ -69,16 +69,15 @@ namespace Management_Project
             checkBoxIsRightAnswer.Checked = true;
 
             //βάζω και τα κεφάλαια στο λιστμποξ
-            foreach (Thema th in Thema.AllQuestions)
-                listBoxChapters.Items.Add(th.Chapter);
+            UpdateChapters();
+        }
 
-            //σιγουρευόμαστε ότι ένα θέμα, αν υπάρχει δύο φορές, δεν θα εμφανιστεί δύο φορές
-            listBoxChapters.Items.
+        private void UpdateChapters()
+        {
+            domainUpDownChapters.Items.Clear();
 
-            foreach (string chapter in listBoxChapters.Items)
-            {
-                
-            }
+            foreach (string chapter in Thema.AllChapters)
+                domainUpDownChapters.Items.Add(chapter);
         }
 
         private void buttonPrev_Click(object sender, EventArgs e)
@@ -138,7 +137,7 @@ namespace Management_Project
 
         private void ClearFields()
         {
-            textBox1.Text = textBoxChapter.Text = "";
+            textBox1.Text = domainUpDownChapters.Text = "";
             numericUpDown1.Value = 1;
 
             while (buttonDeleteAnswer.Enabled)
@@ -154,9 +153,11 @@ namespace Management_Project
         {
             if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, textBoxChapter.Text, possibleAnswers.ToArray());
+                Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, domainUpDownChapters.Text, possibleAnswers.ToArray());
                 ClearFields();
             }
+
+            UpdateChapters();
         }
 
         private void textBoxChapter_TextChanged(object sender, EventArgs e)
@@ -168,8 +169,8 @@ namespace Management_Project
         private void buttonReviewThema_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("ΕΡΩΤΗΣΗ: "  + textBox1.Text       + Environment.NewLine + Environment.NewLine);
-            sb.Append("ΚΕΦΑΛΑΙΟ: " + textBoxChapter.Text + Environment.NewLine + Environment.NewLine);
+            sb.Append("ΕΡΩΤΗΣΗ: "  + textBox1.Text             + Environment.NewLine + Environment.NewLine);
+            sb.Append("ΚΕΦΑΛΑΙΟ: " + domainUpDownChapters.Text + Environment.NewLine + Environment.NewLine);
 
             string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
             string[] GreekNumerals = stringGreekNumerals.Split(',');
