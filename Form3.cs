@@ -76,8 +76,8 @@ namespace Management_Project
         {
             domainUpDownChapters.Items.Clear();
 
-            foreach (string chapter in Thema.AllChapters)
-                domainUpDownChapters.Items.Add(chapter);
+            foreach (string s in Thema.AllChapters)
+                domainUpDownChapters.Items.Add(s);
         }
 
         private void buttonPrev_Click(object sender, EventArgs e)
