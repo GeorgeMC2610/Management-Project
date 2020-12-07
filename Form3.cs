@@ -38,7 +38,7 @@ namespace Management_Project
             }
 
             //μετά τσεκάρω αν το κουμπί μπορεί να ενεργοποιηθεί, δηλαδή αν δεν είναι άδεια τα πεδία της ερώτησης και του κεφαλαίου, κι αν υπάρχουν πιθανές απαντήσεις.
-            if (textBox1.Text.Equals("") || textBoxChapter.Text.Equals("") || CheckEmptyAnswer())
+            if (textBox1.Text.Equals("") || listBoxChapters.SelectedItem.Equals("") || CheckEmptyAnswer())
             {
                 buttonAddQuestion.Enabled   = false;
                 buttonAddQuestion.BackColor = Color.Gray;
@@ -67,6 +67,18 @@ namespace Management_Project
             //μετά αμέσως απανεργοποιώ το κουμπί (όλα τα πεδία είναι άδεια)
             CheckIfButtonCanBeEnabled();
             checkBoxIsRightAnswer.Checked = true;
+
+            //βάζω και τα κεφάλαια στο λιστμποξ
+            foreach (Thema th in Thema.AllQuestions)
+                listBoxChapters.Items.Add(th.Chapter);
+
+            //σιγουρευόμαστε ότι ένα θέμα, αν υπάρχει δύο φορές, δεν θα εμφανιστεί δύο φορές
+            listBoxChapters.Items.
+
+            foreach (string chapter in listBoxChapters.Items)
+            {
+                
+            }
         }
 
         private void buttonPrev_Click(object sender, EventArgs e)

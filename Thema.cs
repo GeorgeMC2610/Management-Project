@@ -14,6 +14,7 @@ namespace Management_Project
     class Thema
     {
         public static List<Thema> AllQuestions = new List<Thema>();
+        public static List<string> AllChapters = new List<string>();
 
         public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, params string[] Answers)
         {
@@ -21,6 +22,8 @@ namespace Management_Project
             this.rightAnswerIndex = rightAnswerIndex;
             this.Question         = Question;
             this.Chapter          = Chapter;
+
+            AllChapters.Add(this.Chapter);
 
             foreach (string Answer in Answers)
                 this.Answers.Add(Answer);

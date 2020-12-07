@@ -32,7 +32,6 @@
             this.labelQuestion = new System.Windows.Forms.Label();
             this.buttonAddQuestion = new System.Windows.Forms.Button();
             this.labelChapter = new System.Windows.Forms.Label();
-            this.textBoxChapter = new System.Windows.Forms.TextBox();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.labelAnswer = new System.Windows.Forms.Label();
             this.buttonPrev = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonDeleteAnswer = new System.Windows.Forms.Button();
             this.buttonClearFields = new System.Windows.Forms.Button();
+            this.listBoxChapters = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             this.buttonAddQuestion.Location = new System.Drawing.Point(608, 508);
             this.buttonAddQuestion.Name = "buttonAddQuestion";
             this.buttonAddQuestion.Size = new System.Drawing.Size(584, 43);
-            this.buttonAddQuestion.TabIndex = 2;
+            this.buttonAddQuestion.TabIndex = 10;
             this.buttonAddQuestion.Text = "ΠΡΟΣΘΗΚΗ ΕΡΩΤΗΣΗΣ ΣΤΗΝ ΤΡΑΠΕΖΑ";
             this.buttonAddQuestion.UseVisualStyleBackColor = false;
             this.buttonAddQuestion.Click += new System.EventHandler(this.buttonAddQuestion_Click);
@@ -90,20 +90,12 @@
             this.labelChapter.TabIndex = 3;
             this.labelChapter.Text = "ΚΕΦΑΛΑΙΟ";
             // 
-            // textBoxChapter
-            // 
-            this.textBoxChapter.Location = new System.Drawing.Point(45, 116);
-            this.textBoxChapter.Name = "textBoxChapter";
-            this.textBoxChapter.Size = new System.Drawing.Size(339, 23);
-            this.textBoxChapter.TabIndex = 4;
-            this.textBoxChapter.TextChanged += new System.EventHandler(this.textBoxChapter_TextChanged);
-            // 
             // textBoxAnswer
             // 
             this.textBoxAnswer.Location = new System.Drawing.Point(45, 202);
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(339, 23);
-            this.textBoxAnswer.TabIndex = 5;
+            this.textBoxAnswer.TabIndex = 3;
             this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
             // 
             // labelAnswer
@@ -122,7 +114,7 @@
             this.buttonPrev.Location = new System.Drawing.Point(16, 202);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(23, 23);
-            this.buttonPrev.TabIndex = 7;
+            this.buttonPrev.TabIndex = 5;
             this.buttonPrev.Text = "<";
             this.buttonPrev.UseVisualStyleBackColor = true;
             this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
@@ -133,7 +125,7 @@
             this.buttonNext.Location = new System.Drawing.Point(390, 201);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(23, 24);
-            this.buttonNext.TabIndex = 8;
+            this.buttonNext.TabIndex = 4;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
@@ -153,7 +145,7 @@
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(84, 23);
-            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.TabIndex = 2;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
             0,
@@ -177,7 +169,7 @@
             this.buttonAddPossibleAnswer.Location = new System.Drawing.Point(190, 173);
             this.buttonAddPossibleAnswer.Name = "buttonAddPossibleAnswer";
             this.buttonAddPossibleAnswer.Size = new System.Drawing.Size(194, 26);
-            this.buttonAddPossibleAnswer.TabIndex = 12;
+            this.buttonAddPossibleAnswer.TabIndex = 6;
             this.buttonAddPossibleAnswer.Text = "Προσθήκη Νέας Απάντησης";
             this.buttonAddPossibleAnswer.UseVisualStyleBackColor = false;
             this.buttonAddPossibleAnswer.Click += new System.EventHandler(this.buttonAddPossibleAnswer_Click);
@@ -191,7 +183,7 @@
             this.buttonReviewThema.Location = new System.Drawing.Point(12, 508);
             this.buttonReviewThema.Name = "buttonReviewThema";
             this.buttonReviewThema.Size = new System.Drawing.Size(584, 43);
-            this.buttonReviewThema.TabIndex = 13;
+            this.buttonReviewThema.TabIndex = 9;
             this.buttonReviewThema.Text = "ΕΠΙΣΚΟΠΗΣΗ ΘΕΜΑΤΟΣ";
             this.buttonReviewThema.UseVisualStyleBackColor = false;
             this.buttonReviewThema.Click += new System.EventHandler(this.buttonReviewThema_Click);
@@ -202,7 +194,7 @@
             this.checkBoxIsRightAnswer.Location = new System.Drawing.Point(45, 231);
             this.checkBoxIsRightAnswer.Name = "checkBoxIsRightAnswer";
             this.checkBoxIsRightAnswer.Size = new System.Drawing.Size(197, 19);
-            this.checkBoxIsRightAnswer.TabIndex = 14;
+            this.checkBoxIsRightAnswer.TabIndex = 7;
             this.checkBoxIsRightAnswer.Text = "Αυτή είναι η σωστή απάντηση";
             this.checkBoxIsRightAnswer.UseVisualStyleBackColor = true;
             this.checkBoxIsRightAnswer.CheckedChanged += new System.EventHandler(this.checkBoxIsRightAnswer_CheckedChanged);
@@ -216,7 +208,7 @@
             this.buttonExit.Location = new System.Drawing.Point(1028, 32);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(164, 35);
-            this.buttonExit.TabIndex = 15;
+            this.buttonExit.TabIndex = 12;
             this.buttonExit.Text = "Επιστροφή στο Μενού";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
@@ -230,7 +222,7 @@
             this.buttonDeleteAnswer.Location = new System.Drawing.Point(248, 228);
             this.buttonDeleteAnswer.Name = "buttonDeleteAnswer";
             this.buttonDeleteAnswer.Size = new System.Drawing.Size(136, 24);
-            this.buttonDeleteAnswer.TabIndex = 16;
+            this.buttonDeleteAnswer.TabIndex = 8;
             this.buttonDeleteAnswer.Text = "Διαγραφή Απάντησης";
             this.buttonDeleteAnswer.UseVisualStyleBackColor = false;
             this.buttonDeleteAnswer.Visible = false;
@@ -245,16 +237,25 @@
             this.buttonClearFields.Location = new System.Drawing.Point(1028, 73);
             this.buttonClearFields.Name = "buttonClearFields";
             this.buttonClearFields.Size = new System.Drawing.Size(164, 35);
-            this.buttonClearFields.TabIndex = 17;
+            this.buttonClearFields.TabIndex = 11;
             this.buttonClearFields.Text = "Καθαρισμός Πεδίων";
             this.buttonClearFields.UseVisualStyleBackColor = false;
             this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
+            // 
+            // listBoxChapters
+            // 
+            this.listBoxChapters.ItemHeight = 15;
+            this.listBoxChapters.Location = new System.Drawing.Point(45, 116);
+            this.listBoxChapters.Name = "listBoxChapters";
+            this.listBoxChapters.Size = new System.Drawing.Size(372, 34);
+            this.listBoxChapters.TabIndex = 1;
             // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 563);
+            this.Controls.Add(this.listBoxChapters);
             this.Controls.Add(this.buttonClearFields);
             this.Controls.Add(this.buttonDeleteAnswer);
             this.Controls.Add(this.buttonExit);
@@ -267,7 +268,6 @@
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.labelAnswer);
             this.Controls.Add(this.textBoxAnswer);
-            this.Controls.Add(this.textBoxChapter);
             this.Controls.Add(this.labelChapter);
             this.Controls.Add(this.buttonAddQuestion);
             this.Controls.Add(this.labelQuestion);
@@ -290,7 +290,6 @@
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Button buttonAddQuestion;
         private System.Windows.Forms.Label labelChapter;
-        private System.Windows.Forms.TextBox textBoxChapter;
         private System.Windows.Forms.TextBox textBoxAnswer;
         private System.Windows.Forms.Label labelAnswer;
         private System.Windows.Forms.Button buttonPrev;
@@ -303,5 +302,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonDeleteAnswer;
         private System.Windows.Forms.Button buttonClearFields;
+        private System.Windows.Forms.ListBox listBoxChapters;
     }
 }

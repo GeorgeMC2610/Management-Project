@@ -171,7 +171,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 209</value>
+    <value>539, 251</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -207,7 +207,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1035, 209</value>
+    <value>539, 190</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -417,10 +417,10 @@
     <value>Arial, 15.75pt, style=Bold</value>
   </data>
   <data name="buttonEditQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 803</value>
+    <value>99, 803</value>
   </data>
   <data name="buttonEditQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 46</value>
+    <value>666, 46</value>
   </data>
   <data name="buttonEditQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -453,7 +453,7 @@
     <value>771, 803</value>
   </data>
   <data name="buttonDeleteQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 46</value>
+    <value>707, 46</value>
   </data>
   <data name="buttonDeleteQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

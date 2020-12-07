@@ -64,7 +64,7 @@
             this.editQuestionsButton.Name = "editQuestionsButton";
             this.editQuestionsButton.Size = new System.Drawing.Size(298, 37);
             this.editQuestionsButton.TabIndex = 1;
-            this.editQuestionsButton.Text = "ΠΡΟΒΟΛΗ/ΤΡΟΠΟΠΟΙΗΣΗ ΘΕΜΑΤΩΝ";
+            this.editQuestionsButton.Text = "ΕΠΙΣΚΟΠΗΣΗ ΘΕΜΑΤΩΝ";
             this.editQuestionsButton.UseVisualStyleBackColor = false;
             this.editQuestionsButton.Click += new System.EventHandler(this.editQuestionsButton_Click);
             // 
