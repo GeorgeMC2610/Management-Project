@@ -14,7 +14,6 @@ namespace Management_Project
     class Thema
     {
         public static List<Thema> AllQuestions = new List<Thema>();
-        public static List<string> AllChapters = new List<string>();
 
         public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, params string[] Answers)
         {
@@ -23,19 +22,10 @@ namespace Management_Project
             this.Question         = Question;
             this.Chapter          = Chapter;
 
-            UpdateChapters();
-
             foreach (string Answer in Answers)
                 this.Answers.Add(Answer);
 
             AllQuestions.Add(this);
-        }
-
-        private static void UpdateChapters()
-        {
-            foreach (Thema th in AllQuestions)
-                if (!AllChapters.Contains(th.Chapter))
-                    AllChapters.Add(th.Chapter);
         }
 
         public string Question { get; set; }
@@ -86,7 +76,6 @@ namespace Management_Project
                 Stream stream = new FileStream("Questions.ser", FileMode.Open, FileAccess.Read);
 
                 AllQuestions = (List<Thema>)formatter.Deserialize(stream);
-                UpdateChapters();
                 stream.Close();
             }
             catch (FileNotFoundException e1)

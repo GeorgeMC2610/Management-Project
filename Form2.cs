@@ -170,10 +170,7 @@ namespace Management_Project
             if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Thema.AllQuestions.RemoveAt(index);
-
-                if (Thema.AllQuestions.Count > 1)
-                    button1.PerformClick();
-
+                index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
                 updateButtons();
                 updateQuestions();
             }

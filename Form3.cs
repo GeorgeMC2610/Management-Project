@@ -76,8 +76,11 @@ namespace Management_Project
         {
             domainUpDownChapters.Items.Clear();
 
-            foreach (string s in Thema.AllChapters)
-                domainUpDownChapters.Items.Add(s);
+            foreach (Thema th in Thema.AllQuestions)
+            {
+                if (!domainUpDownChapters.Items.Contains(th.Chapter))
+                    domainUpDownChapters.Items.Add(th.Chapter);
+            }
         }
 
         private void buttonPrev_Click(object sender, EventArgs e)
