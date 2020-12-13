@@ -70,7 +70,7 @@
             // 
             this.buttonAddQuestion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddQuestion.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonAddQuestion.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddQuestion.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddQuestion.ForeColor = System.Drawing.Color.White;
             this.buttonAddQuestion.Location = new System.Drawing.Point(608, 542);
             this.buttonAddQuestion.Name = "buttonAddQuestion";
@@ -110,10 +110,10 @@
             // 
             // buttonPrev
             // 
-            this.buttonPrev.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrev.Location = new System.Drawing.Point(16, 215);
+            this.buttonPrev.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrev.Location = new System.Drawing.Point(16, 214);
             this.buttonPrev.Name = "buttonPrev";
-            this.buttonPrev.Size = new System.Drawing.Size(23, 25);
+            this.buttonPrev.Size = new System.Drawing.Size(23, 22);
             this.buttonPrev.TabIndex = 5;
             this.buttonPrev.Text = "<";
             this.buttonPrev.UseVisualStyleBackColor = true;
@@ -121,10 +121,10 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Font = new System.Drawing.Font("Roboto Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNext.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.Location = new System.Drawing.Point(390, 214);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(23, 26);
+            this.buttonNext.Size = new System.Drawing.Size(23, 23);
             this.buttonNext.TabIndex = 4;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             // 
             this.buttonReviewThema.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonReviewThema.BackColor = System.Drawing.Color.Green;
-            this.buttonReviewThema.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReviewThema.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReviewThema.ForeColor = System.Drawing.Color.White;
             this.buttonReviewThema.Location = new System.Drawing.Point(12, 542);
             this.buttonReviewThema.Name = "buttonReviewThema";
@@ -203,7 +203,7 @@
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExit.BackColor = System.Drawing.Color.Maroon;
-            this.buttonExit.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.Color.White;
             this.buttonExit.Location = new System.Drawing.Point(1028, 34);
             this.buttonExit.Name = "buttonExit";
@@ -232,7 +232,7 @@
             // 
             this.buttonClearFields.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonClearFields.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearFields.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClearFields.ForeColor = System.Drawing.Color.White;
             this.buttonClearFields.Location = new System.Drawing.Point(1028, 78);
             this.buttonClearFields.Name = "buttonClearFields";
@@ -273,7 +273,7 @@
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προσθήκη Νέου Θέματος";

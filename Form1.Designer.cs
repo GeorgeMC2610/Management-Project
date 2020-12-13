@@ -44,7 +44,7 @@
             this.wordFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wordFileButton.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.wordFileButton.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordFileButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordFileButton.ForeColor = System.Drawing.Color.White;
             this.wordFileButton.Location = new System.Drawing.Point(10, 461);
             this.wordFileButton.Name = "wordFileButton";
@@ -52,12 +52,13 @@
             this.wordFileButton.TabIndex = 0;
             this.wordFileButton.Text = "ΠΑΡΑΓΩΓΗ ΑΡΧΕΙΟΥ WORD";
             this.wordFileButton.UseVisualStyleBackColor = false;
+            this.wordFileButton.Click += new System.EventHandler(this.wordFileButton_Click);
             // 
             // editQuestionsButton
             // 
             this.editQuestionsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionsButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.editQuestionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.editQuestionsButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editQuestionsButton.ForeColor = System.Drawing.Color.Black;
             this.editQuestionsButton.Location = new System.Drawing.Point(6, 115);
