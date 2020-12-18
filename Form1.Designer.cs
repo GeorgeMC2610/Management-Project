@@ -40,6 +40,10 @@
             this.Help = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1_Δημιουργοί = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2_Σκοπός = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1_Κουμπιά = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2_prosthikh_neou_thematos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4_episkophsh_thematwn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -156,14 +160,16 @@
             this.toolStripMenuItem1_Δημιουργοί,
             this.toolStripMenuItem2_Σκοπός});
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(52, 20);
-            this.About.Text = "About";
+            this.About.Size = new System.Drawing.Size(92, 20);
+            this.About.Text = "Πληροφορίες";
             // 
             // Help
             // 
+            this.Help.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1_Κουμπιά});
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(44, 20);
-            this.Help.Text = "Help";
+            this.Help.Size = new System.Drawing.Size(62, 20);
+            this.Help.Text = "Βοήθεια";
             // 
             // toolStripMenuItem1_Δημιουργοί
             // 
@@ -178,6 +184,35 @@
             this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2_Σκοπός.Text = "Σκοπός";
             this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
+            // 
+            // toolStripMenuItem1_Κουμπιά
+            // 
+            this.toolStripMenuItem1_Κουμπιά.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2_prosthikh_neou_thematos,
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn,
+            this.toolStripMenuItem4_episkophsh_thematwn});
+            this.toolStripMenuItem1_Κουμπιά.Name = "toolStripMenuItem1_Κουμπιά";
+            this.toolStripMenuItem1_Κουμπιά.Size = new System.Drawing.Size(201, 22);
+            this.toolStripMenuItem1_Κουμπιά.Text = "Τι κάνει το κάθε κουμπί;";
+            // 
+            // toolStripMenuItem2_prosthikh_neou_thematos
+            // 
+            this.toolStripMenuItem2_prosthikh_neou_thematos.Name = "toolStripMenuItem2_prosthikh_neou_thematos";
+            this.toolStripMenuItem2_prosthikh_neou_thematos.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem2_prosthikh_neou_thematos.Text = "Προσθήκη Νέου Θέματος";
+            this.toolStripMenuItem2_prosthikh_neou_thematos.Click += new System.EventHandler(this.toolStripMenuItem2_prosthikh_neou_thematos_Click);
+            // 
+            // toolStripMenuItem3_diagrafh_olwn_twn_thematwn
+            // 
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Name = "toolStripMenuItem3_diagrafh_olwn_twn_thematwn";
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Text = "Διαγραφή όλων των θεμάτων";
+            // 
+            // toolStripMenuItem4_episkophsh_thematwn
+            // 
+            this.toolStripMenuItem4_episkophsh_thematwn.Name = "toolStripMenuItem4_episkophsh_thematwn";
+            this.toolStripMenuItem4_episkophsh_thematwn.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem4_episkophsh_thematwn.Text = "Επισκόπηση Θεμάτων";
             // 
             // Form1
             // 
@@ -221,6 +256,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_Δημιουργοί;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2_Σκοπός;
         private System.Windows.Forms.ToolStripMenuItem Help;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_Κουμπιά;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2_prosthikh_neou_thematos;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3_diagrafh_olwn_twn_thematwn;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4_episkophsh_thematwn;
     }
 }
 

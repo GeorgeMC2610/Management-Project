@@ -74,7 +74,10 @@ namespace Management_Project
 
         private void wordFileButton_Click(object sender, EventArgs e)
         {
+            Form4 form4 = new Form4();
+            form4.Show();
 
+            Hide(); 
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -84,12 +87,17 @@ namespace Management_Project
 
         private void toolStripMenuItem1_Δημιουργοί_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("κείμενο εντός του message box", "Δημιουργοί");
+            MessageBox.Show("Το project αυτό δημιουργήθηκε από τους φοιτητές του ΠΑΠΕΙ Γιώργο Σεϊμένη και Λευτέρη Λαμπράκο για το μάθημα επιλογής του 3ου εξαμήνου «Management» (2020-2021)", "Δημιουργοί");
         }
 
         private void toolStripMenuItem2_Σκοπός_Click(object sender, EventArgs e)
         {
             MessageBox.Show("κείμενο εντός του message box", "Σκοπός");
+        }
+
+        private void toolStripMenuItem2_prosthikh_neou_thematos_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Δεξιά της οθόνης σας κάτω απο την φράση «Επεξεργασία τράπεζας» θα βρείτε ένα ΠΡΑΣΙΝΟ κουμπί,ονόματι ΠΡΟΣΘΗΚΗ ΝΕΟΥ ΘΕΜΑΤΟΣ. Πατώντας αυτό το κουμπί θα μπορείτε να ξεκινήσετε τη δημιουργία και την επεξεργασία ενός νέου θέματος! Μπορείτε να επιλέξετε: \n\n Ερώτηση \n Κεφάλαιο \n Βαθμό δυσκολίας \n Αριθμό πιθανών απαντήσεων \n\n Στο τέλος μπορείτε να επιλέξετε ΕΠΙΣΚΟΠΗΣΗ ΘΕΜΑΤΟΣ για να δείτε τη τελική μορφή της ερώτησης ή ΠΡΟΣΘΗΚΗ ΕΡΩΤΗΣΗΣ ΣΤΗΝ ΤΡΑΠΕΖΑ εφόσον αποφασίσετε ότι η ερώτηση σας είναι έτοιμη να μπει στη τράπεζα θεμάτων.Πάντα θα έχετε τη δυνατότητα προβολής,επεξεργασίας και διαγραγής κάποιου υπαρκτού θέματος,οπότε μην αγχώνεστε αν κάποια ερώτηση είναι λάθος καθώς θα μπορείτε να την αλλάξετε! \n\n Αν θέλετε να επιστρέψετε στην αρχική διαγάνεια πατήστε πάνω δεξιά το κουμπί «Επιστρογή στο Μενού»", "Προσθήκη Νέου Θέματος");
         }
     }
 }
