@@ -34,9 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownMaxAnswers = new System.Windows.Forms.NumericUpDown();
-            this.textBoxChapterSelect = new System.Windows.Forms.TextBox();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonIncludeAllChapters = new System.Windows.Forms.Button();
             this.numericUpDownEasyQuestions = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +45,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelOverview = new System.Windows.Forms.Label();
+            this.comboBoxChapters = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
@@ -62,9 +63,9 @@
             this.buttonGenerateWordFile.BackColor = System.Drawing.Color.RoyalBlue;
             this.buttonGenerateWordFile.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerateWordFile.ForeColor = System.Drawing.Color.White;
-            this.buttonGenerateWordFile.Location = new System.Drawing.Point(14, 404);
+            this.buttonGenerateWordFile.Location = new System.Drawing.Point(14, 504);
             this.buttonGenerateWordFile.Name = "buttonGenerateWordFile";
-            this.buttonGenerateWordFile.Size = new System.Drawing.Size(958, 44);
+            this.buttonGenerateWordFile.Size = new System.Drawing.Size(1167, 44);
             this.buttonGenerateWordFile.TabIndex = 0;
             this.buttonGenerateWordFile.Text = "ΠΑΡΑΓΩΓΗ ΔΙΑΓΩΝΙΣΜΑΤΟΣ ΣΕ ΜΟΡΦΗ WORD";
             this.buttonGenerateWordFile.UseVisualStyleBackColor = false;
@@ -104,7 +105,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(691, 29);
+            this.label3.Location = new System.Drawing.Point(853, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(245, 19);
             this.label3.TabIndex = 9;
@@ -113,49 +114,21 @@
             // numericUpDownMaxAnswers
             // 
             this.numericUpDownMaxAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(695, 55);
+            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(857, 55);
             this.numericUpDownMaxAnswers.Name = "numericUpDownMaxAnswers";
             this.numericUpDownMaxAnswers.Size = new System.Drawing.Size(57, 22);
             this.numericUpDownMaxAnswers.TabIndex = 10;
-            // 
-            // textBoxChapterSelect
-            // 
-            this.textBoxChapterSelect.Location = new System.Drawing.Point(55, 183);
-            this.textBoxChapterSelect.Name = "textBoxChapterSelect";
-            this.textBoxChapterSelect.ReadOnly = true;
-            this.textBoxChapterSelect.Size = new System.Drawing.Size(288, 22);
-            this.textBoxChapterSelect.TabIndex = 11;
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNext.Location = new System.Drawing.Point(349, 182);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(23, 24);
-            this.buttonNext.TabIndex = 12;
-            this.buttonNext.Text = ">";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            // 
-            // buttonPrev
-            // 
-            this.buttonPrev.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrev.Location = new System.Drawing.Point(25, 182);
-            this.buttonPrev.Name = "buttonPrev";
-            this.buttonPrev.Size = new System.Drawing.Size(24, 24);
-            this.buttonPrev.TabIndex = 13;
-            this.buttonPrev.Text = "<";
-            this.buttonPrev.UseVisualStyleBackColor = true;
             // 
             // buttonIncludeAllChapters
             // 
             this.buttonIncludeAllChapters.BackColor = System.Drawing.Color.Green;
             this.buttonIncludeAllChapters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncludeAllChapters.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 261);
+            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 212);
             this.buttonIncludeAllChapters.Name = "buttonIncludeAllChapters";
             this.buttonIncludeAllChapters.Size = new System.Drawing.Size(288, 49);
             this.buttonIncludeAllChapters.TabIndex = 15;
-            this.buttonIncludeAllChapters.Text = "Να συμπεριληφθούν όλων των ερωτήσεων από όλα τα κεφάλαια";
+            this.buttonIncludeAllChapters.Text = "Να συμπεριληφθούν όλα τα θέματα από όλα τα κεφάλαια";
             this.buttonIncludeAllChapters.UseVisualStyleBackColor = false;
             // 
             // numericUpDownEasyQuestions
@@ -211,7 +184,7 @@
             // 
             // numericUpDownChaptersIncluded
             // 
-            this.numericUpDownChaptersIncluded.Location = new System.Drawing.Point(55, 211);
+            this.numericUpDownChaptersIncluded.Location = new System.Drawing.Point(349, 182);
             this.numericUpDownChaptersIncluded.Name = "numericUpDownChaptersIncluded";
             this.numericUpDownChaptersIncluded.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownChaptersIncluded.TabIndex = 22;
@@ -220,7 +193,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(124, 213);
+            this.label7.Location = new System.Drawing.Point(346, 209);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(201, 16);
             this.label7.TabIndex = 23;
@@ -231,7 +204,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(758, 57);
+            this.label8.Location = new System.Drawing.Point(920, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(172, 16);
             this.label8.TabIndex = 24;
@@ -243,17 +216,67 @@
             this.labelOverview.AutoSize = true;
             this.labelOverview.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOverview.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.labelOverview.Location = new System.Drawing.Point(19, 382);
+            this.labelOverview.Location = new System.Drawing.Point(19, 482);
             this.labelOverview.Name = "labelOverview";
             this.labelOverview.Size = new System.Drawing.Size(320, 18);
             this.labelOverview.TabIndex = 25;
             this.labelOverview.Text = "x ερωτήσεις από x κεφάλαια θα παραχθούν";
             // 
+            // comboBoxChapters
+            // 
+            this.comboBoxChapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxChapters.FormattingEnabled = true;
+            this.comboBoxChapters.Location = new System.Drawing.Point(55, 182);
+            this.comboBoxChapters.Name = "comboBoxChapters";
+            this.comboBoxChapters.Size = new System.Drawing.Size(288, 24);
+            this.comboBoxChapters.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(853, 159);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(172, 19);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Ταξινόμηση Θεμάτων";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Σε σειρά προσθήκης",
+            "Ανά Αλφαβητική Σειρά (Ερωτήσεων)",
+            "Ανά Αλφαβητική Σειρά (Κεφαλαίων)",
+            "Ανά Κεφάλαιο",
+            "Ανά Δυσκολία",
+            "Καμμία (Να ανακατευθούν)"});
+            this.comboBox1.Location = new System.Drawing.Point(857, 182);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(288, 24);
+            this.comboBox1.TabIndex = 28;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(857, 212);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(91, 20);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Αντίστροφη";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1193, 561);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.comboBoxChapters);
             this.Controls.Add(this.labelOverview);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -265,9 +288,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numericUpDownEasyQuestions);
             this.Controls.Add(this.buttonIncludeAllChapters);
-            this.Controls.Add(this.buttonPrev);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.textBoxChapterSelect);
             this.Controls.Add(this.numericUpDownMaxAnswers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,6 +296,7 @@
             this.Controls.Add(this.buttonGenerateWordFile);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Παραγωγή Αρχείου Word";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).EndInit();
@@ -296,9 +317,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxAnswers;
-        private System.Windows.Forms.TextBox textBoxChapterSelect;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonIncludeAllChapters;
         private System.Windows.Forms.NumericUpDown numericUpDownEasyQuestions;
         private System.Windows.Forms.Label label4;
@@ -310,5 +328,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelOverview;
+        private System.Windows.Forms.ComboBox comboBoxChapters;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

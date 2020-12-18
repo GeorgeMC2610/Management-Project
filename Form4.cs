@@ -17,28 +17,56 @@ namespace Management_Project
             InitializeComponent();
         }
 
-        List<string> Chapters = new List<string>();
-        int chapterIndex      = 0;
         List<int> easyQuestions     = new List<int>();
         List<int> normalQuestions   = new List<int>();
         List<int> hardQuestions     = new List<int>();
+        int index, totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            //εφ' όσον δεν έχουμε επιλέξει κάποιο κεφάλαιο, βάζουμε το index -1, ώστε να ξέρουμε ότι ακόμη δεν έχει επιλεγεί
+            index = -1;
+
+            //θέτουμε τον μέγιστο αριθμό απαντήσεων ανά ερώτηση να είναι ο πρώτος, ώστε να κάνουμε απλή εύρεση μεγίστου
+            maxAvailableAnswers = Thema.AllQuestions[0].Answers.Count;
+
+            //βάζουμε τα κεφάλαια στο comboBox
             foreach (Thema th in Thema.AllQuestions)
             {
-                //γεμίζουμε τα κεφάλαια ώστε να υπάρχουν στο textbox
-                if (!Chapters.Contains(th.Chapter))
-                    Chapters.Add(th.Chapter);
+                if (!comboBoxChapters.Items.Contains(th.Chapter))
+                    comboBoxChapters.Items.Add(th.Chapter);
+
+                if (th.Answers.Count > maxAvailableAnswers)
+                    maxAvailableAnswers = th.Answers.Count;
             }
 
-            foreach (Thema th in Thema.AllQuestions)
+            //δεν μπορώ να σκεφτώ καλύτερο τρόπο ΓΤΣΜ
+            //βάζουμε για κάθε κεφάλαιο, πόσες ερωτήσεις υπάρχουν από κάθε δυσκολία
+            foreach (string ch in comboBoxChapters.Items)
             {
+                int easyQCounter = 0, normalQCounter = 0, hardQCounter = 0;
+                foreach (Thema th in Thema.AllQuestions)
+                {
+                    if (th.Difficulty == 1 && th.Chapter.Equals(ch))
+                        easyQCounter++;
+                    else if (th.Difficulty == 2 && th.Chapter.Equals(ch))
+                        normalQCounter++;
+                    else if (th.Difficulty == 3 && th.Chapter.Equals(ch))
+                        hardQCounter++;
+                }
 
+                easyQuestions.Add(easyQCounter);
+                normalQuestions.Add(normalQCounter);
+                hardQuestions.Add(hardQCounter);
             }
-            textBoxChapterSelect.Text = Chapters[chapterIndex];
 
-            
+            //όλες οι ερωτήσεις ανά δυσκολία
+            totalEasyQuestions   = easyQuestions.Sum();
+            totalNormalQuestions = normalQuestions.Sum();
+            totalHardQuestions   = hardQuestions.Sum();
+
+            //όλες οι ερωτήσεις
+            totalQuestions = totalEasyQuestions + totalNormalQuestions + totalHardQuestions;
         }
     }
 }
