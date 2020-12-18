@@ -36,6 +36,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelAvailableQuestions = new System.Windows.Forms.Label();
+            this.About = new System.Windows.Forms.ToolStripMenuItem();
+            this.Help = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1_Δημιουργοί = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2_Σκοπός = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +115,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.About,
+            this.Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1123, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // groupBox1
             // 
@@ -141,6 +150,35 @@
             this.labelAvailableQuestions.TabIndex = 5;
             this.labelAvailableQuestions.Text = "x Διαθέσιμες Ερωτήσεις";
             // 
+            // About
+            // 
+            this.About.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1_Δημιουργοί,
+            this.toolStripMenuItem2_Σκοπός});
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(52, 20);
+            this.About.Text = "About";
+            // 
+            // Help
+            // 
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(44, 20);
+            this.Help.Text = "Help";
+            // 
+            // toolStripMenuItem1_Δημιουργοί
+            // 
+            this.toolStripMenuItem1_Δημιουργοί.Name = "toolStripMenuItem1_Δημιουργοί";
+            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1_Δημιουργοί.Text = "Δημιουργοί";
+            this.toolStripMenuItem1_Δημιουργοί.Click += new System.EventHandler(this.toolStripMenuItem1_Δημιουργοί_Click);
+            // 
+            // toolStripMenuItem2_Σκοπός
+            // 
+            this.toolStripMenuItem2_Σκοπός.Name = "toolStripMenuItem2_Σκοπός";
+            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2_Σκοπός.Text = "Σκοπός";
+            this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -160,6 +198,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -177,6 +217,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelAvailableQuestions;
+        private System.Windows.Forms.ToolStripMenuItem About;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_Δημιουργοί;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2_Σκοπός;
+        private System.Windows.Forms.ToolStripMenuItem Help;
     }
 }
 
