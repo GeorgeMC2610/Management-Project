@@ -75,7 +75,7 @@ namespace Management_Project
         private void UpdateChapters()
         {
             domainUpDownChapters.Items.Clear();
-
+            domainUpDownChapters.Items.Add("");
             foreach (Thema th in Thema.AllQuestions)
             {
                 if (!domainUpDownChapters.Items.Contains(th.Chapter))
@@ -140,7 +140,9 @@ namespace Management_Project
 
         private void ClearFields()
         {
-            textBox1.Text = domainUpDownChapters.Text = "";
+            UpdateChapters();
+            textBox1.Text = "";
+            domainUpDownChapters.SelectedIndex = 0;
             numericUpDown1.Value = 1;
 
             while (buttonDeleteAnswer.Enabled)
@@ -159,8 +161,6 @@ namespace Management_Project
                 Thema thema = new Thema((int) numericUpDown1.Value, rightAnswerIndex - 1, textBox1.Text, domainUpDownChapters.Text, possibleAnswers.ToArray());
                 ClearFields();
             }
-
-            UpdateChapters();
         }
 
         private void textBoxChapter_TextChanged(object sender, EventArgs e)
