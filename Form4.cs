@@ -17,9 +17,23 @@ namespace Management_Project
             InitializeComponent();
         }
 
+        List<string> Chapters = new List<string>();
+        int chapterIndex      = 0;
+        List<int> easyQuestions     = new List<int>();
+        List<int> normalQuestions   = new List<int>();
+        List<int> hardQuestions     = new List<int>();
+
         private void Form4_Load(object sender, EventArgs e)
         {
+            foreach (Thema th in Thema.AllQuestions)
+            {
+                //γεμίζουμε τα κεφάλαια ώστε να υπάρχουν στο textbox
+                if (!Chapters.Contains(th.Chapter))
+                    Chapters.Add(th.Chapter);
+            }
+            textBoxChapterSelect.Text = Chapters[chapterIndex];
 
+            
         }
     }
 }
