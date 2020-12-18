@@ -21,7 +21,7 @@ namespace Management_Project
         {
             Thema.AcquireQuestions();
             checkButton();
-            labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + ((Thema.AllQuestions.Count == 1) ? " Διθέσιμο Θέμα" : " Διαθέσιμα Θέματα");
+            labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + ((Thema.AllQuestions.Count == 1) ? " Διαθέσιμο Θέμα" : " Διαθέσιμα Θέματα");
         }
 
         private void checkButton()
@@ -53,7 +53,7 @@ namespace Management_Project
                 Thema.AllQuestions.Clear();
             }
                 
-            labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + ((Thema.AllQuestions.Count == 1) ? " Διθέσιμο Θέμα" : " Διαθέσιμα Θέματα");
+            labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + ((Thema.AllQuestions.Count == 1) ? " Διαθέσιμο Θέμα" : " Διαθέσιμα Θέματα");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,6 +75,21 @@ namespace Management_Project
         private void wordFileButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Δημιουργοί_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("κείμενο εντός του message box", "Δημιουργοί");
+        }
+
+        private void toolStripMenuItem2_Σκοπός_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("κείμενο εντός του message box", "Σκοπός");
         }
     }
 }
