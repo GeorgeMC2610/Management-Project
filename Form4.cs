@@ -31,6 +31,11 @@ namespace Management_Project
                 if (!Chapters.Contains(th.Chapter))
                     Chapters.Add(th.Chapter);
             }
+
+            foreach (Thema th in Thema.AllQuestions)
+            {
+
+            }
             textBoxChapterSelect.Text = Chapters[chapterIndex];
 
             
