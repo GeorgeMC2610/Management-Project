@@ -41,19 +41,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDownHardQuestions = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDownChaptersIncluded = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelChapterDesc = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelOverview = new System.Windows.Forms.Label();
             this.comboBoxChapters = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSorting = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHardQuestions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChaptersIncluded)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGenerateWordFile
@@ -73,9 +71,9 @@
             // richTextBoxToWord
             // 
             this.richTextBoxToWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxToWord.Location = new System.Drawing.Point(422, 57);
+            this.richTextBoxToWord.Location = new System.Drawing.Point(447, 31);
             this.richTextBoxToWord.Name = "richTextBoxToWord";
-            this.richTextBoxToWord.Size = new System.Drawing.Size(194, 44);
+            this.richTextBoxToWord.Size = new System.Drawing.Size(194, 121);
             this.richTextBoxToWord.TabIndex = 1;
             this.richTextBoxToWord.Text = "";
             this.richTextBoxToWord.Visible = false;
@@ -84,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 29);
+            this.label1.Location = new System.Drawing.Point(51, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(292, 19);
             this.label1.TabIndex = 4;
@@ -94,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 160);
+            this.label2.Location = new System.Drawing.Point(51, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 19);
             this.label2.TabIndex = 8;
@@ -124,7 +122,7 @@
             this.buttonIncludeAllChapters.BackColor = System.Drawing.Color.Green;
             this.buttonIncludeAllChapters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncludeAllChapters.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 212);
+            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 103);
             this.buttonIncludeAllChapters.Name = "buttonIncludeAllChapters";
             this.buttonIncludeAllChapters.Size = new System.Drawing.Size(288, 49);
             this.buttonIncludeAllChapters.TabIndex = 15;
@@ -133,7 +131,7 @@
             // 
             // numericUpDownEasyQuestions
             // 
-            this.numericUpDownEasyQuestions.Location = new System.Drawing.Point(55, 51);
+            this.numericUpDownEasyQuestions.Location = new System.Drawing.Point(55, 212);
             this.numericUpDownEasyQuestions.Name = "numericUpDownEasyQuestions";
             this.numericUpDownEasyQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownEasyQuestions.TabIndex = 16;
@@ -142,7 +140,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(124, 53);
+            this.label4.Location = new System.Drawing.Point(124, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 17;
@@ -150,7 +148,7 @@
             // 
             // numericUpDownNormalQuestions
             // 
-            this.numericUpDownNormalQuestions.Location = new System.Drawing.Point(55, 79);
+            this.numericUpDownNormalQuestions.Location = new System.Drawing.Point(55, 240);
             this.numericUpDownNormalQuestions.Name = "numericUpDownNormalQuestions";
             this.numericUpDownNormalQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownNormalQuestions.TabIndex = 18;
@@ -159,7 +157,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(124, 81);
+            this.label5.Location = new System.Drawing.Point(124, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 16);
             this.label5.TabIndex = 19;
@@ -167,7 +165,7 @@
             // 
             // numericUpDownHardQuestions
             // 
-            this.numericUpDownHardQuestions.Location = new System.Drawing.Point(55, 107);
+            this.numericUpDownHardQuestions.Location = new System.Drawing.Point(55, 268);
             this.numericUpDownHardQuestions.Name = "numericUpDownHardQuestions";
             this.numericUpDownHardQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownHardQuestions.TabIndex = 20;
@@ -176,28 +174,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(124, 109);
+            this.label6.Location = new System.Drawing.Point(124, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 21;
             this.label6.Text = "Δύσκολων";
             // 
-            // numericUpDownChaptersIncluded
+            // labelChapterDesc
             // 
-            this.numericUpDownChaptersIncluded.Location = new System.Drawing.Point(349, 182);
-            this.numericUpDownChaptersIncluded.Name = "numericUpDownChaptersIncluded";
-            this.numericUpDownChaptersIncluded.Size = new System.Drawing.Size(63, 22);
-            this.numericUpDownChaptersIncluded.TabIndex = 22;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(346, 209);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(201, 16);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Ερωτήσεις από αυτό το κεφάλαιο";
+            this.labelChapterDesc.AutoSize = true;
+            this.labelChapterDesc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChapterDesc.Location = new System.Drawing.Point(52, 74);
+            this.labelChapterDesc.Name = "labelChapterDesc";
+            this.labelChapterDesc.Size = new System.Drawing.Size(193, 16);
+            this.labelChapterDesc.TabIndex = 23;
+            this.labelChapterDesc.Text = "x θέματα από αυτό το κεφάλαιο";
             // 
             // label8
             // 
@@ -226,10 +217,11 @@
             // 
             this.comboBoxChapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChapters.FormattingEnabled = true;
-            this.comboBoxChapters.Location = new System.Drawing.Point(55, 182);
+            this.comboBoxChapters.Location = new System.Drawing.Point(55, 47);
             this.comboBoxChapters.Name = "comboBoxChapters";
             this.comboBoxChapters.Size = new System.Drawing.Size(288, 24);
             this.comboBoxChapters.TabIndex = 26;
+            this.comboBoxChapters.SelectedIndexChanged += new System.EventHandler(this.comboBoxChapters_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -242,21 +234,21 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Ταξινόμηση Θεμάτων";
             // 
-            // comboBox1
+            // comboBoxSorting
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSorting.FormattingEnabled = true;
+            this.comboBoxSorting.Items.AddRange(new object[] {
             "Σε σειρά προσθήκης",
             "Ανά Αλφαβητική Σειρά (Ερωτήσεων)",
             "Ανά Αλφαβητική Σειρά (Κεφαλαίων)",
             "Ανά Κεφάλαιο",
             "Ανά Δυσκολία",
             "Καμμία (Να ανακατευθούν)"});
-            this.comboBox1.Location = new System.Drawing.Point(857, 182);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(288, 24);
-            this.comboBox1.TabIndex = 28;
+            this.comboBoxSorting.Location = new System.Drawing.Point(857, 182);
+            this.comboBoxSorting.Name = "comboBoxSorting";
+            this.comboBoxSorting.Size = new System.Drawing.Size(288, 24);
+            this.comboBoxSorting.TabIndex = 28;
             // 
             // checkBox1
             // 
@@ -274,13 +266,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1193, 561);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxSorting);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBoxChapters);
             this.Controls.Add(this.labelOverview);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDownChaptersIncluded);
+            this.Controls.Add(this.labelChapterDesc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDownHardQuestions);
             this.Controls.Add(this.label5);
@@ -303,7 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHardQuestions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChaptersIncluded)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,13 +314,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDownHardQuestions;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDownChaptersIncluded;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelChapterDesc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelOverview;
         private System.Windows.Forms.ComboBox comboBoxChapters;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxSorting;
         private System.Windows.Forms.CheckBox checkBox1;
     }
 }

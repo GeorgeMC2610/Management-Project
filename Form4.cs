@@ -22,6 +22,24 @@ namespace Management_Project
         List<int> hardQuestions     = new List<int>();
         int index, totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
 
+        private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            index = comboBoxChapters.SelectedIndex;
+            CheckNumericUpDownMaxValues();
+        }
+
+        private void CheckNumericUpDownMaxValues()
+        {
+            //θέτουμε για το παρών επιλεγμένο κεφάλαιο, να έχει τις μέγιστες επιλεγμένες ερωτήσεις 
+            numericUpDownEasyQuestions.Maximum   = easyQuestions[comboBoxChapters.SelectedIndex];
+            numericUpDownNormalQuestions.Maximum = normalQuestions[comboBoxChapters.SelectedIndex];
+            numericUpDownHardQuestions.Maximum   = hardQuestions[comboBoxChapters.SelectedIndex];
+
+            //θα πρέπει να ενημερώσουμε και τα διαθέσιμα θέματα ανά κεφάλαιο
+            int totalChapterQuestions = easyQuestions[comboBoxChapters.SelectedIndex] + normalQuestions[comboBoxChapters.SelectedIndex] + hardQuestions[comboBoxChapters.SelectedIndex];
+            labelChapterDesc.Text = (totalChapterQuestions == 1) ? "Ένα θέμα από αυτό το κεφάλαιο" : totalChapterQuestions.ToString() + " θέματα από αυτό το κεφάλαιο";
+        }
+
         private void Form4_Load(object sender, EventArgs e)
         {
             //εφ' όσον δεν έχουμε επιλέξει κάποιο κεφάλαιο, βάζουμε το index -1, ώστε να ξέρουμε ότι ακόμη δεν έχει επιλεγεί
