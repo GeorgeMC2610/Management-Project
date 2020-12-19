@@ -70,6 +70,7 @@ namespace Management_Project
 
             //βάζω και τα κεφάλαια στο λιστμποξ
             UpdateChapters();
+            domainUpDownChapters.SelectedIndex = 0;
         }
 
         private void UpdateChapters()
@@ -174,6 +175,13 @@ namespace Management_Project
             StringBuilder sb = new StringBuilder();
             sb.Append("ΕΡΩΤΗΣΗ: "  + textBox1.Text             + Environment.NewLine + Environment.NewLine);
             sb.Append("ΚΕΦΑΛΑΙΟ: " + domainUpDownChapters.Text + Environment.NewLine + Environment.NewLine);
+
+            if (numericUpDown1.Value == 1)
+                sb.Append("ΒΑΘΜΟΣ ΔΥΣΚΟΛΙΑΣ: Eύκολος" + Environment.NewLine + Environment.NewLine);
+            else if (numericUpDown1.Value == 2)
+                sb.Append("ΒΑΘΜΟΣ ΔΥΣΚΟΛΙΑΣ: Μέτριος" + Environment.NewLine + Environment.NewLine);
+            else
+                sb.Append("ΒΑΘΜΟΣ ΔΥΣΚΟΛΙΑΣ: Δύσκολος" + Environment.NewLine + Environment.NewLine);
 
             string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
             string[] GreekNumerals = stringGreekNumerals.Split(',');

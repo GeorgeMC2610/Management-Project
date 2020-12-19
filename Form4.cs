@@ -18,14 +18,14 @@ namespace Management_Project
         }
 
         //ΓΤΧΜ ΟΛΟ ΛΙΣΤΕΣ ΦΤΙΑΧΝΩ
-        List<int> easyQuestions     = new List<int>();
-        List<int> normalQuestions   = new List<int>();
-        List<int> hardQuestions     = new List<int>();
+        List<int> easyQuestions   = new List<int>();
+        List<int> normalQuestions = new List<int>();
+        List<int> hardQuestions   = new List<int>();
         int[] selectedEasyQuestions;
         int[] selectedNormalQuestions;
         int[] selectedHardQuestions;
 
-        int totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
+        int totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, selectedQuestions, maxAvailableAnswers;
 
         //αλλάζουμε το πόσες ερωτήσεις επιλέγονται, βάσει των numericupdown
         private void numericUpDownEasyQuestions_ValueChanged(object sender, EventArgs e)
@@ -33,6 +33,7 @@ namespace Management_Project
             selectedEasyQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownEasyQuestions.Value;
             updateLabelTotalDifficultyQuestions();
             updateLabelOverview();
+            checkIfButtonCanBeEnabled();
         }
 
         private void numericUpDownNormalQuestions_ValueChanged(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace Management_Project
             selectedNormalQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownNormalQuestions.Value;
             updateLabelTotalDifficultyQuestions();
             updateLabelOverview();
+            checkIfButtonCanBeEnabled();
         }
 
         private void numericUpDownHardQuestions_ValueChanged(object sender, EventArgs e)
@@ -47,6 +49,7 @@ namespace Management_Project
             selectedHardQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownHardQuestions.Value;
             updateLabelTotalDifficultyQuestions();
             updateLabelOverview();
+            checkIfButtonCanBeEnabled();
         }
 
         //λέμε στον χρήστη πόσα θέματα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
@@ -71,7 +74,7 @@ namespace Management_Project
         private void updateLabelOverview()
         {
             //Πρώτα βλέπουμε πόσες ερωτήσεις είναι μαζί.
-            int selectedChapters = 0, selectedQuestions = 0;
+            int selectedChapters = 0;
             selectedQuestions = selectedEasyQuestions.Sum() + selectedNormalQuestions.Sum() + selectedHardQuestions.Sum();
 
             //ύστερα βλέπουμε πόσα είναι τα κεφάλαια
@@ -94,6 +97,35 @@ namespace Management_Project
                 case 1:
                     labelOverview.Text = "Θα παραχθεί μία ερώτηση από ένα κεφάλαιο";
                     break;
+            }
+
+            float percentage = selectedQuestions * 100 / Thema.AllQuestions.Count;
+            labelOverview.Text += " (" + percentage.ToString() + "%)";
+        }
+
+        //φτάνουμε σε αυτό το σημείο κάθε φορά που μπορούμε να πάμε να παράξουμε το αρχείο
+        private void checkIfButtonCanBeEnabled()
+        {
+            //απενεργοποιούμε το κουμπί αν δεν υπάρχουν ερωτήσεις για παραγωγή
+            if (selectedQuestions == 0)
+            {
+                buttonGenerateWordFile.Enabled   = false;
+                buttonGenerateWordFile.BackColor = Color.DarkGray;
+                buttonGenerateWordFile.ForeColor = Color.Black;
+            }
+            //αν οι ερωτήσεις είναι λίγες, θα πρέπει να βάλουμε ξεχωριστό χρώμα
+            else if (selectedQuestions < (int) Math.Round(Thema.AllQuestions.Count * 0.15))
+            {
+                buttonGenerateWordFile.Enabled   = true;
+                buttonGenerateWordFile.BackColor = Color.Gold;
+                buttonGenerateWordFile.ForeColor = Color.Black;
+            }
+            //αλλιώς το κουμπί παίρνει την κανονική μορφή του.
+            else
+            {
+                buttonGenerateWordFile.Enabled   = true;
+                buttonGenerateWordFile.BackColor = Color.RoyalBlue;
+                buttonGenerateWordFile.ForeColor = Color.White;
             }
         }
 
@@ -128,6 +160,8 @@ namespace Management_Project
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckNumericUpDownMaxValues();
+            updateLabelOverview();
+            checkIfButtonCanBeEnabled();
         }
 
         private void CheckNumericUpDownMaxValues()
@@ -212,8 +246,11 @@ namespace Management_Project
             //το θέτουμε ως μηδέν για να μην υπάρχει περίπτωση να υπάρχει κενό επιλεγμένο κεφάλαιο.
             comboBoxChapters.SelectedIndex = 0;
             comboBoxSorting.SelectedIndex  = 0;
+
+            //καλούμε αυτές τις μεθόδους ώστε να αρχικοποιηθούν τα πάντα
             updateLabelTotalDifficultyQuestions();
             updateLabelOverview();
+            checkIfButtonCanBeEnabled();
         }
     }
 }
