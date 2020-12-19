@@ -22,6 +22,28 @@ namespace Management_Project
         List<int> hardQuestions     = new List<int>();
         int index, totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms[0].Show();
+            Close();
+        }
+
+        private void buttonGenerateWordFile_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            foreach (Thema th in Thema.AllQuestions)
+            {
+                richTextBoxToWord.AppendText((i+1).ToString() + ") " + th.Question + "\n");
+                foreach (string answer in th.Answers)
+                    richTextBoxToWord.AppendText(answer + "\n");
+
+                richTextBoxToWord.AppendText("\n\n");
+                i++;
+            }
+
+            richTextBoxToWord.SaveFile("Questions.rtf");
+        }
+
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
             index = comboBoxChapters.SelectedIndex;
@@ -77,6 +99,9 @@ namespace Management_Project
                 normalQuestions.Add(normalQCounter);
                 hardQuestions.Add(hardQCounter);
             }
+
+            //μέγιστος αριθμός απαντήσεων ανά ερώτηση
+            numericUpDownMaxAnswers.Maximum = maxAvailableAnswers;
 
             //όλες οι ερωτήσεις ανά δυσκολία
             totalEasyQuestions   = easyQuestions.Sum();
