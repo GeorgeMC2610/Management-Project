@@ -52,6 +52,7 @@ namespace Management_Project
         //λέμε στον χρήστη πόσα θέματα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
         private void updateLabelTotalDifficultyQuestions()
         {
+            //τα προσθέτουμε όλα μαζί και ύστερα τα εμφανίζουμε ανάλογα στον χρήστη
             int totalDifficultyQuestions = selectedEasyQuestions[comboBoxChapters.SelectedIndex] + selectedNormalQuestions[comboBoxChapters.SelectedIndex] + selectedHardQuestions[comboBoxChapters.SelectedIndex];
             switch (totalDifficultyQuestions)
             {
@@ -69,35 +70,31 @@ namespace Management_Project
 
         private void updateLabelOverview()
         {
+            //Πρώτα βλέπουμε πόσες ερωτήσεις είναι μαζί.
             int selectedChapters = 0, selectedQuestions = 0;
             selectedQuestions = selectedEasyQuestions.Sum() + selectedNormalQuestions.Sum() + selectedHardQuestions.Sum();
 
+            //ύστερα βλέπουμε πόσα είναι τα κεφάλαια
             for (int i = 0; i < selectedEasyQuestions.Length; i++)
             {
                 if (selectedEasyQuestions[i] + selectedNormalQuestions[i] + selectedHardQuestions[i] != 0)
                     selectedChapters++;
             }
 
+            //και μετά κάνουμε πράγματα με το label
             switch (selectedQuestions)
             {
                 default:
-                    labelOverview.Text = selectedQuestions.ToString() + " ερωτήσεις από ";
-
-                    if (selectedChapters == 1)
-                        labelOverview.Text += "ένα κεφάλαιο θα παραχθούν";
-                    else
-                        labelOverview.Text += selectedChapters.ToString() + " κεφάλαια θα παραχθούν";
+                    labelOverview.Text = "Θα παραχθούν συνολικά " + selectedQuestions.ToString() + " ερωτήσεις από ";
+                    labelOverview.Text += (selectedChapters == 1)? "ένα κεφάλαιο" : selectedChapters.ToString() + " κεφάλαια";
                     break;
                 case 0:
                     labelOverview.Text = "Δεν θα παραχθεί καμμία ερώτηση.";
                     break;
                 case 1:
-                    labelOverview.Text = "Μία ερώτηση από ένα κεφάλαιο θα παραχθεί";
+                    labelOverview.Text = "Θα παραχθεί μία ερώτηση από ένα κεφάλαιο";
                     break;
             }
-
-            
-
         }
 
         //κλείνουμε τη φόρμα με ασφαλή τρόπο
@@ -125,18 +122,7 @@ namespace Management_Project
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            foreach (Thema th in Thema.AllQuestions)
-            {
-                richTextBoxToWord.AppendText((i+1).ToString() + ") " + th.Question + "\n");
-                foreach (string answer in th.Answers)
-                    richTextBoxToWord.AppendText(answer + "\n");
-
-                richTextBoxToWord.AppendText("\n\n");
-                i++;
-            }
-
-            richTextBoxToWord.SaveFile("Questions.rtf");
+            
         }
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
