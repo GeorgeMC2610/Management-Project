@@ -99,7 +99,7 @@ namespace Management_Project
                     break;
             }
 
-            float percentage = selectedQuestions * 100 / Thema.AllQuestions.Count;
+            float percentage = (float) selectedQuestions * 100 / (float) Thema.AllQuestions.Count;
             labelOverview.Text += " (" + percentage.ToString() + "%)";
         }
 
@@ -114,7 +114,7 @@ namespace Management_Project
                 buttonGenerateWordFile.ForeColor = Color.Black;
             }
             //αν οι ερωτήσεις είναι λίγες, θα πρέπει να βάλουμε ξεχωριστό χρώμα
-            else if (selectedQuestions < (int) Math.Round(Thema.AllQuestions.Count * 0.15))
+            else if (selectedQuestions < (int) Math.Round((float)Thema.AllQuestions.Count * 0.15))
             {
                 buttonGenerateWordFile.Enabled   = true;
                 buttonGenerateWordFile.BackColor = Color.Gold;
