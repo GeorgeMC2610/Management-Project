@@ -32,18 +32,21 @@ namespace Management_Project
         {
             selectedEasyQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownEasyQuestions.Value;
             updateLabelTotalDifficultyQuestions();
+            updateLabelOverview();
         }
 
         private void numericUpDownNormalQuestions_ValueChanged(object sender, EventArgs e)
         {
             selectedNormalQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownNormalQuestions.Value;
             updateLabelTotalDifficultyQuestions();
+            updateLabelOverview();
         }
 
         private void numericUpDownHardQuestions_ValueChanged(object sender, EventArgs e)
         {
             selectedHardQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownHardQuestions.Value;
             updateLabelTotalDifficultyQuestions();
+            updateLabelOverview();
         }
 
         //λέμε στον χρήστη πόσα θέματα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
@@ -66,6 +69,34 @@ namespace Management_Project
 
         private void updateLabelOverview()
         {
+            int selectedChapters = 0, selectedQuestions = 0;
+            selectedQuestions = selectedEasyQuestions.Sum() + selectedNormalQuestions.Sum() + selectedHardQuestions.Sum();
+
+            for (int i = 0; i < selectedEasyQuestions.Length; i++)
+            {
+                if (selectedEasyQuestions[i] + selectedNormalQuestions[i] + selectedHardQuestions[i] != 0)
+                    selectedChapters++;
+            }
+
+            switch (selectedQuestions)
+            {
+                default:
+                    labelOverview.Text = selectedQuestions.ToString() + " ερωτήσεις από ";
+
+                    if (selectedChapters == 1)
+                        labelOverview.Text += "ένα κεφάλαιο θα παραχθούν";
+                    else
+                        labelOverview.Text += selectedChapters.ToString() + " κεφάλαια θα παραχθούν";
+                    break;
+                case 0:
+                    labelOverview.Text = "Δεν θα παραχθεί καμμία ερώτηση.";
+                    break;
+                case 1:
+                    labelOverview.Text = "Μία ερώτηση από ένα κεφάλαιο θα παραχθεί";
+                    break;
+            }
+
+            
 
         }
 
@@ -196,6 +227,7 @@ namespace Management_Project
             comboBoxChapters.SelectedIndex = 0;
             comboBoxSorting.SelectedIndex  = 0;
             updateLabelTotalDifficultyQuestions();
+            updateLabelOverview();
         }
     }
 }
