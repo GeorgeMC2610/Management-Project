@@ -141,6 +141,7 @@ namespace Management_Project
             if (MessageBox.Show("Θέλετε πραγματικά να συμπεριλάβετε κάθε ερώτηση από κάθε δυσκολία από όλα τα κεφάλαια;", buttonIncludeAllChapters.Text, MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
+            //εδώ είναι σαν να πατάμε κάθε κάθε φορά τα μάξιμουμ σε κάθε κεφάλαιο. Οπότε η δουλειά γίνεται αυτόματα για εμάς
             for (int i = 0; i < comboBoxChapters.Items.Count; i++)
             {
                 comboBoxChapters.SelectedIndex = i;
@@ -151,10 +152,55 @@ namespace Management_Project
             }
         }
 
+        //OVERLOADS για να ανακατέψουμε λίστες.
+        private List<T> randomizeList<T> (List<T> list)
+        {
+            Random random = new Random();
+
+            //ξεκινώντας από το δεύτερο στοιχείο, αρχίζουμε και ανακατεύουμε τη λίστα
+            for (int i = 1; i < list.Count; i++)
+            {
+                int rng = random.Next(2);
+                if (rng == 1)
+                {
+                    T temp = list[0];
+                    list[0] = list[i];
+                    list[i] = temp;
+                }
+            }
+
+            return list;
+        }
+
+        private T[] randomizeList<T> (T[] array)
+        {
+            Random random = new Random();
+
+            //ξεκινώντας από το δεύτερο στοιχείο, αρχίζουμε και ανακατεύουμε τον πίνακα
+            for (int i = 1; i < array.Length; i++)
+            {
+                int rng = random.Next(2);
+                if (rng == 1)
+                {
+                    T temp = array[0];
+                    array[0] = array[i];
+                    array[i] = temp;
+                }
+            }
+
+            return array;
+        }
+
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
-            
+            List<Thema> QuestionsToBeIncluded = new List<Thema>();
+
+            int i = 0;
+            foreach (string ch in comboBoxChapters.Items)
+            {
+                
+            }
         }
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
