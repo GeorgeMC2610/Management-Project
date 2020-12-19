@@ -31,16 +31,42 @@ namespace Management_Project
         private void numericUpDownEasyQuestions_ValueChanged(object sender, EventArgs e)
         {
             selectedEasyQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownEasyQuestions.Value;
+            updateLabelTotalDifficultyQuestions();
         }
 
         private void numericUpDownNormalQuestions_ValueChanged(object sender, EventArgs e)
         {
             selectedNormalQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownNormalQuestions.Value;
+            updateLabelTotalDifficultyQuestions();
         }
 
         private void numericUpDownHardQuestions_ValueChanged(object sender, EventArgs e)
         {
             selectedHardQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownHardQuestions.Value;
+            updateLabelTotalDifficultyQuestions();
+        }
+
+        //λέμε στον χρήστη πόσα θέματα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
+        private void updateLabelTotalDifficultyQuestions()
+        {
+            int totalDifficultyQuestions = selectedEasyQuestions[comboBoxChapters.SelectedIndex] + selectedNormalQuestions[comboBoxChapters.SelectedIndex] + selectedHardQuestions[comboBoxChapters.SelectedIndex];
+            switch (totalDifficultyQuestions)
+            {
+                default:
+                    labelTotalDifficultyQuestions.Text = totalDifficultyQuestions.ToString() + " θέματα θα επιλεγούν από το κεφάλαιο με τις παραπάνω δυσκολίες";
+                    break;
+                case 0:
+                    labelTotalDifficultyQuestions.Text = "Δεν θα επιλεγούν θέματα από αυτό το κεφάλαιο.";
+                    break;
+                case 1:
+                    labelTotalDifficultyQuestions.Text = "Ένα θέμα θα επιλεγεί από το κεφάλαιο αυτό με την παραπάνω δυσκολία";
+                    break;
+            }
+        }
+
+        private void updateLabelOverview()
+        {
+
         }
 
         //κλείνουμε τη φόρμα με ασφαλή τρόπο
@@ -48,6 +74,21 @@ namespace Management_Project
         {
             Application.OpenForms[0].Show();
             Close();
+        }
+
+        private void buttonIncludeAllChapters_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Θέλετε πραγματικά να συμπεριλάβετε κάθε ερώτηση από κάθε δυσκολία από όλα τα κεφάλαια;", buttonIncludeAllChapters.Text, MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            for (int i = 0; i < comboBoxChapters.Items.Count; i++)
+            {
+                comboBoxChapters.SelectedIndex = i;
+
+                numericUpDownEasyQuestions.Value   = numericUpDownEasyQuestions.Maximum;
+                numericUpDownNormalQuestions.Value = numericUpDownNormalQuestions.Maximum;
+                numericUpDownHardQuestions.Value   = numericUpDownHardQuestions.Maximum;
+            }
         }
 
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
@@ -153,6 +194,8 @@ namespace Management_Project
 
             //το θέτουμε ως μηδέν για να μην υπάρχει περίπτωση να υπάρχει κενό επιλεγμένο κεφάλαιο.
             comboBoxChapters.SelectedIndex = 0;
+            comboBoxSorting.SelectedIndex  = 0;
+            updateLabelTotalDifficultyQuestions();
         }
     }
 }

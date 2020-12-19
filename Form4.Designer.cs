@@ -50,6 +50,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.labelTotalDifficultyQuestions = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
@@ -63,9 +64,9 @@
             this.buttonGenerateWordFile.BackColor = System.Drawing.Color.RoyalBlue;
             this.buttonGenerateWordFile.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerateWordFile.ForeColor = System.Drawing.Color.White;
-            this.buttonGenerateWordFile.Location = new System.Drawing.Point(14, 504);
+            this.buttonGenerateWordFile.Location = new System.Drawing.Point(14, 505);
             this.buttonGenerateWordFile.Name = "buttonGenerateWordFile";
-            this.buttonGenerateWordFile.Size = new System.Drawing.Size(1157, 44);
+            this.buttonGenerateWordFile.Size = new System.Drawing.Size(1158, 44);
             this.buttonGenerateWordFile.TabIndex = 0;
             this.buttonGenerateWordFile.Text = "ΠΑΡΑΓΩΓΗ ΔΙΑΓΩΝΙΣΜΑΤΟΣ ΣΕ ΜΟΡΦΗ WORD";
             this.buttonGenerateWordFile.UseVisualStyleBackColor = false;
@@ -106,7 +107,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(843, 67);
+            this.label3.Location = new System.Drawing.Point(844, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(245, 19);
             this.label3.TabIndex = 9;
@@ -115,7 +116,7 @@
             // numericUpDownMaxAnswers
             // 
             this.numericUpDownMaxAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(847, 93);
+            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(848, 93);
             this.numericUpDownMaxAnswers.Minimum = new decimal(new int[] {
             2,
             0,
@@ -141,6 +142,7 @@
             this.buttonIncludeAllChapters.TabIndex = 15;
             this.buttonIncludeAllChapters.Text = "Να συμπεριληφθούν όλα τα θέματα από όλα τα κεφάλαια";
             this.buttonIncludeAllChapters.UseVisualStyleBackColor = false;
+            this.buttonIncludeAllChapters.Click += new System.EventHandler(this.buttonIncludeAllChapters_Click);
             // 
             // numericUpDownEasyQuestions
             // 
@@ -211,7 +213,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(910, 95);
+            this.label8.Location = new System.Drawing.Point(911, 95);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(172, 16);
             this.label8.TabIndex = 24;
@@ -244,7 +246,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(843, 228);
+            this.label9.Location = new System.Drawing.Point(844, 228);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(172, 19);
             this.label9.TabIndex = 27;
@@ -262,7 +264,7 @@
             "Ανά Κεφάλαιο",
             "Ανά Δυσκολία",
             "Καμμία (Να ανακατευθούν)"});
-            this.comboBoxSorting.Location = new System.Drawing.Point(847, 252);
+            this.comboBoxSorting.Location = new System.Drawing.Point(848, 252);
             this.comboBoxSorting.Name = "comboBoxSorting";
             this.comboBoxSorting.Size = new System.Drawing.Size(288, 24);
             this.comboBoxSorting.TabIndex = 28;
@@ -271,7 +273,7 @@
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(847, 282);
+            this.checkBox1.Location = new System.Drawing.Point(848, 282);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 20);
             this.checkBox1.TabIndex = 29;
@@ -291,11 +293,23 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.button1_Click);
             // 
+            // labelTotalDifficultyQuestions
+            // 
+            this.labelTotalDifficultyQuestions.AutoSize = true;
+            this.labelTotalDifficultyQuestions.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalDifficultyQuestions.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelTotalDifficultyQuestions.Location = new System.Drawing.Point(52, 341);
+            this.labelTotalDifficultyQuestions.Name = "labelTotalDifficultyQuestions";
+            this.labelTotalDifficultyQuestions.Size = new System.Drawing.Size(254, 16);
+            this.labelTotalDifficultyQuestions.TabIndex = 31;
+            this.labelTotalDifficultyQuestions.Text = "x συνολικά θέματα από όλες τις δυσκολίες";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.labelTotalDifficultyQuestions);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBoxSorting);
@@ -355,5 +369,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label labelTotalDifficultyQuestions;
     }
 }
