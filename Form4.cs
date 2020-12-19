@@ -17,17 +17,40 @@ namespace Management_Project
             InitializeComponent();
         }
 
+        //ΓΤΧΜ ΟΛΟ ΛΙΣΤΕΣ ΦΤΙΑΧΝΩ
         List<int> easyQuestions     = new List<int>();
         List<int> normalQuestions   = new List<int>();
         List<int> hardQuestions     = new List<int>();
-        int index, totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
+        int[] selectedEasyQuestions;
+        int[] selectedNormalQuestions;
+        int[] selectedHardQuestions;
 
+        int totalEasyQuestions, totalNormalQuestions, totalHardQuestions, totalQuestions, maxAvailableAnswers;
+
+        //αλλάζουμε το πόσες ερωτήσεις επιλέγονται, βάσει των numericupdown
+        private void numericUpDownEasyQuestions_ValueChanged(object sender, EventArgs e)
+        {
+            selectedEasyQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownEasyQuestions.Value;
+        }
+
+        private void numericUpDownNormalQuestions_ValueChanged(object sender, EventArgs e)
+        {
+            selectedNormalQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownNormalQuestions.Value;
+        }
+
+        private void numericUpDownHardQuestions_ValueChanged(object sender, EventArgs e)
+        {
+            selectedHardQuestions[comboBoxChapters.SelectedIndex] = (int)numericUpDownHardQuestions.Value;
+        }
+
+        //κλείνουμε τη φόρμα με ασφαλή τρόπο
         private void button1_Click(object sender, EventArgs e)
         {
             Application.OpenForms[0].Show();
             Close();
         }
 
+        //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
             int i = 0;
@@ -46,7 +69,6 @@ namespace Management_Project
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            index = comboBoxChapters.SelectedIndex;
             CheckNumericUpDownMaxValues();
         }
 
@@ -57,6 +79,11 @@ namespace Management_Project
             numericUpDownNormalQuestions.Maximum = normalQuestions[comboBoxChapters.SelectedIndex];
             numericUpDownHardQuestions.Maximum   = hardQuestions[comboBoxChapters.SelectedIndex];
 
+            //κάθε φορά που αλλάζει το κεφάλαιο θα πρέπει να βλέπουμε τι είχε επιλέξει ο χρήστης και να το θέσουμε ανάλογα.
+            numericUpDownEasyQuestions.Value     = selectedEasyQuestions[comboBoxChapters.SelectedIndex];
+            numericUpDownNormalQuestions.Value   = selectedNormalQuestions[comboBoxChapters.SelectedIndex];
+            numericUpDownHardQuestions.Value     = selectedHardQuestions[comboBoxChapters.SelectedIndex];
+
             //θα πρέπει να ενημερώσουμε και τα διαθέσιμα θέματα ανά κεφάλαιο
             int totalChapterQuestions = easyQuestions[comboBoxChapters.SelectedIndex] + normalQuestions[comboBoxChapters.SelectedIndex] + hardQuestions[comboBoxChapters.SelectedIndex];
             labelChapterDesc.Text = (totalChapterQuestions == 1) ? "Ένα θέμα από αυτό το κεφάλαιο" : totalChapterQuestions.ToString() + " θέματα από αυτό το κεφάλαιο";
@@ -64,9 +91,6 @@ namespace Management_Project
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            //εφ' όσον δεν έχουμε επιλέξει κάποιο κεφάλαιο, βάζουμε το index -1, ώστε να ξέρουμε ότι ακόμη δεν έχει επιλεγεί
-            index = -1;
-
             //θέτουμε τον μέγιστο αριθμό απαντήσεων ανά ερώτηση να είναι ο πρώτος, ώστε να κάνουμε απλή εύρεση μεγίστου
             maxAvailableAnswers = Thema.AllQuestions[0].Answers.Count;
 
@@ -102,6 +126,7 @@ namespace Management_Project
 
             //μέγιστος αριθμός απαντήσεων ανά ερώτηση
             numericUpDownMaxAnswers.Maximum = maxAvailableAnswers;
+            numericUpDownMaxAnswers.Value   = numericUpDownMaxAnswers.Maximum;
 
             //όλες οι ερωτήσεις ανά δυσκολία
             totalEasyQuestions   = easyQuestions.Sum();
@@ -110,6 +135,24 @@ namespace Management_Project
 
             //όλες οι ερωτήσεις
             totalQuestions = totalEasyQuestions + totalNormalQuestions + totalHardQuestions;
+
+            //οι επιλεγμένες ερωτήσεις
+            selectedEasyQuestions   = new int[easyQuestions.Count];
+            selectedNormalQuestions = new int[normalQuestions.Count];
+            selectedHardQuestions   = new int[hardQuestions.Count];
+
+            //γεμίζουμε τους πίνακες με μηδενικά
+            for (int i = 0; i < selectedEasyQuestions.Length; i++)
+                selectedEasyQuestions[i] = 0;
+
+            for (int i = 0; i < selectedNormalQuestions.Length; i++)
+                selectedNormalQuestions[i] = 0;
+
+            for (int i = 0; i < selectedHardQuestions.Length; i++)
+                selectedHardQuestions[i] = 0;
+
+            //το θέτουμε ως μηδέν για να μην υπάρχει περίπτωση να υπάρχει κενό επιλεγμένο κεφάλαιο.
+            comboBoxChapters.SelectedIndex = 0;
         }
     }
 }

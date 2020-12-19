@@ -49,6 +49,7 @@
             this.comboBoxSorting = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
@@ -94,7 +95,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 63);
+            this.label2.Location = new System.Drawing.Point(51, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 19);
             this.label2.TabIndex = 8;
@@ -134,7 +135,7 @@
             this.buttonIncludeAllChapters.BackColor = System.Drawing.Color.Green;
             this.buttonIncludeAllChapters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncludeAllChapters.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 141);
+            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 102);
             this.buttonIncludeAllChapters.Name = "buttonIncludeAllChapters";
             this.buttonIncludeAllChapters.Size = new System.Drawing.Size(288, 49);
             this.buttonIncludeAllChapters.TabIndex = 15;
@@ -147,6 +148,7 @@
             this.numericUpDownEasyQuestions.Name = "numericUpDownEasyQuestions";
             this.numericUpDownEasyQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownEasyQuestions.TabIndex = 16;
+            this.numericUpDownEasyQuestions.ValueChanged += new System.EventHandler(this.numericUpDownEasyQuestions_ValueChanged);
             // 
             // label4
             // 
@@ -164,6 +166,7 @@
             this.numericUpDownNormalQuestions.Name = "numericUpDownNormalQuestions";
             this.numericUpDownNormalQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownNormalQuestions.TabIndex = 18;
+            this.numericUpDownNormalQuestions.ValueChanged += new System.EventHandler(this.numericUpDownNormalQuestions_ValueChanged);
             // 
             // label5
             // 
@@ -181,6 +184,7 @@
             this.numericUpDownHardQuestions.Name = "numericUpDownHardQuestions";
             this.numericUpDownHardQuestions.Size = new System.Drawing.Size(63, 22);
             this.numericUpDownHardQuestions.TabIndex = 20;
+            this.numericUpDownHardQuestions.ValueChanged += new System.EventHandler(this.numericUpDownHardQuestions_ValueChanged);
             // 
             // label6
             // 
@@ -196,7 +200,7 @@
             // 
             this.labelChapterDesc.AutoSize = true;
             this.labelChapterDesc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChapterDesc.Location = new System.Drawing.Point(52, 112);
+            this.labelChapterDesc.Location = new System.Drawing.Point(52, 73);
             this.labelChapterDesc.Name = "labelChapterDesc";
             this.labelChapterDesc.Size = new System.Drawing.Size(193, 16);
             this.labelChapterDesc.TabIndex = 23;
@@ -229,7 +233,7 @@
             // 
             this.comboBoxChapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChapters.FormattingEnabled = true;
-            this.comboBoxChapters.Location = new System.Drawing.Point(55, 85);
+            this.comboBoxChapters.Location = new System.Drawing.Point(55, 46);
             this.comboBoxChapters.Name = "comboBoxChapters";
             this.comboBoxChapters.Size = new System.Drawing.Size(288, 24);
             this.comboBoxChapters.TabIndex = 26;
@@ -350,5 +354,6 @@
         private System.Windows.Forms.ComboBox comboBoxSorting;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
