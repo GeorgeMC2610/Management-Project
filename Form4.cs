@@ -211,6 +211,18 @@ namespace Management_Project
             return list;
         }
 
+        private void comboBoxSorting_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //απενεργοποιούμε το checkbox, αφού δεν έχει νόημα να αναποδογυρίσει μία τυχαία λίστα
+            if (comboBoxSorting.SelectedIndex == 5)
+            {
+                checkBoxReverse.Checked = false;
+                checkBoxReverse.Enabled = false;
+            }
+            else
+                checkBoxReverse.Enabled = true;
+        }
+
         private void printArray<T>(T[] array)
         {
             if (array.Length == 1)
@@ -313,20 +325,29 @@ namespace Management_Project
                 //στην περίπτωση που ο χρήστης έχει επιλέξει κανονική κατάταξη, δεν κάνουμε τίποτα. Τα θέματα είναι ήδη σε σειρά προσθήκης
                 case 0:
                     break;
-                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute στα θέματα
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute ερώτησης
                 case 1:
                     QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Question).ToList();
                     break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute κεφαλαίου
                 case 2:
                     QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Chapter).ToList();
                     break;
                 case 3:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(ch => comboBoxChapters.SelectedItem).ToList();
                     break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute δυσκολίας
                 case 4:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Difficulty).ToList();
                     break;
+                //χρησιμοποιούμε την φτιαχτή randomizeList για να παραχθεί μία τυχαία λίστα.
                 case 5:
+                    QuestionsToBeIncluded = randomizeList(QuestionsToBeIncluded);
                     break;
             }
+
+            if (checkBoxReverse.Checked)
+                QuestionsToBeIncluded.Reverse();
 
             i = 0;
             foreach (Thema th in QuestionsToBeIncluded)

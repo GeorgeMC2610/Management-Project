@@ -47,7 +47,7 @@
             this.comboBoxChapters = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSorting = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxReverse = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.labelTotalDifficultyQuestions = new System.Windows.Forms.Label();
@@ -269,17 +269,18 @@
             this.comboBoxSorting.Name = "comboBoxSorting";
             this.comboBoxSorting.Size = new System.Drawing.Size(288, 24);
             this.comboBoxSorting.TabIndex = 28;
+            this.comboBoxSorting.SelectedIndexChanged += new System.EventHandler(this.comboBoxSorting_SelectedIndexChanged);
             // 
-            // checkBox1
+            // checkBoxReverse
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(848, 282);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 20);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.Text = "Αντίστροφη";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxReverse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxReverse.AutoSize = true;
+            this.checkBoxReverse.Location = new System.Drawing.Point(848, 282);
+            this.checkBoxReverse.Name = "checkBoxReverse";
+            this.checkBoxReverse.Size = new System.Drawing.Size(91, 20);
+            this.checkBoxReverse.TabIndex = 29;
+            this.checkBoxReverse.Text = "Αντίστροφη";
+            this.checkBoxReverse.UseVisualStyleBackColor = true;
             // 
             // buttonExit
             // 
@@ -312,7 +313,7 @@
             this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.labelTotalDifficultyQuestions);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxReverse);
             this.Controls.Add(this.comboBoxSorting);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBoxChapters);
@@ -367,7 +368,7 @@
         private System.Windows.Forms.ComboBox comboBoxChapters;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxSorting;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxReverse;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label labelTotalDifficultyQuestions;
