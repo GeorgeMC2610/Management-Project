@@ -228,7 +228,7 @@ namespace Management_Project
 
                 //Αν ΔΕΝ έχουμε μαζέψει όσες εύκολες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
                 if (selectedEasyQuestions[i] < EasyQuestionsToBeIncluded.Count)
-                    randomChoice(EasyQuestionsToBeIncluded, selectedEasyQuestions[i]);
+                    EasyQuestionsToBeIncluded = randomChoice(EasyQuestionsToBeIncluded, selectedEasyQuestions[i]);
 
                 List<Thema> NormalQuestionsToBeIncluded = new List<Thema>();
 
@@ -240,7 +240,7 @@ namespace Management_Project
 
                 //Αν ΔΕΝ έχουμε μαζέψει όσες μέτριες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
                 if (selectedNormalQuestions[i] < NormalQuestionsToBeIncluded.Count)
-                    randomChoice(NormalQuestionsToBeIncluded, selectedNormalQuestions[i]);
+                    NormalQuestionsToBeIncluded = randomChoice(NormalQuestionsToBeIncluded, selectedNormalQuestions[i]);
 
                 List<Thema> HardQuestionsToBeIncluded = new List<Thema>();
 
@@ -252,13 +252,34 @@ namespace Management_Project
 
                 //Αν ΔΕΝ έχουμε μαζέψει όσες δύσκολες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
                 if (selectedHardQuestions[i] < HardQuestionsToBeIncluded.Count)
-                    randomChoice(HardQuestionsToBeIncluded, selectedHardQuestions[i]);
+                    HardQuestionsToBeIncluded = randomChoice(HardQuestionsToBeIncluded, selectedHardQuestions[i]);
 
                 QuestionsToBeIncluded.AddRange(EasyQuestionsToBeIncluded);
                 QuestionsToBeIncluded.AddRange(NormalQuestionsToBeIncluded);
                 QuestionsToBeIncluded.AddRange(HardQuestionsToBeIncluded);
 
                 i++;
+            }
+
+            //Ελέγχουμε αν οι απαντήσεις είναι ακριβώς έτσι όπως θέλουμε
+            foreach (Thema th in QuestionsToBeIncluded)
+            {
+                Random random = new Random();
+
+                //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
+                if (th.Answers.Count > maxAvailableAnswers)
+                {
+                    //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
+                    string rightAnswer = th.Answers[th.RightAnswerIndex];
+                    th.Answers = randomChoice(th.Answers, maxAvailableAnswers);
+
+                    //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
+                    if (!th.Answers.Contains(rightAnswer))
+                        th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
+                }
+                //αλλιώς, απλά ανακάτεψε τις απαντήσεις
+                else
+                    th.Answers = randomizeList(th.Answers);
             }
         }
 
