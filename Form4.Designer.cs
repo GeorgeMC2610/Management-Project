@@ -130,6 +130,7 @@
             0,
             0,
             0});
+            this.numericUpDownMaxAnswers.ValueChanged += new System.EventHandler(this.numericUpDownMaxAnswers_ValueChanged);
             // 
             // buttonIncludeAllChapters
             // 
