@@ -48,7 +48,7 @@ namespace Management_Project
             }
 
             label2.Text = sb.ToString();
-            label3.Text = GreekNumerals[th.RightAnswerIndex] + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
+            label3.Text = GreekNumerals[th.RightAnswerIndex] + ") " + th.Answers[th.RightAnswerIndex - 1]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
 
             label7.Text = "Κεφάλαιο: " + th.Chapter;
 

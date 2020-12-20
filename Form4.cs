@@ -204,13 +204,29 @@ namespace Management_Project
             if (choices == list.Count)
                 return randomizeList(list);
 
-            //οι επιλογές του χρήστη για το πόσες θέσεις θέλουμε να 'χει η λίστα
-            int times = list.Count;
+            list = randomizeList(list);
+            int times = list.Count - choices;
+            list.RemoveRange(0, times);
 
-            for (int i = 0; i <= choices - times; i++)
-                list.RemoveAt(random.Next(list.Count));
+            return list;
+        }
 
-            return randomizeList(list);
+        private void printArray<T>(T[] array)
+        {
+            if (array.Length == 1)
+            {
+                Console.WriteLine("[" + array[0] + "]");
+                return;
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append("[");
+            for (int i = 0; i < array.Length - 1; i++)
+                sb.Append(array[i] + ", ");
+
+            sb.Append(array[array.Length - 1] + "]");
+            Console.WriteLine(sb.ToString());
         }
 
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
@@ -218,6 +234,10 @@ namespace Management_Project
         {
             richTextBoxToWord.Text = "";
             List<Thema> QuestionsToBeIncluded = new List<Thema>();
+
+            printArray(selectedEasyQuestions);
+            printArray(selectedNormalQuestions);
+            printArray(selectedHardQuestions);
 
             int i = 0;
             foreach (string ch in comboBoxChapters.Items)
@@ -273,7 +293,7 @@ namespace Management_Project
                 Random random = new Random();
 
                 //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
-                if (th.Answers.Count > maxAvailableAnswers)
+                if (th.Answers.Count > numericUpDownMaxAnswers.Value)
                 {
                     //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
                     string rightAnswer = th.Answers[th.RightAnswerIndex];

@@ -54,6 +54,7 @@ namespace Management_Project
             }
                 
             labelAvailableQuestions.Text = Thema.AllQuestions.Count.ToString() + ((Thema.AllQuestions.Count == 1) ? " Διαθέσιμο Θέμα" : " Διαθέσιμα Θέματα");
+            checkButton();
         }
 
         private void button1_Click(object sender, EventArgs e)
