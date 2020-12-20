@@ -191,6 +191,23 @@ namespace Management_Project
             return array;
         }
 
+        private List<T> randomChoice<T> (List<T> list, int choices)
+        {
+            Random random = new Random();
+
+            //αν οι επιλογές είναι οι ίδιες με την ίδια τη λίστα, τότε, του επιστρέφουμε την ίδια τη λίστα, απλά ανακτεμμένη;
+            if (choices == list.Count)
+                return randomizeList(list);
+
+            //οι επιλογές του χρήστη για το πόσες θέσεις θέλουμε να 'χει η λίστα
+            int times = list.Count;
+
+            for (int i = 0; i < times - choices; i++)
+                list.RemoveAt(random.Next(list.Count));
+
+            return randomizeList(list);
+        }
+
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
@@ -199,7 +216,49 @@ namespace Management_Project
             int i = 0;
             foreach (string ch in comboBoxChapters.Items)
             {
-                
+                //Για κάθε δυσκολία τραβάμε όσες ερωτήσεις μας έχει πει ο χρήστης.
+                //ΠΡΩΤΑ τραβάμε ΟΛΕΣ τις ερωτήσεις από κάθε δυσκολία σε 3 ξεχωριστές λίστες, και με την randomChoice κρατάμε μόνον όσες θέλουμε εμείς.
+                List<Thema> EasyQuestionsToBeIncluded = new List<Thema>();
+
+                foreach (Thema th in Thema.AllQuestions)
+                {
+                    if (th.Difficulty == 1 && th.Chapter.Equals(ch))
+                        EasyQuestionsToBeIncluded.Add(th);
+                }
+
+                //Αν ΔΕΝ έχουμε μαζέψει όσες εύκολες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
+                if (selectedEasyQuestions[i] < EasyQuestionsToBeIncluded.Count)
+                    randomChoice(EasyQuestionsToBeIncluded, selectedEasyQuestions[i]);
+
+                List<Thema> NormalQuestionsToBeIncluded = new List<Thema>();
+
+                foreach (Thema th in Thema.AllQuestions)
+                {
+                    if (th.Difficulty == 2 && th.Chapter.Equals(ch))
+                        NormalQuestionsToBeIncluded.Add(th);
+                }
+
+                //Αν ΔΕΝ έχουμε μαζέψει όσες μέτριες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
+                if (selectedNormalQuestions[i] < NormalQuestionsToBeIncluded.Count)
+                    randomChoice(NormalQuestionsToBeIncluded, selectedNormalQuestions[i]);
+
+                List<Thema> HardQuestionsToBeIncluded = new List<Thema>();
+
+                foreach (Thema th in Thema.AllQuestions)
+                {
+                    if (th.Difficulty == 3 && th.Chapter.Equals(ch))
+                        HardQuestionsToBeIncluded.Add(th);
+                }
+
+                //Αν ΔΕΝ έχουμε μαζέψει όσες δύσκολες ερωτήσεις έχει πει ο χρήστης, κόβουμε όσες έχει πει ο χρήστης
+                if (selectedHardQuestions[i] < HardQuestionsToBeIncluded.Count)
+                    randomChoice(HardQuestionsToBeIncluded, selectedHardQuestions[i]);
+
+                QuestionsToBeIncluded.AddRange(EasyQuestionsToBeIncluded);
+                QuestionsToBeIncluded.AddRange(NormalQuestionsToBeIncluded);
+                QuestionsToBeIncluded.AddRange(HardQuestionsToBeIncluded);
+
+                i++;
             }
         }
 
