@@ -191,6 +191,11 @@ namespace Management_Project
             return array;
         }
 
+        private void numericUpDownMaxAnswers_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private List<T> randomChoice<T> (List<T> list, int choices)
         {
             Random random = new Random();
@@ -202,7 +207,7 @@ namespace Management_Project
             //οι επιλογές του χρήστη για το πόσες θέσεις θέλουμε να 'χει η λίστα
             int times = list.Count;
 
-            for (int i = 0; i < times - choices; i++)
+            for (int i = 0; i <= choices - times; i++)
                 list.RemoveAt(random.Next(list.Count));
 
             return randomizeList(list);
@@ -211,6 +216,7 @@ namespace Management_Project
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
+            richTextBoxToWord.Text = "";
             List<Thema> QuestionsToBeIncluded = new List<Thema>();
 
             int i = 0;
@@ -271,7 +277,7 @@ namespace Management_Project
                 {
                     //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
                     string rightAnswer = th.Answers[th.RightAnswerIndex];
-                    th.Answers = randomChoice(th.Answers, maxAvailableAnswers);
+                    th.Answers = randomChoice(th.Answers, (int) numericUpDownMaxAnswers.Value);
 
                     //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
                     if (!th.Answers.Contains(rightAnswer))
@@ -281,6 +287,26 @@ namespace Management_Project
                 else
                     th.Answers = randomizeList(th.Answers);
             }
+
+            i = 0;
+            foreach (Thema th in QuestionsToBeIncluded)
+            {
+                richTextBoxToWord.AppendText((i+1).ToString() +  ") " + th.Question + Environment.NewLine);
+
+                int j = 0;
+                string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
+                string[] GreekNumerals = stringGreekNumerals.Split(',');
+                foreach (string answer in th.Answers)
+                {
+                    richTextBoxToWord.AppendText(GreekNumerals[j] + ". " + answer + Environment.NewLine);
+                    j++;
+                }
+
+                richTextBoxToWord.AppendText(Environment.NewLine);
+                i++;
+            }
+
+            richTextBoxToWord.SaveFile("Questions.rtf");
         }
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
