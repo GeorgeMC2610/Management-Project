@@ -132,7 +132,7 @@ namespace Management_Project
         //κλείνουμε τη φόρμα με ασφαλή τρόπο
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.OpenForms[0].Show();
+            new Form1().Show();
             Close();
         }
 

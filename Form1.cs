@@ -71,6 +71,8 @@ namespace Management_Project
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Thema.SaveQuestions();
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+                Application.OpenForms[i].Close();
         }
 
         private void wordFileButton_Click(object sender, EventArgs e)
