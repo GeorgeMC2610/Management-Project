@@ -112,7 +112,7 @@ namespace Management_Project
 
         private void toolStripMenuItem1_ti_einai_auth_h_egarmogh_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("123", "Τι είναι αυτή η εφαρμογή;");
+            MessageBox.Show("Αυτή η εφαρμογή σας παρέχει τη δυνατότητα να δημιουργήσετε ερωτήσεις πολλαπλής επιλογής που μπορούν αργότερα να παραχτούν σε αρχεία word! \n", "Τι κάνει αυτή η εφαρμογή;");
         }
     }
 }
