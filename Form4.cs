@@ -308,6 +308,26 @@ namespace Management_Project
                     th.Answers = randomizeList(th.Answers);
             }
 
+            switch (comboBoxSorting.SelectedIndex)
+            {
+                //στην περίπτωση που ο χρήστης έχει επιλέξει κανονική κατάταξη, δεν κάνουμε τίποτα. Τα θέματα είναι ήδη σε σειρά προσθήκης
+                case 0:
+                    break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute στα θέματα
+                case 1:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Question).ToList();
+                    break;
+                case 2:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Chapter).ToList();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+
             i = 0;
             foreach (Thema th in QuestionsToBeIncluded)
             {
