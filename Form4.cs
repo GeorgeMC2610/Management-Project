@@ -244,12 +244,17 @@ namespace Management_Project
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
             richTextBoxToWord.Text = "";
             List<Thema> QuestionsToBeIncluded = new List<Thema>();
 
             printArray(selectedEasyQuestions);
             printArray(selectedNormalQuestions);
             printArray(selectedHardQuestions);
+
+            
 
             int i = 0;
             foreach (string ch in comboBoxChapters.Items)
@@ -387,7 +392,7 @@ namespace Management_Project
                 i++;
             }
 
-            richTextBoxToWord.SaveFile("Questions.rtf");
+            richTextBoxToWord.SaveFile(saveFileDialog1.FileName);
         }
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)

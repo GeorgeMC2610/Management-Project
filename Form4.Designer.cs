@@ -296,6 +296,13 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.button1_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "rtf";
+            this.saveFileDialog1.FileName = "Diagonisma.rtf";
+            this.saveFileDialog1.Filter = "Rich Text Format files|*.rtf";
+            this.saveFileDialog1.Title = "Αποθήκευση αρχείου σε μορφή .rtf";
+            // 
             // labelTotalDifficultyQuestions
             // 
             this.labelTotalDifficultyQuestions.AutoSize = true;
