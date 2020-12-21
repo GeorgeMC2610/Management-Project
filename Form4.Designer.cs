@@ -51,6 +51,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.labelTotalDifficultyQuestions = new System.Windows.Forms.Label();
+            this.checkBoxRandomizedAnswers = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
@@ -306,11 +307,23 @@
             this.labelTotalDifficultyQuestions.TabIndex = 31;
             this.labelTotalDifficultyQuestions.Text = "x συνολικά θέματα από όλες τις δυσκολίες";
             // 
+            // checkBoxRandomizedAnswers
+            // 
+            this.checkBoxRandomizedAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxRandomizedAnswers.AutoSize = true;
+            this.checkBoxRandomizedAnswers.Location = new System.Drawing.Point(848, 121);
+            this.checkBoxRandomizedAnswers.Name = "checkBoxRandomizedAnswers";
+            this.checkBoxRandomizedAnswers.Size = new System.Drawing.Size(112, 20);
+            this.checkBoxRandomizedAnswers.TabIndex = 32;
+            this.checkBoxRandomizedAnswers.Text = "Ανακατεμμένες";
+            this.checkBoxRandomizedAnswers.UseVisualStyleBackColor = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.checkBoxRandomizedAnswers);
             this.Controls.Add(this.labelTotalDifficultyQuestions);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.checkBoxReverse);
@@ -372,5 +385,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label labelTotalDifficultyQuestions;
+        private System.Windows.Forms.CheckBox checkBoxRandomizedAnswers;
     }
 }

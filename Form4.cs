@@ -307,17 +307,37 @@ namespace Management_Project
                 //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
                 if (th.Answers.Count > numericUpDownMaxAnswers.Value)
                 {
-                    //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
-                    string rightAnswer = th.Answers[th.RightAnswerIndex];
-                    th.Answers = randomChoice(th.Answers, (int) numericUpDownMaxAnswers.Value);
+                    //αν πρέπει να έχουμε ανακτεμμένες απαντήσεις
+                    if (checkBoxRandomizedAnswers.Checked)
+                    {
+                        //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
+                        string rightAnswer = th.Answers[th.RightAnswerIndex];
+                        th.Answers = randomChoice(th.Answers, (int)numericUpDownMaxAnswers.Value);
 
-                    //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
-                    if (!th.Answers.Contains(rightAnswer))
-                        th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
+                        //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
+                        if (!th.Answers.Contains(rightAnswer))
+                            th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
+                    }
+                    //αν δεν πρέπει να 'χουμε ανακατεμμένες απαντήσεις
+                    else
+                    {
+                        //κράτα την σωστή απάντηση και μετά κόψε τις υπόλοιπες
+                        string rightAnswer = th.Answers[th.RightAnswerIndex];
+
+                        int count = th.Answers.Count - (int) numericUpDownMaxAnswers.Value;
+                        for (i = 0; i < count; i++)
+                            th.Answers.RemoveAt(th.Answers.Count - 1);
+
+                        //αν η απάντηση βρισκόταν σε μεγαλύτερη θέση από τις απαντήσεις που κόψαμε, τη βάζουμε ως τελευταία.
+                        th.Answers[th.Answers.Count - 1] = (th.RightAnswerIndex + 1 > numericUpDownMaxAnswers.Value) ? rightAnswer : th.Answers[th.Answers.Count - 1];
+                    }
                 }
-                //αλλιώς, απλά ανακάτεψε τις απαντήσεις
+                //αλλιώς ανάκατεψε τις απαντήσεις αν πρέπει. Αν δεν πρέπει, σημαίνει ότι τις αφήνουμε όπως είναι.
                 else
-                    th.Answers = randomizeList(th.Answers);
+                {
+                    if (checkBoxRandomizedAnswers.Checked)
+                        th.Answers = randomizeList(th.Answers);
+                } 
             }
 
             switch (comboBoxSorting.SelectedIndex)
