@@ -438,20 +438,14 @@ namespace Management_Project
             //βάζουμε για κάθε κεφάλαιο, πόσες ερωτήσεις υπάρχουν από κάθε δυσκολία
             foreach (string ch in comboBoxChapters.Items)
             {
-                int easyQCounter = 0, normalQCounter = 0, hardQCounter = 0;
-                foreach (Thema th in Thema.AllQuestions)
-                {
-                    if (th.Difficulty == 1 && th.Chapter.Equals(ch))
-                        easyQCounter++;
-                    else if (th.Difficulty == 2 && th.Chapter.Equals(ch))
-                        normalQCounter++;
-                    else if (th.Difficulty == 3 && th.Chapter.Equals(ch))
-                        hardQCounter++;
-                }
+                var tempEasyQuestions = from th in Thema.AllQuestions where th.Difficulty == 1 && th.Chapter.Equals(ch) select th.Difficulty;
+                easyQuestions.AddRange(tempEasyQuestions);
 
-                easyQuestions.Add(easyQCounter);
-                normalQuestions.Add(normalQCounter);
-                hardQuestions.Add(hardQCounter);
+                var tempNormalQuestions = from th in Thema.AllQuestions where th.Difficulty == 2 && th.Chapter.Equals(ch) select th.Difficulty;
+                normalQuestions.AddRange(tempNormalQuestions);
+
+                var tempHardQuestions = from th in Thema.AllQuestions where th.Difficulty == 3 && th.Chapter.Equals(ch) select th.Difficulty;
+                hardQuestions.AddRange(tempHardQuestions);
             }
 
             //μέγιστος αριθμός απαντήσεων ανά ερώτηση

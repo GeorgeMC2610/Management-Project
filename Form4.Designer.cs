@@ -76,6 +76,7 @@
             // richTextBoxToWord
             // 
             this.richTextBoxToWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxToWord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxToWord.Location = new System.Drawing.Point(481, 141);
             this.richTextBoxToWord.Name = "richTextBoxToWord";
             this.richTextBoxToWord.Size = new System.Drawing.Size(194, 121);
@@ -356,7 +357,6 @@
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Παραγωγή Αρχείου Word";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).EndInit();
