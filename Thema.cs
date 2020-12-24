@@ -13,12 +13,7 @@ namespace Management_Project
     [Serializable]
     class Thema
     {
-        public static List<Thema> AllQuestions    = new List<Thema>();
-        public static List<Thema> EasyQuestions   = new List<Thema>();
-        public static List<Thema> NormalQuestions = new List<Thema>();
-        public static List<Thema> HardQuestions   = new List<Thema>();
-        public static List<string> Chapters       = new List<string>();
-        public static int mostAnswers;
+        public static List<Thema> AllQuestions = new List<Thema>();
 
         public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, params string[] Answers)
         {
@@ -31,24 +26,6 @@ namespace Management_Project
                 this.Answers.Add(Answer);
 
             AllQuestions.Add(this);
-            RearrangeThemata();
-        }
-
-        public static void RearrangeThemata()
-        {
-            //βάζουμε σε τάξη τις δυσκολίες ερωτήσεων
-            EasyQuestions   = (from th in AllQuestions where th.Difficulty == 1 select th).ToList();
-            NormalQuestions = (from th in AllQuestions where th.Difficulty == 2 select th).ToList();
-            HardQuestions   = (from th in AllQuestions where th.Difficulty == 3 select th).ToList();
-
-            //βάζουμε σε τάξη τα κεφάλαια
-            Chapters = (from th in AllQuestions where !(Chapters.Contains(th.Chapter)) select Chapter).ToList();
-
-            //και έχουμε ως γνωστό τον μέγιστο αριθμό απαντήσεων σε μία ερώτηση
-            mostAnswers = 0;
-            foreach (Thema th in AllQuestions)
-                if (mostAnswers < th.Answers.Count)
-                    mostAnswers = th.Answers.Count;
         }
 
         public string Question { get; set; }
@@ -100,8 +77,6 @@ namespace Management_Project
 
                 AllQuestions = (List<Thema>)formatter.Deserialize(stream);
                 stream.Close();
-
-                RearrangeThemata();
             }
             catch (FileNotFoundException e1)
             {
