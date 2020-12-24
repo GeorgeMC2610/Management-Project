@@ -18,6 +18,7 @@ namespace Management_Project
         public static List<Thema> NormalQuestions = new List<Thema>();
         public static List<Thema> HardQuestions   = new List<Thema>();
         public static List<string> Chapters       = new List<string>();
+        public static List<List<Thema>> QuestionsByChapter = new List<List<Thema>>();
         public static int mostAnswers;
 
         public Thema(int difficulty, int rightAnswerIndex, string Question, string Chapter, params string[] Answers)
@@ -42,7 +43,16 @@ namespace Management_Project
             HardQuestions   = (from th in AllQuestions where th.Difficulty == 3 select th).ToList();
 
             //βάζουμε σε τάξη τα κεφάλαια
-            Chapters = (from th in AllQuestions where !(Chapters.Contains(th.Chapter)) select th.Chapter).ToList();
+            foreach (Thema th in AllQuestions)
+                if (!Chapters.Contains(th.Chapter))
+                    Chapters.Add(th.Chapter);
+
+            //βάζουμε λίστες με ερωτήσεις ανά κεφάλαιο
+            foreach (string ch in Chapters)
+            {
+                var tempList = (from th in AllQuestions where th.Chapter.Equals(ch) select th).ToList();
+                QuestionsByChapter.Add(tempList);
+            }
 
             //και έχουμε ως γνωστό τον μέγιστο αριθμό απαντήσεων σε μία ερώτηση
             mostAnswers = 0;
