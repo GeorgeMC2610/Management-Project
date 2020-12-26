@@ -260,11 +260,11 @@
             this.comboBoxSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSorting.FormattingEnabled = true;
             this.comboBoxSorting.Items.AddRange(new object[] {
-            "Σε σειρά προσθήκης",
-            "Ανά Αλφαβητική Σειρά (Ερωτήσεων)",
-            "Ανά Αλφαβητική Σειρά (Κεφαλαίων)",
             "Ανά Κεφάλαιο",
             "Ανά Δυσκολία",
+            "Ανά Αλφαβητική Σειρά (Ερωτήσεων)",
+            "Ανά Αλφαβητική Σειρά (Κεφαλαίων)",
+            "Σε Σειρά Προσθήκης",
             "Καμμία (Να ανακατευθούν)"});
             this.comboBoxSorting.Location = new System.Drawing.Point(848, 252);
             this.comboBoxSorting.Name = "comboBoxSorting";

@@ -14,6 +14,7 @@ namespace Management_Project
             InitializeComponent();
         }
 
+        Random random = new Random();
         List<Thema> QuestionsToBeIncluded = new List<Thema>();
         decimal[,] SelectedQuestions, MaxAvailableQuestions;
         int totalSelectedQuestions;
@@ -166,8 +167,138 @@ namespace Management_Project
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
+            //πρώτα πρέπει να σιγουρευτούμε ότι είναι άδειο το rich text box.
             richTextBoxToWord.Text = "";
 
+            //για κάθε κεφάλαιο, προσθέτουμε όσες ερωτήσεις έχει πει ο χρήστης.
+            int i = 0;
+            foreach (string ch in Thema.Chapters)
+            {
+                //για κάθε δυσκολία, επιλέγουμε όσες ερωτήσεις μας έχει πει ο χρήστης
+                var TempEasyQuestions = (from th in Thema.EasyQuestions where th.Chapter.Equals(ch) select th).ToList();
+                TempEasyQuestions = RandomSelectionFromList(TempEasyQuestions, (int) SelectedQuestions[i, 0]);
+                QuestionsToBeIncluded.AddRange(TempEasyQuestions);
+
+                var TempNormalQuestions = (from th in Thema.NormalQuestions where th.Chapter.Equals(ch) select th).ToList();
+                TempNormalQuestions = RandomSelectionFromList(TempNormalQuestions, (int)SelectedQuestions[i, 1]);
+                QuestionsToBeIncluded.AddRange(TempNormalQuestions);
+
+                var TempHardQuestions = (from th in Thema.HardQuestions where th.Chapter.Equals(ch) select th).ToList();
+                TempHardQuestions = RandomSelectionFromList(TempHardQuestions, (int)SelectedQuestions[i, 2]);
+                QuestionsToBeIncluded.AddRange(TempHardQuestions);
+
+                i++;
+            }
+
+            //κοιτάμε αν οι απαντήσεις είναι όπως πρέπει 
+            foreach (Thema th in QuestionsToBeIncluded)
+            {
+                Random random = new Random();
+                //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
+                if (th.Answers.Count > numericUpDownMaxAnswers.Value)
+                {
+                    //αν πρέπει να έχουμε ανακτεμμένες απαντήσεις
+                    if (checkBoxRandomizedAnswers.Checked)
+                    {
+                        //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
+                        string rightAnswer = th.Answers[th.RightAnswerIndex];
+                        th.Answers = RandomSelectionFromList(th.Answers, (int)numericUpDownMaxAnswers.Value);
+                        //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
+                        if (!th.Answers.Contains(rightAnswer))
+                            th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
+                    }
+                    //αν δεν πρέπει να 'χουμε ανακατεμμένες απαντήσεις
+                    else
+                    {
+                        //κράτα την σωστή απάντηση και μετά κόψε τις υπόλοιπες
+                        string rightAnswer = th.Answers[th.RightAnswerIndex];
+                        int count = th.Answers.Count - (int)numericUpDownMaxAnswers.Value;
+                        for (i = 0; i < count; i++)
+                            th.Answers.RemoveAt(th.Answers.Count - 1);
+                        //αν η απάντηση βρισκόταν σε μεγαλύτερη θέση από τις απαντήσεις που κόψαμε, τη βάζουμε ως τελευταία.
+                        th.Answers[th.Answers.Count - 1] = (th.RightAnswerIndex + 1 > numericUpDownMaxAnswers.Value) ? rightAnswer : th.Answers[th.Answers.Count - 1];
+                    }
+                }
+                //αλλιώς ανάκατεψε τις απαντήσεις αν πρέπει. Αν δεν πρέπει, σημαίνει ότι τις αφήνουμε όπως είναι.
+                else if (checkBoxRandomizedAnswers.Checked)
+                    th.Answers = RandomSelectionFromList(th.Answers, th.Answers.Count);
+            }
+
+            //ύστερα ταξινομούμε τα θέματα με τη σειρά που έχει προσδιορίσει ο χρήστης
+            switch (comboBoxSorting.SelectedIndex)
+            {
+                //στην περίπτωση που ο χρήστης έχει επιλέξει κανονική κατάταξη, δεν κάνουμε τίποτα. Τα θέματα είναι ήδη ανά κεφάλαιο
+                case 0:
+                    break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute ερώτησης
+                case 1:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Difficulty).ToList();
+                    break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute κεφαλαίου
+                case 2:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Question).ToList();
+                    break;
+                case 3:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => th.Chapter).ToList();
+                    break;
+                //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute δυσκολίας
+                case 4:
+                    QuestionsToBeIncluded = QuestionsToBeIncluded.OrderBy(th => Thema.AllQuestions).ToList();
+                    break;
+                //χρησιμοποιούμε την φτιαχτή RandomSelectionFromList για να παραχθεί μία τυχαία λίστα.
+                case 5:
+                    QuestionsToBeIncluded = RandomSelectionFromList(QuestionsToBeIncluded, QuestionsToBeIncluded.Count);
+                    break;
+            }
+
+            if (checkBoxReverse.Checked)
+                QuestionsToBeIncluded.Reverse();
+
+            //ύστερα παράγουμε το αρχείο μέσω του richtextbox
+            i = 0;
+            foreach (Thema th in QuestionsToBeIncluded)
+            {
+                richTextBoxToWord.AppendText((i + 1).ToString() + ") " + th.Question + Environment.NewLine);
+                int j = 0;
+                string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
+                string[] GreekNumerals = stringGreekNumerals.Split(',');
+                foreach (string answer in th.Answers)
+                {
+                    richTextBoxToWord.AppendText(GreekNumerals[j] + ". " + answer + Environment.NewLine);
+                    j++;
+                }
+                richTextBoxToWord.AppendText(Environment.NewLine);
+                i++;
+            }
+
+            richTextBoxToWord.SaveFile(saveFileDialog1.FileName);
+        }
+
+        //μία συνάρτηση τυχαίας επιλογής
+        private List<T> RandomSelectionFromList<T>(List<T> list, int times)
+        {
+            //πρώτα ανακατεύουμε τη λίστα
+            for (int i = 1; i < list.Count; i++)
+            {
+                int rand = random.Next(0, 2);
+
+                if (rand == 0)
+                {
+                    T temp = list[i];
+                    list[i] = list[0];
+                    list[0] = temp;
+                }
+            }
+
+            if (times < 1 || times > list.Count)
+                return list;
+
+            //ύστερα κόβουμε στοιχεία, ώστε να έχει ακριβώς όσα μας είπε ο χρήστης.
+            int itemsToRemove = list.Count - times;
+            for (int i = 0; i < itemsToRemove; i++)
+                list.RemoveAt(0);
+
+            return list;
         }
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,9 +309,9 @@ namespace Management_Project
             numericUpDownHardQuestions.Maximum   = decimal.MaxValue;
 
             //κάθε φορά που αλλάζει το κεφάλαιο θα πρέπει να βλέπουμε τι είχε επιλέξει ο χρήστης και να το θέσουμε ανάλογα.
-            numericUpDownEasyQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 0];
-            numericUpDownNormalQuestions.Value = SelectedQuestions[comboBoxChapters.SelectedIndex, 1];
-            numericUpDownHardQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 2];
+            numericUpDownEasyQuestions.Value     = SelectedQuestions[comboBoxChapters.SelectedIndex, 0];
+            numericUpDownNormalQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 1];
+            numericUpDownHardQuestions.Value     = SelectedQuestions[comboBoxChapters.SelectedIndex, 2];
 
             //θέτουμε για το παρών επιλεγμένο κεφάλαιο, να έχει τις μέγιστες επιλεγμένες ερωτήσεις 
             numericUpDownEasyQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0];
@@ -192,13 +323,12 @@ namespace Management_Project
             labelChapterDesc.Text = (totalChapterQuestions == 1) ? "Ένα θέμα από αυτό το κεφάλαιο" : totalChapterQuestions.ToString() + " θέματα από αυτό το κεφάλαιο";
         }
 
-        private void CheckNumericUpDownMaxValues()
-        {
-            
-        }
-
         private void Form4_Load(object sender, EventArgs e)
         {
+            //θέτουμε τον μέγιστο αριθμό απαντήσεων ανά ερώτηση να είναι ο πρώτος, ώστε να κάνουμε απλή εύρεση μεγίστου
+            numericUpDownMaxAnswers.Maximum = Thema.mostAnswers;
+            numericUpDownMaxAnswers.Value   = numericUpDownMaxAnswers.Maximum;
+
             //ορίζουμε τους δισδιάστατους πίνακές μας ανάλογα
             SelectedQuestions     = new decimal[Thema.Chapters.Count, 3];
             MaxAvailableQuestions = new decimal[Thema.Chapters.Count, 3];
@@ -222,9 +352,6 @@ namespace Management_Project
                 var HardQuestionsByChapter  = (from th in Thema.QuestionsByChapter[i] where th.Difficulty == 3 select th).ToList();
                 MaxAvailableQuestions[i, 2] = (decimal) HardQuestionsByChapter.Count;
             }
-
-            //θέτουμε τον μέγιστο αριθμό απαντήσεων ανά ερώτηση να είναι ο πρώτος, ώστε να κάνουμε απλή εύρεση μεγίστου
-            numericUpDownMaxAnswers.Maximum = Thema.mostAnswers;
 
             //βάζουμε τα κεφάλαια στο comboBox
             comboBoxChapters.Items.AddRange(Thema.Chapters.ToArray());
