@@ -172,15 +172,20 @@ namespace Management_Project
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //θέτουμε για το παρών επιλεγμένο κεφάλαιο, να έχει τις μέγιστες επιλεγμένες ερωτήσεις 
-            numericUpDownEasyQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0];
-            numericUpDownNormalQuestions.Maximum = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1];
-            numericUpDownHardQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2];
+            //για να μην υπάρξει πρόβλημα με τις τιμές όταν αλλάζουν τα κεφάλαια, πρώτα θέτουμε το μέγιστο να 'ναι ένας υπερβολικά μεγάλος αριθμός.
+            numericUpDownEasyQuestions.Maximum   = decimal.MaxValue;
+            numericUpDownNormalQuestions.Maximum = decimal.MaxValue;
+            numericUpDownHardQuestions.Maximum   = decimal.MaxValue;
 
             //κάθε φορά που αλλάζει το κεφάλαιο θα πρέπει να βλέπουμε τι είχε επιλέξει ο χρήστης και να το θέσουμε ανάλογα.
             numericUpDownEasyQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 0];
             numericUpDownNormalQuestions.Value = SelectedQuestions[comboBoxChapters.SelectedIndex, 1];
             numericUpDownHardQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 2];
+
+            //θέτουμε για το παρών επιλεγμένο κεφάλαιο, να έχει τις μέγιστες επιλεγμένες ερωτήσεις 
+            numericUpDownEasyQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0];
+            numericUpDownNormalQuestions.Maximum = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1];
+            numericUpDownHardQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2];
 
             //θα πρέπει να ενημερώσουμε και τα διαθέσιμα θέματα ανά κεφάλαιο
             int totalChapterQuestions = (int)(MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2]);
