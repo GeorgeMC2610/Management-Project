@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Management_Project
@@ -21,36 +18,34 @@ namespace Management_Project
         decimal[,] SelectedQuestions, MaxAvailableQuestions;
         int totalSelectedQuestions;
 
+
         //αλλάζουμε το πόσες ερωτήσεις επιλέγονται, βάσει των numericupdown
         private void numericUpDownEasyQuestions_ValueChanged(object sender, EventArgs e)
         {
             SelectedQuestions[comboBoxChapters.SelectedIndex, 0] = numericUpDownEasyQuestions.Value;
 
-            updateLabelTotalDifficultyQuestions();
-            updateLabelOverview();
-            checkIfButtonCanBeEnabled();
+            UpdateOverviewLabels();
+            CheckIfButtonCanBeEnabled();
         }
 
         private void numericUpDownNormalQuestions_ValueChanged(object sender, EventArgs e)
         {
             SelectedQuestions[comboBoxChapters.SelectedIndex, 1] = numericUpDownNormalQuestions.Value;
 
-            updateLabelTotalDifficultyQuestions();
-            updateLabelOverview();
-            checkIfButtonCanBeEnabled();
+            UpdateOverviewLabels();
+            CheckIfButtonCanBeEnabled();
         }
 
         private void numericUpDownHardQuestions_ValueChanged(object sender, EventArgs e)
         {
             SelectedQuestions[comboBoxChapters.SelectedIndex, 2] = numericUpDownHardQuestions.Value;
 
-            updateLabelTotalDifficultyQuestions();
-            updateLabelOverview();
-            checkIfButtonCanBeEnabled();
+            UpdateOverviewLabels();
+            CheckIfButtonCanBeEnabled();
         }
 
-        //λέμε στον χρήστη πόσα θέματα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
-        private void updateLabelTotalDifficultyQuestions()
+        //λέμε στον χρήστη πόσα θέματα θα παραχθούν συνολικά, αλλά και πόσα επιλέγονται από κάθε δυσκολία στο κεφάλαιο.
+        private void UpdateOverviewLabels()
         {
             //τα προσθέτουμε όλα μαζί και ύστερα τα εμφανίζουμε ανάλογα στον χρήστη
             int totalDifficultyQuestions = (int) (SelectedQuestions[comboBoxChapters.SelectedIndex, 0] + SelectedQuestions[comboBoxChapters.SelectedIndex, 1] + SelectedQuestions[comboBoxChapters.SelectedIndex, 2]);
@@ -66,17 +61,12 @@ namespace Management_Project
                     labelTotalDifficultyQuestions.Text = "Ένα θέμα θα επιλεγεί από το κεφάλαιο αυτό με την παραπάνω δυσκολία";
                     break;
             }
-        }
 
-        private void updateLabelOverview()
-        {
             //Πρώτα βλέπουμε πόσες ερωτήσεις είναι μαζί.
             int selectedChapters = 0;
             totalSelectedQuestions = 0;
             foreach (int i in SelectedQuestions)
                 totalSelectedQuestions += i;
-
-
 
             //ύστερα βλέπουμε πόσα είναι τα κεφάλαια
             for (int i = 0; i < comboBoxChapters.Items.Count; i++)
@@ -90,7 +80,7 @@ namespace Management_Project
             {
                 default:
                     labelOverview.Text = "Θα παραχθούν συνολικά " + totalSelectedQuestions.ToString() + " ερωτήσεις από ";
-                    labelOverview.Text += (selectedChapters == 1)? "ένα κεφάλαιο" : selectedChapters.ToString() + " κεφάλαια";
+                    labelOverview.Text += (selectedChapters == 1) ? "ένα κεφάλαιο" : selectedChapters.ToString() + " κεφάλαια";
                     break;
                 case 0:
                     labelOverview.Text = "Δεν θα παραχθεί καμμία ερώτηση.";
@@ -100,12 +90,12 @@ namespace Management_Project
                     break;
             }
 
-            float percentage = (float) totalSelectedQuestions * 100 / (float) Thema.AllQuestions.Count;
+            float percentage = (float)totalSelectedQuestions * 100 / (float)Thema.AllQuestions.Count;
             labelOverview.Text += " (" + percentage.ToString() + "%)";
         }
 
         //φτάνουμε σε αυτό το σημείο κάθε φορά που μπορούμε να πάμε να παράξουμε το αρχείο
-        private void checkIfButtonCanBeEnabled()
+        private void CheckIfButtonCanBeEnabled()
         {
             //απενεργοποιούμε το κουμπί αν δεν υπάρχουν ερωτήσεις για παραγωγή
             if (totalSelectedQuestions == 0)
@@ -182,24 +172,24 @@ namespace Management_Project
 
         private void comboBoxChapters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CheckNumericUpDownMaxValues();
-        }
-
-        private void CheckNumericUpDownMaxValues()
-        {
             //θέτουμε για το παρών επιλεγμένο κεφάλαιο, να έχει τις μέγιστες επιλεγμένες ερωτήσεις 
             numericUpDownEasyQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0];
             numericUpDownNormalQuestions.Maximum = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1];
             numericUpDownHardQuestions.Maximum   = MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2];
 
             //κάθε φορά που αλλάζει το κεφάλαιο θα πρέπει να βλέπουμε τι είχε επιλέξει ο χρήστης και να το θέσουμε ανάλογα.
-            numericUpDownEasyQuestions.Value     = SelectedQuestions[comboBoxChapters.SelectedIndex, 0];
-            numericUpDownNormalQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 1];
-            numericUpDownHardQuestions.Value     = SelectedQuestions[comboBoxChapters.SelectedIndex, 2];
+            numericUpDownEasyQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 0];
+            numericUpDownNormalQuestions.Value = SelectedQuestions[comboBoxChapters.SelectedIndex, 1];
+            numericUpDownHardQuestions.Value   = SelectedQuestions[comboBoxChapters.SelectedIndex, 2];
 
             //θα πρέπει να ενημερώσουμε και τα διαθέσιμα θέματα ανά κεφάλαιο
-            int totalChapterQuestions = (int) (MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2]);
+            int totalChapterQuestions = (int)(MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 0] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 1] + MaxAvailableQuestions[comboBoxChapters.SelectedIndex, 2]);
             labelChapterDesc.Text = (totalChapterQuestions == 1) ? "Ένα θέμα από αυτό το κεφάλαιο" : totalChapterQuestions.ToString() + " θέματα από αυτό το κεφάλαιο";
+        }
+
+        private void CheckNumericUpDownMaxValues()
+        {
+            
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -240,9 +230,8 @@ namespace Management_Project
             comboBoxSorting.SelectedIndex  = 0;
 
             //καλούμε αυτές τις μεθόδους ώστε να αρχικοποιηθούν τα πάντα
-            updateLabelTotalDifficultyQuestions();
-            updateLabelOverview();
-            checkIfButtonCanBeEnabled();
+            UpdateOverviewLabels();
+            CheckIfButtonCanBeEnabled();
         }
     }
 }
