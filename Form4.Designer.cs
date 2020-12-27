@@ -57,9 +57,9 @@
             this.ToolStripMenuItemSelectFont = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemIncludeAllQuestions = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAllDifficulties = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemEasyQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemNormalQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemHardQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemEasyQuestions = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemNormalQuestions = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemHardQuestions = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemClearSelections = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemClearSelectionsFromAllChapters = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemClearSelectionsFromThisChapter = new System.Windows.Forms.ToolStripMenuItem();
@@ -370,9 +370,9 @@
             // 
             this.ToolStripMenuItemIncludeAllQuestions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemAllDifficulties,
-            this.ToolStripMenuItemEasyQuestionsOnly,
-            this.ToolStripMenuItemNormalQuestionsOnly,
-            this.ToolStripMenuItemHardQuestionsOnly});
+            this.ToolStripMenuItemEasyQuestions,
+            this.ToolStripMenuItemNormalQuestions,
+            this.ToolStripMenuItemHardQuestions});
             this.ToolStripMenuItemIncludeAllQuestions.Name = "ToolStripMenuItemIncludeAllQuestions";
             this.ToolStripMenuItemIncludeAllQuestions.Size = new System.Drawing.Size(409, 22);
             this.ToolStripMenuItemIncludeAllQuestions.Text = "Να συμπεριληφθούν όλα τα θέματα του τρέχοντος κεφαλαίου";
@@ -380,26 +380,30 @@
             // ToolStripMenuItemAllDifficulties
             // 
             this.ToolStripMenuItemAllDifficulties.Name = "ToolStripMenuItemAllDifficulties";
-            this.ToolStripMenuItemAllDifficulties.Size = new System.Drawing.Size(196, 22);
+            this.ToolStripMenuItemAllDifficulties.Size = new System.Drawing.Size(208, 22);
             this.ToolStripMenuItemAllDifficulties.Text = "Όλων των δυσκολιών";
+            this.ToolStripMenuItemAllDifficulties.Click += new System.EventHandler(this.ToolStripMenuItemAllDifficulties_Click);
             // 
-            // ToolStripMenuItemEasyQuestionsOnly
+            // ToolStripMenuItemEasyQuestions
             // 
-            this.ToolStripMenuItemEasyQuestionsOnly.Name = "ToolStripMenuItemEasyQuestionsOnly";
-            this.ToolStripMenuItemEasyQuestionsOnly.Size = new System.Drawing.Size(196, 22);
-            this.ToolStripMenuItemEasyQuestionsOnly.Text = "Μόνο των εύκολων";
+            this.ToolStripMenuItemEasyQuestions.Name = "ToolStripMenuItemEasyQuestions";
+            this.ToolStripMenuItemEasyQuestions.Size = new System.Drawing.Size(208, 22);
+            this.ToolStripMenuItemEasyQuestions.Text = "Της εύκολης δυσκολίας";
+            this.ToolStripMenuItemEasyQuestions.Click += new System.EventHandler(this.ToolStripMenuItemEasyQuestions_Click);
             // 
-            // ToolStripMenuItemNormalQuestionsOnly
+            // ToolStripMenuItemNormalQuestions
             // 
-            this.ToolStripMenuItemNormalQuestionsOnly.Name = "ToolStripMenuItemNormalQuestionsOnly";
-            this.ToolStripMenuItemNormalQuestionsOnly.Size = new System.Drawing.Size(196, 22);
-            this.ToolStripMenuItemNormalQuestionsOnly.Text = "Μόνο των μέτριων";
+            this.ToolStripMenuItemNormalQuestions.Name = "ToolStripMenuItemNormalQuestions";
+            this.ToolStripMenuItemNormalQuestions.Size = new System.Drawing.Size(208, 22);
+            this.ToolStripMenuItemNormalQuestions.Text = "Της μέτριας δυσκολίας";
+            this.ToolStripMenuItemNormalQuestions.Click += new System.EventHandler(this.ToolStripMenuItemNormalQuestions_Click);
             // 
-            // ToolStripMenuItemHardQuestionsOnly
+            // ToolStripMenuItemHardQuestions
             // 
-            this.ToolStripMenuItemHardQuestionsOnly.Name = "ToolStripMenuItemHardQuestionsOnly";
-            this.ToolStripMenuItemHardQuestionsOnly.Size = new System.Drawing.Size(196, 22);
-            this.ToolStripMenuItemHardQuestionsOnly.Text = "Μόνο των δύσκολων";
+            this.ToolStripMenuItemHardQuestions.Name = "ToolStripMenuItemHardQuestions";
+            this.ToolStripMenuItemHardQuestions.Size = new System.Drawing.Size(208, 22);
+            this.ToolStripMenuItemHardQuestions.Text = "Της δύσκολης δυσκολίας";
+            this.ToolStripMenuItemHardQuestions.Click += new System.EventHandler(this.ToolStripMenuItemHardQuestions_Click);
             // 
             // ToolStripMenuItemClearSelections
             // 
@@ -415,12 +419,14 @@
             this.ToolStripMenuItemClearSelectionsFromAllChapters.Name = "ToolStripMenuItemClearSelectionsFromAllChapters";
             this.ToolStripMenuItemClearSelectionsFromAllChapters.Size = new System.Drawing.Size(206, 22);
             this.ToolStripMenuItemClearSelectionsFromAllChapters.Text = "Από κανένα κεφάλαιο";
+            this.ToolStripMenuItemClearSelectionsFromAllChapters.Click += new System.EventHandler(this.ToolStripMenuItemClearSelectionsFromAllChapters_Click);
             // 
             // ToolStripMenuItemClearSelectionsFromThisChapter
             // 
             this.ToolStripMenuItemClearSelectionsFromThisChapter.Name = "ToolStripMenuItemClearSelectionsFromThisChapter";
             this.ToolStripMenuItemClearSelectionsFromThisChapter.Size = new System.Drawing.Size(206, 22);
             this.ToolStripMenuItemClearSelectionsFromThisChapter.Text = "Από το τρέχον κεφάλαιο";
+            this.ToolStripMenuItemClearSelectionsFromThisChapter.Click += new System.EventHandler(this.ToolStripMenuItemClearSelectionsFromThisChapter_Click);
             // 
             // Form4
             // 
@@ -499,9 +505,9 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectFont;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemIncludeAllQuestions;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAllDifficulties;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEasyQuestionsOnly;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNormalQuestionsOnly;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemHardQuestionsOnly;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEasyQuestions;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNormalQuestions;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemHardQuestions;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelections;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelectionsFromAllChapters;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelectionsFromThisChapter;

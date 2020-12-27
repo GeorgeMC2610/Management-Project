@@ -133,6 +133,8 @@ namespace Management_Project
             if (MessageBox.Show("Θέλετε πραγματικά να συμπεριλάβετε κάθε ερώτηση από κάθε δυσκολία από όλα τα κεφάλαια;", buttonIncludeAllChapters.Text, MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
+            int currentSelectedIndex = comboBoxChapters.SelectedIndex;
+
             //εδώ είναι σαν να πατάμε κάθε κάθε φορά τα μάξιμουμ σε κάθε κεφάλαιο. Οπότε η δουλειά γίνεται αυτόματα για εμάς
             for (int i = 0; i < comboBoxChapters.Items.Count; i++)
             {
@@ -142,6 +144,8 @@ namespace Management_Project
                 numericUpDownNormalQuestions.Value = numericUpDownNormalQuestions.Maximum;
                 numericUpDownHardQuestions.Value   = numericUpDownHardQuestions.Maximum;
             }
+
+            comboBoxChapters.SelectedIndex = currentSelectedIndex;
         }
 
         private void numericUpDownMaxAnswers_ValueChanged(object sender, EventArgs e)
@@ -164,6 +168,12 @@ namespace Management_Project
         //όταν πατιένται το κουμπί επιλέγουμε τις ερωτήσεις βάσει των κριτηρίων
         private void buttonGenerateWordFile_Click(object sender, EventArgs e)
         {
+            //αν οι ερωτήσεις είναι λίγες, ενημερώνουμε τον χρήστη.
+            if (totalSelectedQuestions < 3)
+                if (MessageBox.Show("Έχετε επιλέξει λιγότερες από 3 ερωτήσεις, για το διαγώνισμα. Είστε σίγουρος, ότι δεν θέλετε να συμπεριλάβετε και άλλες;", "Ελάχιστες ερωτήσεις", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+            //αν ο χρήστης δεν επιλέξει μέρος για να σώσει το αρχείο, δεν κάνουμε τίποτα.
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
@@ -326,10 +336,63 @@ namespace Management_Project
 
         private void ToolStripMenuItemSelectFont_Click(object sender, EventArgs e)
         {
+            //ο χρήστης μπορεί να διαλέξει εκείνος την γραμματοσειρά την οποία θέλει να έχει το διαγώνισμα.
             if (fontDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
 
             richTextBoxToWord.Font = fontDialog1.Font;
+        }
+
+        private void ToolStripMenuItemAllDifficulties_Click(object sender, EventArgs e)
+        {
+            //αφού ο Χρήστης θέλει να συμπεριληφθούν
+            numericUpDownEasyQuestions.Value   = numericUpDownEasyQuestions.Maximum;
+            numericUpDownNormalQuestions.Value = numericUpDownNormalQuestions.Maximum;
+            numericUpDownHardQuestions.Value   = numericUpDownHardQuestions.Maximum;
+        }
+
+        //για κάθε δυσκολία, ο χρήστης έχει τη δυνατότητα να συμπεριλάβει όλες τις ερωτήσεις
+        private void ToolStripMenuItemEasyQuestions_Click(object sender, EventArgs e)
+        {
+            numericUpDownEasyQuestions.Value = numericUpDownEasyQuestions.Maximum;
+        }
+
+        private void ToolStripMenuItemNormalQuestions_Click(object sender, EventArgs e)
+        {
+            numericUpDownNormalQuestions.Value = numericUpDownNormalQuestions.Maximum;
+        }
+
+        private void ToolStripMenuItemHardQuestions_Click(object sender, EventArgs e)
+        {
+            numericUpDownHardQuestions.Value = numericUpDownHardQuestions.Maximum;
+        }
+
+        private void ToolStripMenuItemClearSelectionsFromAllChapters_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Είστε σίγουρος ότι θέλετε να εκκαθαρισθούν οι επιλογές σας;", "Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο.", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            int currentSelectedIndex = comboBoxChapters.SelectedIndex;
+
+            //θέτουμε για κάθε κεφάλαιο το 0, ώστε να μην συμπεριληφθεί τίποτα
+            for (int i = 0; i < comboBoxChapters.Items.Count; i++)
+            {
+                comboBoxChapters.SelectedIndex = i;
+
+                numericUpDownEasyQuestions.Value   = 0;
+                numericUpDownNormalQuestions.Value = 0;
+                numericUpDownHardQuestions.Value   = 0;
+            }
+
+            comboBoxChapters.SelectedIndex = currentSelectedIndex;
+        }
+
+        private void ToolStripMenuItemClearSelectionsFromThisChapter_Click(object sender, EventArgs e)
+        {
+            //αφού ο χρήστης δεν θέλει να συμπεριληφθεί τίποτα από το τρέχον κεφάλαιο, απλά μηδενίζουμε τα domainUpDown.
+            numericUpDownEasyQuestions.Value   = 0;
+            numericUpDownNormalQuestions.Value = 0;
+            numericUpDownHardQuestions.Value   = 0;
         }
 
         private void Form4_Load(object sender, EventArgs e)
