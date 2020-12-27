@@ -324,6 +324,14 @@ namespace Management_Project
             labelChapterDesc.Text = (totalChapterQuestions == 1) ? "Ένα θέμα από αυτό το κεφάλαιο" : totalChapterQuestions.ToString() + " θέματα από αυτό το κεφάλαιο";
         }
 
+        private void ToolStripMenuItemSelectFont_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            richTextBoxToWord.Font = fontDialog1.Font;
+        }
+
         private void Form4_Load(object sender, EventArgs e)
         {
             //θέτουμε τον μέγιστο αριθμό απαντήσεων ανά ερώτηση να είναι ο πρώτος, ώστε να κάνουμε απλή εύρεση μεγίστου

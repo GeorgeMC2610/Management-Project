@@ -52,10 +52,23 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.labelTotalDifficultyQuestions = new System.Windows.Forms.Label();
             this.checkBoxRandomizedAnswers = new System.Windows.Forms.CheckBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItemOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSelectFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemIncludeAllQuestions = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAllDifficulties = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemEasyQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemNormalQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemHardQuestionsOnly = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemClearSelections = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemClearSelectionsFromAllChapters = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemClearSelectionsFromThisChapter = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHardQuestions)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonGenerateWordFile
@@ -76,7 +89,8 @@
             // richTextBoxToWord
             // 
             this.richTextBoxToWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxToWord.Location = new System.Drawing.Point(481, 141);
+            this.richTextBoxToWord.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxToWord.Location = new System.Drawing.Point(848, 354);
             this.richTextBoxToWord.Name = "richTextBoxToWord";
             this.richTextBoxToWord.Size = new System.Drawing.Size(194, 121);
             this.richTextBoxToWord.TabIndex = 1;
@@ -97,7 +111,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 24);
+            this.label2.Location = new System.Drawing.Point(51, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 19);
             this.label2.TabIndex = 8;
@@ -108,7 +122,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(844, 67);
+            this.label3.Location = new System.Drawing.Point(844, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(245, 19);
             this.label3.TabIndex = 9;
@@ -117,7 +131,7 @@
             // numericUpDownMaxAnswers
             // 
             this.numericUpDownMaxAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(848, 93);
+            this.numericUpDownMaxAnswers.Location = new System.Drawing.Point(848, 105);
             this.numericUpDownMaxAnswers.Minimum = new decimal(new int[] {
             2,
             0,
@@ -138,7 +152,7 @@
             this.buttonIncludeAllChapters.BackColor = System.Drawing.Color.Green;
             this.buttonIncludeAllChapters.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonIncludeAllChapters.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 102);
+            this.buttonIncludeAllChapters.Location = new System.Drawing.Point(55, 112);
             this.buttonIncludeAllChapters.Name = "buttonIncludeAllChapters";
             this.buttonIncludeAllChapters.Size = new System.Drawing.Size(288, 49);
             this.buttonIncludeAllChapters.TabIndex = 15;
@@ -204,7 +218,7 @@
             // 
             this.labelChapterDesc.AutoSize = true;
             this.labelChapterDesc.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChapterDesc.Location = new System.Drawing.Point(52, 73);
+            this.labelChapterDesc.Location = new System.Drawing.Point(52, 83);
             this.labelChapterDesc.Name = "labelChapterDesc";
             this.labelChapterDesc.Size = new System.Drawing.Size(193, 16);
             this.labelChapterDesc.TabIndex = 23;
@@ -215,7 +229,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(911, 95);
+            this.label8.Location = new System.Drawing.Point(911, 107);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(172, 16);
             this.label8.TabIndex = 24;
@@ -237,7 +251,7 @@
             // 
             this.comboBoxChapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxChapters.FormattingEnabled = true;
-            this.comboBoxChapters.Location = new System.Drawing.Point(55, 46);
+            this.comboBoxChapters.Location = new System.Drawing.Point(55, 56);
             this.comboBoxChapters.Name = "comboBoxChapters";
             this.comboBoxChapters.Size = new System.Drawing.Size(288, 24);
             this.comboBoxChapters.TabIndex = 26;
@@ -248,7 +262,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(844, 228);
+            this.label9.Location = new System.Drawing.Point(844, 240);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(172, 19);
             this.label9.TabIndex = 27;
@@ -266,7 +280,7 @@
             "Ανά Αλφαβητική Σειρά (Κεφαλαίων)",
             "Σε Σειρά Προσθήκης",
             "Καμμία (Να ανακατευθούν)"});
-            this.comboBoxSorting.Location = new System.Drawing.Point(848, 252);
+            this.comboBoxSorting.Location = new System.Drawing.Point(848, 264);
             this.comboBoxSorting.Name = "comboBoxSorting";
             this.comboBoxSorting.Size = new System.Drawing.Size(288, 24);
             this.comboBoxSorting.TabIndex = 28;
@@ -276,7 +290,7 @@
             // 
             this.checkBoxReverse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxReverse.AutoSize = true;
-            this.checkBoxReverse.Location = new System.Drawing.Point(848, 282);
+            this.checkBoxReverse.Location = new System.Drawing.Point(848, 294);
             this.checkBoxReverse.Name = "checkBoxReverse";
             this.checkBoxReverse.Size = new System.Drawing.Size(91, 20);
             this.checkBoxReverse.TabIndex = 29;
@@ -288,7 +302,7 @@
             this.buttonExit.BackColor = System.Drawing.Color.DarkRed;
             this.buttonExit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonExit.Location = new System.Drawing.Point(1024, 12);
+            this.buttonExit.Location = new System.Drawing.Point(1025, 27);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(147, 30);
             this.buttonExit.TabIndex = 30;
@@ -318,12 +332,95 @@
             // 
             this.checkBoxRandomizedAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxRandomizedAnswers.AutoSize = true;
-            this.checkBoxRandomizedAnswers.Location = new System.Drawing.Point(848, 121);
+            this.checkBoxRandomizedAnswers.Location = new System.Drawing.Point(848, 133);
             this.checkBoxRandomizedAnswers.Name = "checkBoxRandomizedAnswers";
             this.checkBoxRandomizedAnswers.Size = new System.Drawing.Size(112, 20);
             this.checkBoxRandomizedAnswers.TabIndex = 32;
             this.checkBoxRandomizedAnswers.Text = "Ανακατεμμένες";
             this.checkBoxRandomizedAnswers.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemOptions});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ToolStripMenuItemOptions
+            // 
+            this.ToolStripMenuItemOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSelectFont,
+            this.ToolStripMenuItemIncludeAllQuestions,
+            this.ToolStripMenuItemClearSelections});
+            this.ToolStripMenuItemOptions.Name = "ToolStripMenuItemOptions";
+            this.ToolStripMenuItemOptions.Size = new System.Drawing.Size(149, 20);
+            this.ToolStripMenuItemOptions.Text = "Επιπρόσθετες Ρυθμίσεις";
+            // 
+            // ToolStripMenuItemSelectFont
+            // 
+            this.ToolStripMenuItemSelectFont.Name = "ToolStripMenuItemSelectFont";
+            this.ToolStripMenuItemSelectFont.Size = new System.Drawing.Size(409, 22);
+            this.ToolStripMenuItemSelectFont.Text = "Επιλογή Γραμματοσειράς";
+            this.ToolStripMenuItemSelectFont.Click += new System.EventHandler(this.ToolStripMenuItemSelectFont_Click);
+            // 
+            // ToolStripMenuItemIncludeAllQuestions
+            // 
+            this.ToolStripMenuItemIncludeAllQuestions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemAllDifficulties,
+            this.ToolStripMenuItemEasyQuestionsOnly,
+            this.ToolStripMenuItemNormalQuestionsOnly,
+            this.ToolStripMenuItemHardQuestionsOnly});
+            this.ToolStripMenuItemIncludeAllQuestions.Name = "ToolStripMenuItemIncludeAllQuestions";
+            this.ToolStripMenuItemIncludeAllQuestions.Size = new System.Drawing.Size(409, 22);
+            this.ToolStripMenuItemIncludeAllQuestions.Text = "Να συμπεριληφθούν όλα τα θέματα του τρέχοντος κεφαλαίου";
+            // 
+            // ToolStripMenuItemAllDifficulties
+            // 
+            this.ToolStripMenuItemAllDifficulties.Name = "ToolStripMenuItemAllDifficulties";
+            this.ToolStripMenuItemAllDifficulties.Size = new System.Drawing.Size(196, 22);
+            this.ToolStripMenuItemAllDifficulties.Text = "Όλων των δυσκολιών";
+            // 
+            // ToolStripMenuItemEasyQuestionsOnly
+            // 
+            this.ToolStripMenuItemEasyQuestionsOnly.Name = "ToolStripMenuItemEasyQuestionsOnly";
+            this.ToolStripMenuItemEasyQuestionsOnly.Size = new System.Drawing.Size(196, 22);
+            this.ToolStripMenuItemEasyQuestionsOnly.Text = "Μόνο των εύκολων";
+            // 
+            // ToolStripMenuItemNormalQuestionsOnly
+            // 
+            this.ToolStripMenuItemNormalQuestionsOnly.Name = "ToolStripMenuItemNormalQuestionsOnly";
+            this.ToolStripMenuItemNormalQuestionsOnly.Size = new System.Drawing.Size(196, 22);
+            this.ToolStripMenuItemNormalQuestionsOnly.Text = "Μόνο των μέτριων";
+            // 
+            // ToolStripMenuItemHardQuestionsOnly
+            // 
+            this.ToolStripMenuItemHardQuestionsOnly.Name = "ToolStripMenuItemHardQuestionsOnly";
+            this.ToolStripMenuItemHardQuestionsOnly.Size = new System.Drawing.Size(196, 22);
+            this.ToolStripMenuItemHardQuestionsOnly.Text = "Μόνο των δύσκολων";
+            // 
+            // ToolStripMenuItemClearSelections
+            // 
+            this.ToolStripMenuItemClearSelections.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemClearSelectionsFromAllChapters,
+            this.ToolStripMenuItemClearSelectionsFromThisChapter});
+            this.ToolStripMenuItemClearSelections.Name = "ToolStripMenuItemClearSelections";
+            this.ToolStripMenuItemClearSelections.Size = new System.Drawing.Size(409, 22);
+            this.ToolStripMenuItemClearSelections.Text = "Να μην συμπεριληφθεί τίποτα";
+            // 
+            // ToolStripMenuItemClearSelectionsFromAllChapters
+            // 
+            this.ToolStripMenuItemClearSelectionsFromAllChapters.Name = "ToolStripMenuItemClearSelectionsFromAllChapters";
+            this.ToolStripMenuItemClearSelectionsFromAllChapters.Size = new System.Drawing.Size(206, 22);
+            this.ToolStripMenuItemClearSelectionsFromAllChapters.Text = "Από κανένα κεφάλαιο";
+            // 
+            // ToolStripMenuItemClearSelectionsFromThisChapter
+            // 
+            this.ToolStripMenuItemClearSelectionsFromThisChapter.Name = "ToolStripMenuItemClearSelectionsFromThisChapter";
+            this.ToolStripMenuItemClearSelectionsFromThisChapter.Size = new System.Drawing.Size(206, 22);
+            this.ToolStripMenuItemClearSelectionsFromThisChapter.Text = "Από το τρέχον κεφάλαιο";
             // 
             // Form4
             // 
@@ -353,7 +450,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBoxToWord);
             this.Controls.Add(this.buttonGenerateWordFile);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Παραγωγή Αρχείου Word";
@@ -362,6 +461,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNormalQuestions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHardQuestions)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +494,17 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label labelTotalDifficultyQuestions;
         private System.Windows.Forms.CheckBox checkBoxRandomizedAnswers;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOptions;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectFont;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemIncludeAllQuestions;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAllDifficulties;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemEasyQuestionsOnly;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemNormalQuestionsOnly;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemHardQuestionsOnly;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelections;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelectionsFromAllChapters;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelectionsFromThisChapter;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
