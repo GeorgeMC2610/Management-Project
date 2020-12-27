@@ -168,6 +168,7 @@ namespace Management_Project
                 return;
 
             //πρώτα πρέπει να σιγουρευτούμε ότι είναι άδειο το rich text box.
+            QuestionsToBeIncluded.Clear();
             richTextBoxToWord.Text = "";
 
             //για κάθε κεφάλαιο, προσθέτουμε όσες ερωτήσεις έχει πει ο χρήστης.
@@ -290,7 +291,7 @@ namespace Management_Project
                 }
             }
 
-            if (times < 1 || times > list.Count)
+            if (times > list.Count)
                 return list;
 
             //ύστερα κόβουμε στοιχεία, ώστε να έχει ακριβώς όσα μας είπε ο χρήστης.
@@ -344,13 +345,13 @@ namespace Management_Project
             for (int i = 0; i < Thema.Chapters.Count; i++)
             {
                 var EasyQuestionsByChapter  = (from th in Thema.QuestionsByChapter[i] where th.Difficulty == 1 select th).ToList();
-                MaxAvailableQuestions[i, 0] = (decimal) EasyQuestionsByChapter.Count;
+                MaxAvailableQuestions[i, 0] = EasyQuestionsByChapter.Count;
 
                 var NormalQuestionsByChapter = (from th in Thema.QuestionsByChapter[i] where th.Difficulty == 2 select th).ToList();
-                MaxAvailableQuestions[i, 1]  = (decimal) NormalQuestionsByChapter.Count;
+                MaxAvailableQuestions[i, 1]  = NormalQuestionsByChapter.Count;
 
                 var HardQuestionsByChapter  = (from th in Thema.QuestionsByChapter[i] where th.Difficulty == 3 select th).ToList();
-                MaxAvailableQuestions[i, 2] = (decimal) HardQuestionsByChapter.Count;
+                MaxAvailableQuestions[i, 2] = HardQuestionsByChapter.Count;
             }
 
             //βάζουμε τα κεφάλαια στο comboBox

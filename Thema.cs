@@ -37,6 +37,12 @@ namespace Management_Project
 
         public static void RearrangeThemata()
         {
+            EasyQuestions.Clear();
+            NormalQuestions.Clear();
+            HardQuestions.Clear();
+            Chapters.Clear();
+            QuestionsByChapter.Clear();
+
             //βάζουμε σε τάξη τις δυσκολίες ερωτήσεων
             EasyQuestions   = (from th in AllQuestions where th.Difficulty == 1 select th).ToList();
             NormalQuestions = (from th in AllQuestions where th.Difficulty == 2 select th).ToList();
