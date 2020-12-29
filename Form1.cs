@@ -77,10 +77,23 @@ namespace Management_Project
 
         private void wordFileButton_Click(object sender, EventArgs e)
         {
-            Form4 form4 = new Form4();
-            form4.Show();
+            DialogResult input = MessageBox.Show("Θα θέλατε να γίνει χειροκίνητη επιλογή θεμάτων από την τράπεζα;", "Χειρισμός Παραγωγής Αρχείου", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            Hide(); 
+            switch(input)
+            {
+                case DialogResult.Yes:
+                    Form5 form5 = new Form5();
+                    form5.Show();
+                    Hide();
+                    break;
+                case DialogResult.No:
+                    Form4 form4 = new Form4();
+                    form4.Show();
+                    Hide();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

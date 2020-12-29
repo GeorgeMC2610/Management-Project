@@ -56,9 +56,9 @@
             this.wordFileButton.BackColor = System.Drawing.SystemColors.HotTrack;
             this.wordFileButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordFileButton.ForeColor = System.Drawing.Color.White;
-            this.wordFileButton.Location = new System.Drawing.Point(10, 468);
+            this.wordFileButton.Location = new System.Drawing.Point(10, 461);
             this.wordFileButton.Name = "wordFileButton";
-            this.wordFileButton.Size = new System.Drawing.Size(1102, 43);
+            this.wordFileButton.Size = new System.Drawing.Size(1102, 50);
             this.wordFileButton.TabIndex = 0;
             this.wordFileButton.Text = "ΠΑΡΑΓΩΓΗ ΑΡΧΕΙΟΥ WORD";
             this.wordFileButton.UseVisualStyleBackColor = false;
@@ -68,9 +68,9 @@
             // 
             this.editQuestionsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.editQuestionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.editQuestionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.editQuestionsButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editQuestionsButton.ForeColor = System.Drawing.Color.Black;
+            this.editQuestionsButton.ForeColor = System.Drawing.Color.White;
             this.editQuestionsButton.Location = new System.Drawing.Point(6, 115);
             this.editQuestionsButton.Name = "editQuestionsButton";
             this.editQuestionsButton.Size = new System.Drawing.Size(297, 39);

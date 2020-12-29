@@ -40,12 +40,21 @@ namespace Management_Project
             //μετά τσεκάρω αν το κουμπί μπορεί να ενεργοποιηθεί, δηλαδή αν δεν είναι άδεια τα πεδία της ερώτησης και του κεφαλαίου, κι αν υπάρχουν πιθανές απαντήσεις.
             if (textBox1.Text.Equals("") || domainUpDownChapters.Text.Equals("") || CheckEmptyAnswer())
             {
+                labelNotification.Visible   = false;
                 buttonAddQuestion.Enabled   = false;
                 buttonAddQuestion.BackColor = Color.Gray;
                 buttonAddQuestion.ForeColor = Color.Black;
             }
+            else if (!textBox1.Text.EndsWith(";"))
+            {
+                labelNotification.Visible   = true;
+                buttonAddQuestion.Enabled   = true;
+                buttonAddQuestion.BackColor = Color.Gold;
+                buttonAddQuestion.ForeColor = Color.Black;
+            }
             else
             {
+                labelNotification.Visible   = false;
                 buttonAddQuestion.Enabled   = true;
                 buttonAddQuestion.BackColor = SystemColors.HotTrack;
                 buttonAddQuestion.ForeColor = Color.White;
@@ -66,6 +75,7 @@ namespace Management_Project
 
             //μετά αμέσως απανεργοποιώ το κουμπί (όλα τα πεδία είναι άδεια)
             CheckIfButtonCanBeEnabled();
+            labelNotification.Visible     = false;
             checkBoxIsRightAnswer.Checked = true;
 
             //βάζω και τα κεφάλαια στο λιστμποξ
@@ -134,11 +144,6 @@ namespace Management_Project
             }
         }
 
-        private void buttonConfirmAnswer_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void ClearFields()
         {
             UpdateChapters();
@@ -146,13 +151,13 @@ namespace Management_Project
             domainUpDownChapters.SelectedIndex = 0;
             numericUpDown1.Value = 1;
 
+            answerIndex = possibleAnswers.Count;
             while (buttonDeleteAnswer.Enabled)
                 buttonDeleteAnswer.PerformClick();
 
             possibleAnswers[0] = possibleAnswers[1] = "";
             rightAnswerIndex = 1;
-            answerIndex = 2;
-            buttonPrev.PerformClick();
+            answerIndex = 1;
         }
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)

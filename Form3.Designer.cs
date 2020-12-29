@@ -45,6 +45,7 @@
             this.buttonDeleteAnswer = new System.Windows.Forms.Button();
             this.buttonClearFields = new System.Windows.Forms.Button();
             this.domainUpDownChapters = new System.Windows.Forms.DomainUpDown();
+            this.labelNotification = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,11 +251,24 @@
             this.domainUpDownChapters.Size = new System.Drawing.Size(339, 22);
             this.domainUpDownChapters.TabIndex = 2;
             // 
+            // labelNotification
+            // 
+            this.labelNotification.AutoSize = true;
+            this.labelNotification.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotification.ForeColor = System.Drawing.Color.Olive;
+            this.labelNotification.Location = new System.Drawing.Point(605, 524);
+            this.labelNotification.Name = "labelNotification";
+            this.labelNotification.Size = new System.Drawing.Size(364, 15);
+            this.labelNotification.TabIndex = 13;
+            this.labelNotification.Text = "(!) Στο τέλος της ερώτησης δεν υπάρχει ερωτηματικό.";
+            // 
             // FormAddQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1204, 601);
+            this.Controls.Add(this.labelNotification);
             this.Controls.Add(this.domainUpDownChapters);
             this.Controls.Add(this.buttonClearFields);
             this.Controls.Add(this.buttonDeleteAnswer);
@@ -303,5 +317,6 @@
         private System.Windows.Forms.Button buttonDeleteAnswer;
         private System.Windows.Forms.Button buttonClearFields;
         private System.Windows.Forms.DomainUpDown domainUpDownChapters;
+        private System.Windows.Forms.Label labelNotification;
     }
 }
