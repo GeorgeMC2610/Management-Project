@@ -170,7 +170,7 @@ namespace Management_Project
         {
             //αν οι ερωτήσεις είναι λίγες, ενημερώνουμε τον χρήστη.
             if (totalSelectedQuestions < 3)
-                if (MessageBox.Show("Έχετε επιλέξει λιγότερες από 3 ερωτήσεις, για το διαγώνισμα. Είστε σίγουρος, ότι δεν θέλετε να συμπεριλάβετε και άλλες;", "Ελάχιστες ερωτήσεις", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Έχετε επιλέξει λιγότερες από 3 ερωτήσεις, για το διαγώνισμα. Είστε σίγουρος, ότι δεν θέλετε να συμπεριλάβετε και άλλες;", "Ελάχιστες ερωτήσεις", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                     return;
 
             //αν ο χρήστης δεν επιλέξει μέρος για να σώσει το αρχείο, δεν κάνουμε τίποτα.
