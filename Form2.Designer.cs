@@ -41,6 +41,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSelectQuestion = new System.Windows.Forms.Button();
             this.buttonGenerateWord = new System.Windows.Forms.Button();
+            this.comboBoxSorting = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -129,11 +130,26 @@
             this.buttonGenerateWord.UseVisualStyleBackColor = false;
             this.buttonGenerateWord.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
+            // comboBoxSorting
+            // 
+            this.comboBoxSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSorting.FormattingEnabled = true;
+            this.comboBoxSorting.Items.AddRange(new object[] {
+            resources.GetString("comboBoxSorting.Items"),
+            resources.GetString("comboBoxSorting.Items1"),
+            resources.GetString("comboBoxSorting.Items2"),
+            resources.GetString("comboBoxSorting.Items3"),
+            resources.GetString("comboBoxSorting.Items4"),
+            resources.GetString("comboBoxSorting.Items5")});
+            resources.ApplyResources(this.comboBoxSorting, "comboBoxSorting");
+            this.comboBoxSorting.Name = "comboBoxSorting";
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
+            this.Controls.Add(this.comboBoxSorting);
             this.Controls.Add(this.buttonGenerateWord);
             this.Controls.Add(this.buttonSelectQuestion);
             this.Controls.Add(this.buttonExit);
@@ -149,6 +165,7 @@
             this.Name = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Resize += new System.EventHandler(this.Form2_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +185,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSelectQuestion;
         private System.Windows.Forms.Button buttonGenerateWord;
+        private System.Windows.Forms.ComboBox comboBoxSorting;
     }
 }

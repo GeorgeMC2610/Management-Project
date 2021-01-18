@@ -20,8 +20,8 @@ namespace Management_Project
         public Form2(bool SelectMode)
         {
             InitializeComponent();
-            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = SelectMode;
-            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = SelectMode;
+            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = SelectMode;
+            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = SelectMode;
 
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
@@ -32,9 +32,10 @@ namespace Management_Project
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            DummyThemaList.AddRange(Thema.AllQuestions);
+            comboBoxSorting.SelectedIndex = 0;
             updateQuestions();
             updateButtons();
-            DummyThemaList.AddRange(Thema.AllQuestions);
         }
 
         private void AnyButtonClicked(object sender, EventArgs e)
@@ -134,22 +135,7 @@ namespace Management_Project
                     break;
             }
 
-
-            if (labelQuestion.Text.Length < 100)
-            {
-                Font f = new Font("Microsoft Sans Serif", 16f);
-                labelQuestion.Font = f;
-            }
-            else if (labelQuestion.Text.Length < 160)
-            {
-                Font f = new Font("Microsoft Sans Serif", 13f);
-                labelQuestion.Font = f;
-            }
-            else
-            {
-                Font f = new Font("Microsoft Sans Serif", 10f);
-                labelQuestion.Font = f;
-            }
+            CheckLabelSize();
         }
 
         private void updateButtons()
@@ -173,6 +159,40 @@ namespace Management_Project
                 buttonDeleteQuestion.BackColor = Color.DarkRed;
                 buttonDeleteQuestion.ForeColor = Color.White;
             }
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            CheckLabelSize();
+        }
+
+        private void CheckLabelSize()
+        {
+            Font f;
+            var analogy = labelQuestion.Size.Width / this.Width;
+
+            f = new Font("Arial", 16f);
+            labelQuestion.Font = f;
+
+
+            if (analogy > 0.60 && analogy < 0.75)
+            {
+                f = new Font("Arial", 13f);
+                labelQuestion.Font = f;
+            }
+
+            else if (analogy > 0.75 && analogy < 0.90)
+            {
+                f = new Font("Arial", 10f);
+                labelQuestion.Font = f;
+            }
+
+            else if (analogy > 0.90)
+            {
+                f = new Font("Arial", 8f);
+                labelQuestion.Font = f;
+            }
+
         }
     }
 }
