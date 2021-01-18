@@ -123,43 +123,50 @@ namespace Management_Project
             updateButtons();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void AnyButtonClicked(object sender, EventArgs e)
         {
+            Button buttonClicked = (Button)sender;
             
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            index = (index == 0)? Thema.AllQuestions.Count -1 : index - 1;
+            switch (buttonClicked.Name)
+            {
+                case "buttonExit":
+                    Thema.SaveQuestions();
+                    new Form1().Show();
+                    Close();
+                    break;
 
-            updateButtons();
-            updateQuestions();
-        }
+                case "buttonPrev":
+                    index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            index = (index == Thema.AllQuestions.Count - 1)? 0 : index + 1;
-            updateButtons();
-            updateQuestions();
-        }
+                case "buttonNext":
+                    index = (index == Thema.AllQuestions.Count - 1) ? 0 : index + 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Thema.SaveQuestions();
-            new Form1().Show();
-            Close();
-        }
+                case "buttonEditQuestion":
+                    break;
 
-        private void buttonDeleteQuestion_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
+                case "buttonDeleteQuestion":
+                    if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.No)
+                        return;
 
-            Thema.AllQuestions.RemoveAt(index);
-            index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
-            updateButtons();
-            updateQuestions();
+                    Thema.AllQuestions.RemoveAt(index);
+                    index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
+
+                case "buttonSelectQuestion":
+                    break;
+
+                case "buttonGenerateWord":
+                    break;
+            }
         }
     }
 }

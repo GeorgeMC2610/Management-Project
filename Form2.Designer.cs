@@ -33,7 +33,6 @@
             this.labelAnswers = new System.Windows.Forms.Label();
             this.labelRightAnswer = new System.Windows.Forms.Label();
             this.buttonPrev = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.labelDifficulty = new System.Windows.Forms.Label();
             this.buttonNext = new System.Windows.Forms.Button();
             this.labelChapter = new System.Windows.Forms.Label();
@@ -68,14 +67,7 @@
             resources.ApplyResources(this.buttonPrev, "buttonPrev");
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.UseVisualStyleBackColor = true;
-            this.buttonPrev.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonPrev.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // labelDifficulty
             // 
@@ -87,7 +79,7 @@
             resources.ApplyResources(this.buttonNext, "buttonNext");
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.button3_Click);
+            this.buttonNext.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // labelChapter
             // 
@@ -99,6 +91,7 @@
             resources.ApplyResources(this.buttonEditQuestion, "buttonEditQuestion");
             this.buttonEditQuestion.Name = "buttonEditQuestion";
             this.buttonEditQuestion.UseVisualStyleBackColor = true;
+            this.buttonEditQuestion.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonDeleteQuestion
             // 
@@ -107,7 +100,7 @@
             this.buttonDeleteQuestion.ForeColor = System.Drawing.Color.White;
             this.buttonDeleteQuestion.Name = "buttonDeleteQuestion";
             this.buttonDeleteQuestion.UseVisualStyleBackColor = false;
-            this.buttonDeleteQuestion.Click += new System.EventHandler(this.buttonDeleteQuestion_Click);
+            this.buttonDeleteQuestion.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonExit
             // 
@@ -116,7 +109,7 @@
             this.buttonExit.ForeColor = System.Drawing.Color.White;
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonSelectQuestion
             // 
@@ -125,6 +118,7 @@
             this.buttonSelectQuestion.ForeColor = System.Drawing.Color.White;
             this.buttonSelectQuestion.Name = "buttonSelectQuestion";
             this.buttonSelectQuestion.UseVisualStyleBackColor = false;
+            this.buttonSelectQuestion.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonGenerateWord
             // 
@@ -133,6 +127,7 @@
             this.buttonGenerateWord.ForeColor = System.Drawing.Color.White;
             this.buttonGenerateWord.Name = "buttonGenerateWord";
             this.buttonGenerateWord.UseVisualStyleBackColor = false;
+            this.buttonGenerateWord.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // Form2
             // 
@@ -147,12 +142,12 @@
             this.Controls.Add(this.labelChapter);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.labelDifficulty);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.labelRightAnswer);
             this.Controls.Add(this.labelAnswers);
             this.Controls.Add(this.labelQuestion);
             this.Name = "Form2";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +160,6 @@
         private System.Windows.Forms.Label labelAnswers;
         private System.Windows.Forms.Label labelRightAnswer;
         private System.Windows.Forms.Button buttonPrev;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelDifficulty;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label labelChapter;
