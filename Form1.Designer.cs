@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.wordFileButton = new System.Windows.Forms.Button();
             this.editQuestionsButton = new System.Windows.Forms.Button();
             this.deleteAllQuestionsButton = new System.Windows.Forms.Button();
@@ -45,8 +46,10 @@
             this.toolStripMenuItem4_episkophsh_thematwn = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelAvailableQuestions = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // wordFileButton
@@ -96,12 +99,16 @@
             // 
             // labelTrapezaThematon
             // 
+            this.labelTrapezaThematon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTrapezaThematon.AutoSize = true;
-            this.labelTrapezaThematon.Location = new System.Drawing.Point(502, 35);
+            this.labelTrapezaThematon.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelTrapezaThematon.Location = new System.Drawing.Point(444, 43);
             this.labelTrapezaThematon.Name = "labelTrapezaThematon";
-            this.labelTrapezaThematon.Size = new System.Drawing.Size(112, 16);
+            this.labelTrapezaThematon.Size = new System.Drawing.Size(208, 27);
             this.labelTrapezaThematon.TabIndex = 3;
             this.labelTrapezaThematon.Text = "Τράπεζα Θεμάτων";
+            this.labelTrapezaThematon.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
@@ -126,7 +133,7 @@
             this.Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1123, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1123, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -137,21 +144,21 @@
             this.toolStripMenuItem1_Δημιουργοί,
             this.toolStripMenuItem2_Σκοπός});
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(92, 20);
+            this.About.Size = new System.Drawing.Size(114, 24);
             this.About.Text = "Πληροφορίες";
             // 
             // toolStripMenuItem1_Δημιουργοί
             // 
             this.toolStripMenuItem1_Δημιουργοί.Name = "toolStripMenuItem1_Δημιουργοί";
-            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(136, 22);
+            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem1_Δημιουργοί.Text = "Δημιουργοί";
             this.toolStripMenuItem1_Δημιουργοί.Click += new System.EventHandler(this.toolStripMenuItem1_Δημιουργοί_Click);
             // 
             // toolStripMenuItem2_Σκοπός
             // 
             this.toolStripMenuItem2_Σκοπός.Name = "toolStripMenuItem2_Σκοπός";
-            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(136, 22);
-            this.toolStripMenuItem2_Σκοπός.Text = "Σκοπός";
+            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2_Σκοπός.Text = "Επικοινωνίες";
             this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
             // 
             // Help
@@ -160,13 +167,13 @@
             this.toolStripMenuItem1_ti_einai_auth_h_egarmogh,
             this.toolStripMenuItem1_Κουμπιά});
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(62, 20);
+            this.Help.Size = new System.Drawing.Size(79, 24);
             this.Help.Text = "Βοήθεια";
             // 
             // toolStripMenuItem1_ti_einai_auth_h_egarmogh
             // 
             this.toolStripMenuItem1_ti_einai_auth_h_egarmogh.Name = "toolStripMenuItem1_ti_einai_auth_h_egarmogh";
-            this.toolStripMenuItem1_ti_einai_auth_h_egarmogh.Size = new System.Drawing.Size(214, 22);
+            this.toolStripMenuItem1_ti_einai_auth_h_egarmogh.Size = new System.Drawing.Size(271, 26);
             this.toolStripMenuItem1_ti_einai_auth_h_egarmogh.Text = "Τι κάνει αυτή η εφαρμογή;";
             this.toolStripMenuItem1_ti_einai_auth_h_egarmogh.Click += new System.EventHandler(this.toolStripMenuItem1_ti_einai_auth_h_egarmogh_Click);
             // 
@@ -177,27 +184,27 @@
             this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn,
             this.toolStripMenuItem4_episkophsh_thematwn});
             this.toolStripMenuItem1_Κουμπιά.Name = "toolStripMenuItem1_Κουμπιά";
-            this.toolStripMenuItem1_Κουμπιά.Size = new System.Drawing.Size(214, 22);
+            this.toolStripMenuItem1_Κουμπιά.Size = new System.Drawing.Size(271, 26);
             this.toolStripMenuItem1_Κουμπιά.Text = "Τι κάνει το κάθε κουμπί;";
             // 
             // toolStripMenuItem2_prosthikh_neou_thematos
             // 
             this.toolStripMenuItem2_prosthikh_neou_thematos.Name = "toolStripMenuItem2_prosthikh_neou_thematos";
-            this.toolStripMenuItem2_prosthikh_neou_thematos.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem2_prosthikh_neou_thematos.Size = new System.Drawing.Size(296, 26);
             this.toolStripMenuItem2_prosthikh_neou_thematos.Text = "Προσθήκη Νέου Θέματος";
             this.toolStripMenuItem2_prosthikh_neou_thematos.Click += new System.EventHandler(this.toolStripMenuItem2_prosthikh_neou_thematos_Click);
             // 
             // toolStripMenuItem3_diagrafh_olwn_twn_thematwn
             // 
             this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Name = "toolStripMenuItem3_diagrafh_olwn_twn_thematwn";
-            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Size = new System.Drawing.Size(296, 26);
             this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Text = "Διαγραφή όλων των θεμάτων";
             this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn.Click += new System.EventHandler(this.toolStripMenuItem3_diagrafh_olwn_twn_thematwn_Click);
             // 
             // toolStripMenuItem4_episkophsh_thematwn
             // 
             this.toolStripMenuItem4_episkophsh_thematwn.Name = "toolStripMenuItem4_episkophsh_thematwn";
-            this.toolStripMenuItem4_episkophsh_thematwn.Size = new System.Drawing.Size(239, 22);
+            this.toolStripMenuItem4_episkophsh_thematwn.Size = new System.Drawing.Size(296, 26);
             this.toolStripMenuItem4_episkophsh_thematwn.Text = "Επισκόπηση Θεμάτων";
             this.toolStripMenuItem4_episkophsh_thematwn.Click += new System.EventHandler(this.toolStripMenuItem4_episkophsh_thematwn_Click);
             // 
@@ -222,16 +229,27 @@
             this.labelAvailableQuestions.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAvailableQuestions.Location = new System.Drawing.Point(2, 250);
             this.labelAvailableQuestions.Name = "labelAvailableQuestions";
-            this.labelAvailableQuestions.Size = new System.Drawing.Size(192, 19);
+            this.labelAvailableQuestions.Size = new System.Drawing.Size(237, 24);
             this.labelAvailableQuestions.TabIndex = 5;
             this.labelAvailableQuestions.Text = "x Διαθέσιμες Ερωτήσεις";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(65, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 188);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1123, 524);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTrapezaThematon);
             this.Controls.Add(this.wordFileButton);
@@ -249,6 +267,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +292,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3_diagrafh_olwn_twn_thematwn;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4_episkophsh_thematwn;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_ti_einai_auth_h_egarmogh;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
