@@ -29,48 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelQuestion = new System.Windows.Forms.Label();
+            this.labelAnswers = new System.Windows.Forms.Label();
+            this.labelRightAnswer = new System.Windows.Forms.Label();
+            this.buttonPrev = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelDifficulty = new System.Windows.Forms.Label();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.labelChapter = new System.Windows.Forms.Label();
             this.buttonEditQuestion = new System.Windows.Forms.Button();
             this.buttonDeleteQuestion = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSelectQuestion = new System.Windows.Forms.Button();
+            this.buttonGenerateWord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // labelQuestion
             // 
-            this.label1.AutoEllipsis = true;
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelQuestion.AutoEllipsis = true;
+            resources.ApplyResources(this.labelQuestion, "labelQuestion");
+            this.labelQuestion.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelQuestion.Name = "labelQuestion";
             // 
-            // label2
+            // labelAnswers
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            resources.ApplyResources(this.labelAnswers, "labelAnswers");
+            this.labelAnswers.BackColor = System.Drawing.Color.Transparent;
+            this.labelAnswers.Name = "labelAnswers";
             // 
-            // label3
+            // labelRightAnswer
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.Color.LightGreen;
-            this.label3.Name = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            resources.ApplyResources(this.labelRightAnswer, "labelRightAnswer");
+            this.labelRightAnswer.BackColor = System.Drawing.Color.LightGreen;
+            this.labelRightAnswer.Name = "labelRightAnswer";
             // 
-            // button1
+            // buttonPrev
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.buttonPrev, "buttonPrev");
+            this.buttonPrev.Name = "buttonPrev";
+            this.buttonPrev.UseVisualStyleBackColor = true;
+            this.buttonPrev.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -79,22 +77,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label6
+            // labelDifficulty
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.labelDifficulty, "labelDifficulty");
+            this.labelDifficulty.Name = "labelDifficulty";
             // 
-            // button3
+            // buttonNext
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            resources.ApplyResources(this.buttonNext, "buttonNext");
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label7
+            // labelChapter
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.labelChapter, "labelChapter");
+            this.labelChapter.Name = "labelChapter";
             // 
             // buttonEditQuestion
             // 
@@ -111,14 +109,14 @@
             this.buttonDeleteQuestion.UseVisualStyleBackColor = false;
             this.buttonDeleteQuestion.Click += new System.EventHandler(this.buttonDeleteQuestion_Click);
             // 
-            // button4
+            // buttonExit
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkRed;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonExit.BackColor = System.Drawing.Color.DarkRed;
+            resources.ApplyResources(this.buttonExit, "buttonExit");
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonSelectQuestion
             // 
@@ -128,23 +126,32 @@
             this.buttonSelectQuestion.Name = "buttonSelectQuestion";
             this.buttonSelectQuestion.UseVisualStyleBackColor = false;
             // 
+            // buttonGenerateWord
+            // 
+            resources.ApplyResources(this.buttonGenerateWord, "buttonGenerateWord");
+            this.buttonGenerateWord.BackColor = System.Drawing.Color.RoyalBlue;
+            this.buttonGenerateWord.ForeColor = System.Drawing.Color.White;
+            this.buttonGenerateWord.Name = "buttonGenerateWord";
+            this.buttonGenerateWord.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
+            this.Controls.Add(this.buttonGenerateWord);
             this.Controls.Add(this.buttonSelectQuestion);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonDeleteQuestion);
             this.Controls.Add(this.buttonEditQuestion);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelChapter);
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.labelDifficulty);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonPrev);
+            this.Controls.Add(this.labelRightAnswer);
+            this.Controls.Add(this.labelAnswers);
+            this.Controls.Add(this.labelQuestion);
             this.Name = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
@@ -154,17 +161,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelQuestion;
+        private System.Windows.Forms.Label labelAnswers;
+        private System.Windows.Forms.Label labelRightAnswer;
+        private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelDifficulty;
+        private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Label labelChapter;
         private System.Windows.Forms.Button buttonEditQuestion;
         private System.Windows.Forms.Button buttonDeleteQuestion;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSelectQuestion;
+        private System.Windows.Forms.Button buttonGenerateWord;
     }
 }
