@@ -199,7 +199,10 @@ namespace Management_Project
                 else
                     sb.Append(GreekNumerals[count] + ") " + s + Environment.NewLine);
 
-                count++;
+                if (count > 27)
+                    count = 0;
+                else
+                    count++;
             }
 
             string message = sb.ToString();

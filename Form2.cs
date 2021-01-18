@@ -44,12 +44,18 @@ namespace Management_Project
             string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
             string[] GreekNumerals = stringGreekNumerals.Split(',');
 
+            int j = 0;
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < th.Answers.Count; i++)
             {
-                sb.Append(GreekNumerals[i] + ") ");
+                sb.Append(GreekNumerals[j] + ") ");
                 sb.Append(th.Answers[i]);
                 sb.Append(Environment.NewLine);
+
+                if (j > 27)
+                    j = 0;
+                else
+                    j++;
             }
 
             labelAnswers.Text = sb.ToString();
