@@ -15,9 +15,14 @@ namespace Management_Project
     {
         //global variable for question index.
         int index = 0;
-        public Form2()
+        public Form2(bool SelectMode)
         {
             InitializeComponent();
+            buttonSelectQuestion.Visible = SelectMode;
+            buttonSelectQuestion.Enabled = SelectMode;
+
+            buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
+            buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
         }
 
         //to update the questions, I set all the labels to be the corresponding properties

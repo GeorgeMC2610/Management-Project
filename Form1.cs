@@ -43,7 +43,7 @@ namespace Management_Project
         private void editQuestionsButton_Click(object sender, EventArgs e)
         {
             Hide();
-            new Form2().Show();
+            new Form2(false).Show();
         }
 
         private void deleteAllQuestionsButton_Click(object sender, EventArgs e)
@@ -82,6 +82,8 @@ namespace Management_Project
             switch(input)
             {
                 case DialogResult.Yes:
+                    Form2 form2 = new Form2(true);
+                    form2.Show();
                     Hide();
                     break;
                 case DialogResult.No:

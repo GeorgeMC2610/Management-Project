@@ -40,6 +40,7 @@
             this.buttonEditQuestion = new System.Windows.Forms.Button();
             this.buttonDeleteQuestion = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.buttonSelectQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +54,7 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -119,10 +120,20 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // buttonSelectQuestion
+            // 
+            resources.ApplyResources(this.buttonSelectQuestion, "buttonSelectQuestion");
+            this.buttonSelectQuestion.BackColor = System.Drawing.Color.Green;
+            this.buttonSelectQuestion.ForeColor = System.Drawing.Color.White;
+            this.buttonSelectQuestion.Name = "buttonSelectQuestion";
+            this.buttonSelectQuestion.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.Controls.Add(this.buttonSelectQuestion);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonDeleteQuestion);
             this.Controls.Add(this.buttonEditQuestion);
@@ -154,5 +165,6 @@
         private System.Windows.Forms.Button buttonEditQuestion;
         private System.Windows.Forms.Button buttonDeleteQuestion;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonSelectQuestion;
     }
 }
