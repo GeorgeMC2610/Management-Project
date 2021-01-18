@@ -15,6 +15,8 @@ namespace Management_Project
     {
         //global variable for question index.
         int index = 0;
+        List<Thema> DummyThemaList = new List<Thema>();
+
         public Form2(bool SelectMode)
         {
             InitializeComponent();
@@ -23,13 +25,69 @@ namespace Management_Project
 
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
+
+            this.BackColor = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
+            labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen : Color.LightGreen;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            updateQuestions();
+            updateButtons();
+            DummyThemaList.AddRange(Thema.AllQuestions);
+        }
+
+        private void AnyButtonClicked(object sender, EventArgs e)
+        {
+            Button buttonClicked = (Button)sender;
+
+
+            switch (buttonClicked.Name)
+            {
+                case "buttonExit":
+                    Thema.SaveQuestions();
+                    new Form1().Show();
+                    Close();
+                    break;
+
+                case "buttonPrev":
+                    index = (index == 0) ? DummyThemaList.Count - 1 : index - 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
+
+                case "buttonNext":
+                    index = (index == DummyThemaList.Count - 1) ? 0 : index + 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
+
+                case "buttonEditQuestion":
+                    break;
+
+                case "buttonDeleteQuestion":
+                    if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.No)
+                        return;
+
+                    DummyThemaList.RemoveAt(index);
+                    index = (index == 0) ? DummyThemaList.Count - 1 : index - 1;
+                    updateButtons();
+                    updateQuestions();
+                    break;
+
+                case "buttonSelectQuestion":
+                    break;
+
+                case "buttonGenerateWord":
+                    break;
+            }
         }
 
         //to update the questions, I set all the labels to be the corresponding properties
         private void updateQuestions()
         {
             //but if there are no questions available, nothing happens.
-            if (Thema.AllQuestions.Count == 0)
+            if (DummyThemaList.Count == 0)
             {
                 labelQuestion.Text = "Η τράπεζα θεμάτων είναι άδεια.";
                 labelChapter.Text = "Πηγαίνετε στο κύριο μενου, πατήστε \"Προσθήκη Θέματος\" κι όταν φτιάξετε το θέμα σας, θα το βρείτε εδώ!";
@@ -37,7 +95,7 @@ namespace Management_Project
                 return;
             }
 
-            Thema th = Thema.AllQuestions[index];
+            Thema th = DummyThemaList[index];
 
             labelQuestion.Text = (index + 1).ToString() + ") " + th.Question;
 
@@ -96,13 +154,13 @@ namespace Management_Project
 
         private void updateButtons()
         {
-            if (Thema.AllQuestions.Count == 0)
+            if (DummyThemaList.Count == 0)
             {
                 buttonPrev.Enabled = buttonNext.Enabled = buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = false;
                 buttonDeleteQuestion.BackColor = Color.DarkGray;
                 buttonDeleteQuestion.ForeColor = Color.Black;
             }
-            else if (Thema.AllQuestions.Count == 1)
+            else if (DummyThemaList.Count == 1)
             {
                 buttonPrev.Enabled = buttonNext.Enabled = false;
                 buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = true;
@@ -114,58 +172,6 @@ namespace Management_Project
                 buttonPrev.Enabled = buttonNext.Enabled = buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = true;
                 buttonDeleteQuestion.BackColor = Color.DarkRed;
                 buttonDeleteQuestion.ForeColor = Color.White;
-            }
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            updateQuestions();
-            updateButtons();
-        }
-
-        private void AnyButtonClicked(object sender, EventArgs e)
-        {
-            Button buttonClicked = (Button)sender;
-            
-
-            switch (buttonClicked.Name)
-            {
-                case "buttonExit":
-                    Thema.SaveQuestions();
-                    new Form1().Show();
-                    Close();
-                    break;
-
-                case "buttonPrev":
-                    index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
-                    updateButtons();
-                    updateQuestions();
-                    break;
-
-                case "buttonNext":
-                    index = (index == Thema.AllQuestions.Count - 1) ? 0 : index + 1;
-                    updateButtons();
-                    updateQuestions();
-                    break;
-
-                case "buttonEditQuestion":
-                    break;
-
-                case "buttonDeleteQuestion":
-                    if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.No)
-                        return;
-
-                    Thema.AllQuestions.RemoveAt(index);
-                    index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
-                    updateButtons();
-                    updateQuestions();
-                    break;
-
-                case "buttonSelectQuestion":
-                    break;
-
-                case "buttonGenerateWord":
-                    break;
             }
         }
     }
