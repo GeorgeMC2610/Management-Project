@@ -159,7 +159,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelQuestion.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="labelAnswers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -195,7 +195,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelAnswers.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="labelRightAnswer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -231,7 +231,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelRightAnswer.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="buttonPrev.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -264,7 +264,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonPrev.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="labelDifficulty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -276,7 +276,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelDifficulty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 124</value>
+    <value>14, 104</value>
   </data>
   <data name="labelDifficulty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -300,7 +300,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelDifficulty.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="buttonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -336,7 +336,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonNext.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="labelChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -348,7 +348,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 89</value>
+    <value>13, 80</value>
   </data>
   <data name="labelChapter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -372,7 +372,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelChapter.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="buttonEditQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -402,7 +402,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonEditQuestion.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="buttonDeleteQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -435,7 +435,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonDeleteQuestion.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="buttonExit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt, style=Bold</value>
@@ -465,7 +465,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="buttonSelectQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -498,7 +498,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonSelectQuestion.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonGenerateWord.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -531,7 +531,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonGenerateWord.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="comboBoxSorting.Items" xml:space="preserve">
     <value>Ανά Κεφάλαιο</value>
@@ -552,10 +552,10 @@
     <value>Καμμία (Να ανακατευθούν)</value>
   </data>
   <data name="comboBoxSorting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 152</value>
+    <value>12, 154</value>
   </data>
   <data name="comboBoxSorting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 24</value>
+    <value>232, 24</value>
   </data>
   <data name="comboBoxSorting.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -570,6 +570,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBoxSorting.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 14.25pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 129</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ΤΑΞΙΝΟΜΗΣΗ ΘΕΜΑΤΩΝ</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -583,9 +619,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>

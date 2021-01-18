@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.labelQuestion = new System.Windows.Forms.Label();
             this.buttonAddQuestion = new System.Windows.Forms.Button();
             this.labelChapter = new System.Windows.Forms.Label();
@@ -49,13 +49,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxQuestion
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(966, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxQuestion.Location = new System.Drawing.Point(45, 47);
+            this.textBoxQuestion.Name = "textBoxQuestion";
+            this.textBoxQuestion.Size = new System.Drawing.Size(966, 22);
+            this.textBoxQuestion.TabIndex = 0;
+            this.textBoxQuestion.TextChanged += new System.EventHandler(this.AnyTextBoxChanged);
             // 
             // labelQuestion
             // 
@@ -79,7 +79,7 @@
             this.buttonAddQuestion.TabIndex = 10;
             this.buttonAddQuestion.Text = "ΠΡΟΣΘΗΚΗ ΕΡΩΤΗΣΗΣ ΣΤΗΝ ΤΡΑΠΕΖΑ";
             this.buttonAddQuestion.UseVisualStyleBackColor = false;
-            this.buttonAddQuestion.Click += new System.EventHandler(this.buttonAddQuestion_Click);
+            this.buttonAddQuestion.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // labelChapter
             // 
@@ -97,7 +97,7 @@
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.Size = new System.Drawing.Size(339, 22);
             this.textBoxAnswer.TabIndex = 3;
-            this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
+            this.textBoxAnswer.TextChanged += new System.EventHandler(this.AnyTextBoxChanged);
             // 
             // labelAnswer
             // 
@@ -118,7 +118,7 @@
             this.buttonPrev.TabIndex = 5;
             this.buttonPrev.Text = "<";
             this.buttonPrev.UseVisualStyleBackColor = true;
-            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
+            this.buttonPrev.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonNext
             // 
@@ -129,7 +129,7 @@
             this.buttonNext.TabIndex = 4;
             this.buttonNext.Text = ">";
             this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            this.buttonNext.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // numericUpDown1
             // 
@@ -173,7 +173,7 @@
             this.buttonAddPossibleAnswer.TabIndex = 6;
             this.buttonAddPossibleAnswer.Text = "Προσθήκη Νέας Απάντησης";
             this.buttonAddPossibleAnswer.UseVisualStyleBackColor = false;
-            this.buttonAddPossibleAnswer.Click += new System.EventHandler(this.buttonAddPossibleAnswer_Click);
+            this.buttonAddPossibleAnswer.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonReviewThema
             // 
@@ -187,7 +187,7 @@
             this.buttonReviewThema.TabIndex = 9;
             this.buttonReviewThema.Text = "ΕΠΙΣΚΟΠΗΣΗ ΘΕΜΑΤΟΣ";
             this.buttonReviewThema.UseVisualStyleBackColor = false;
-            this.buttonReviewThema.Click += new System.EventHandler(this.buttonReviewThema_Click);
+            this.buttonReviewThema.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // checkBoxIsRightAnswer
             // 
@@ -212,7 +212,7 @@
             this.buttonExit.TabIndex = 12;
             this.buttonExit.Text = "Επιστροφή στο Μενού";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonDeleteAnswer
             // 
@@ -227,7 +227,7 @@
             this.buttonDeleteAnswer.Text = "Διαγραφή Απάντησης";
             this.buttonDeleteAnswer.UseVisualStyleBackColor = false;
             this.buttonDeleteAnswer.Visible = false;
-            this.buttonDeleteAnswer.Click += new System.EventHandler(this.buttonDeleteAnswer_Click);
+            this.buttonDeleteAnswer.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // buttonClearFields
             // 
@@ -241,7 +241,7 @@
             this.buttonClearFields.TabIndex = 11;
             this.buttonClearFields.Text = "Καθαρισμός Πεδίων";
             this.buttonClearFields.UseVisualStyleBackColor = false;
-            this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
+            this.buttonClearFields.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
             // domainUpDownChapters
             // 
@@ -285,7 +285,7 @@
             this.Controls.Add(this.labelChapter);
             this.Controls.Add(this.buttonAddQuestion);
             this.Controls.Add(this.labelQuestion);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxQuestion);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddQuestion";
@@ -300,7 +300,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxQuestion;
         private System.Windows.Forms.Label labelQuestion;
         private System.Windows.Forms.Button buttonAddQuestion;
         private System.Windows.Forms.Label labelChapter;
