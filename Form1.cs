@@ -82,8 +82,6 @@ namespace Management_Project
             switch(input)
             {
                 case DialogResult.Yes:
-                    Form5 form5 = new Form5();
-                    form5.Show();
                     Hide();
                     break;
                 case DialogResult.No:
