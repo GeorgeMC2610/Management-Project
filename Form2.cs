@@ -20,8 +20,8 @@ namespace Management_Project
         public Form2(bool SelectMode)
         {
             InitializeComponent();
-            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = SelectMode;
-            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = SelectMode;
+            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = labelSorting.Visible = SelectMode;
+            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = labelSorting.Enabled = SelectMode;
 
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
@@ -67,7 +67,7 @@ namespace Management_Project
                     break;
 
                 case "buttonDeleteQuestion":
-                    if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo) == DialogResult.No)
+                    if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                         return;
 
                     DummyThemaList.RemoveAt(index);
@@ -169,30 +169,29 @@ namespace Management_Project
         private void CheckLabelSize()
         {
             Font f;
-            var analogy = labelQuestion.Size.Width / this.Width;
-
+            
             f = new Font("Arial", 16f);
             labelQuestion.Font = f;
 
+            float analogy = (float)labelQuestion.Size.Width / (float)this.Width;
 
-            if (analogy > 0.60 && analogy < 0.75)
-            {
-                f = new Font("Arial", 13f);
-                labelQuestion.Font = f;
-            }
-
-            else if (analogy > 0.75 && analogy < 0.90)
-            {
-                f = new Font("Arial", 10f);
-                labelQuestion.Font = f;
-            }
-
-            else if (analogy > 0.90)
+            if (analogy > 1.6)
             {
                 f = new Font("Arial", 8f);
                 labelQuestion.Font = f;
             }
 
+            else if (analogy > 1.2)
+            {
+                f = new Font("Arial", 10f);
+                labelQuestion.Font = f;
+            }
+
+            else if (analogy > 0.9)
+            {
+                f = new Font("Arial", 13f);
+                labelQuestion.Font = f;
+            }
         }
     }
 }
