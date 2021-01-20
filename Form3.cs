@@ -248,13 +248,19 @@ namespace Management_Project
             domainUpDownChapters.SelectedIndex = 0;
             numericUpDown1.Value = 1;
 
-            answerIndex = possibleAnswers.Count;
+            while (answerIndex != possibleAnswers.Count)
+                buttonNext.PerformClick();
+
             while (buttonDeleteAnswer.Enabled)
                 buttonDeleteAnswer.PerformClick();
 
             possibleAnswers[0] = possibleAnswers[1] = "";
+
+            while (answerIndex != 1)
+                buttonPrev.PerformClick();
+
             rightAnswerIndex = 1;
-            answerIndex = 1;
+            textBoxAnswer.Text = "";
         }
 
         private void checkBoxIsRightAnswer_CheckedChanged(object sender, EventArgs e)

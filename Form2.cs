@@ -16,12 +16,16 @@ namespace Management_Project
         //global variable for question index.
         int index = 0;
         List<Thema> DummyThemaList = new List<Thema>();
+        List<Thema> SelectedThemas = new List<Thema>();
+        List<string> SelectedChapters = new List<string>();
+        bool SelectMode;
 
         public Form2(bool SelectMode)
         {
             InitializeComponent();
-            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = labelSorting.Visible = SelectMode;
-            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = labelSorting.Enabled = SelectMode;
+            this.SelectMode = SelectMode;
+            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = labelSorting.Visible = labelOverview.Visible = SelectMode;
+            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = labelSorting.Enabled = labelOverview.Enabled = SelectMode;
 
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
@@ -36,6 +40,7 @@ namespace Management_Project
             comboBoxSorting.SelectedIndex = 0;
             updateQuestions();
             updateButtons();
+            updateLabels();
         }
 
         private void AnyButtonClicked(object sender, EventArgs e)
@@ -77,6 +82,24 @@ namespace Management_Project
                     break;
 
                 case "buttonSelectQuestion":
+                    if (!SelectedThemas.Contains(DummyThemaList[index]))
+                    {
+                        SelectedThemas.Add(DummyThemaList[index]);
+
+                        if (!SelectedChapters.Contains(DummyThemaList[index].Chapter))
+                            SelectedChapters.Add(DummyThemaList[index].Chapter);
+                    }
+                        
+                    else
+                    {
+                        SelectedThemas.Remove(DummyThemaList[index]);
+
+                        if (SelectedChapters.Contains(DummyThemaList[index].Chapter))
+                            SelectedChapters.Remove(DummyThemaList[index].Chapter);
+                    }
+                    
+                    updateLabels();
+                    updateButtons();
                     break;
 
                 case "buttonGenerateWord":
@@ -159,6 +182,56 @@ namespace Management_Project
                 buttonDeleteQuestion.BackColor = Color.DarkRed;
                 buttonDeleteQuestion.ForeColor = Color.White;
             }
+
+            if (!SelectMode)
+                return;
+
+            if (SelectedThemas.Contains(DummyThemaList[index]))
+            {
+                buttonSelectQuestion.BackColor = Color.Red;
+                buttonSelectQuestion.Text      = "Απόρριψη Θέματος";
+                labelQuestion.ForeColor        = Color.Green;
+            }
+            else
+            {
+                buttonSelectQuestion.BackColor = Color.Green;
+                buttonSelectQuestion.Text      = "Επιλογή Θέματος";
+                labelQuestion.ForeColor        = Color.Black;
+            }
+
+
+            if (SelectedThemas.Count > 0)
+            {
+                buttonGenerateWord.Enabled   = true;
+                buttonGenerateWord.BackColor = Color.RoyalBlue;
+                buttonGenerateWord.ForeColor = Color.White;
+            }
+            else
+            {
+                buttonGenerateWord.Enabled   = false;
+                buttonGenerateWord.BackColor = Color.DarkGray;
+                buttonGenerateWord.ForeColor = Color.White;
+            }
+        }
+
+        private void updateLabels()
+        {
+            switch (SelectedThemas.Count)
+            {
+                default:
+                    labelOverview.Text = "Θα παραχθούν συνολικά " + SelectedThemas.Count.ToString() + " ερωτήσεις από ";
+                    labelOverview.Text += (SelectedChapters.Count == 1) ? "ένα κεφάλαιο" : SelectedChapters.Count.ToString() + " κεφάλαια.";
+                    break;
+                case 0:
+                    labelOverview.Text = "Δεν θα παραχθεί καμμία ερώτηση.";
+                    break;
+                case 1:
+                    labelOverview.Text = "Θα παραχθεί μία ερώτηση από ένα κεφάλαιο.";
+                    break;
+            }
+
+            float percentage = (float)SelectedThemas.Count * 100 / (float)Thema.AllQuestions.Count;
+            labelOverview.Text += " (" + percentage.ToString() + "%)";
         }
 
         private void Form2_Resize(object sender, EventArgs e)

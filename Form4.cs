@@ -369,7 +369,7 @@ namespace Management_Project
 
         private void ToolStripMenuItemClearSelectionsFromAllChapters_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Είστε σίγουρος ότι θέλετε να εκκαθαρισθούν οι επιλογές σας;", "Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο.", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Είστε σίγουρος ότι θέλετε να εκκαθαρισθούν οι επιλογές σας;", "Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο.", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 return;
 
             int currentSelectedIndex = comboBoxChapters.SelectedIndex;

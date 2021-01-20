@@ -43,6 +43,7 @@
             this.buttonGenerateWord = new System.Windows.Forms.Button();
             this.comboBoxSorting = new System.Windows.Forms.ComboBox();
             this.labelSorting = new System.Windows.Forms.Label();
+            this.labelOverview = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -150,11 +151,18 @@
             resources.ApplyResources(this.labelSorting, "labelSorting");
             this.labelSorting.Name = "labelSorting";
             // 
+            // labelOverview
+            // 
+            resources.ApplyResources(this.labelOverview, "labelOverview");
+            this.labelOverview.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.labelOverview.Name = "labelOverview";
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
+            this.Controls.Add(this.labelOverview);
             this.Controls.Add(this.labelSorting);
             this.Controls.Add(this.comboBoxSorting);
             this.Controls.Add(this.buttonGenerateWord);
@@ -194,5 +202,6 @@
         private System.Windows.Forms.Button buttonGenerateWord;
         private System.Windows.Forms.ComboBox comboBoxSorting;
         private System.Windows.Forms.Label labelSorting;
+        private System.Windows.Forms.Label labelOverview;
     }
 }
