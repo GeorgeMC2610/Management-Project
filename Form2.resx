@@ -678,6 +678,12 @@
   <data name="ToolStripMenuItemManageAnswers.Text" xml:space="preserve">
     <value>Ρυθμίσεις Απαντήσεων</value>
   </data>
+  <data name="επιλογήΓραμματοσειράςToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 20</value>
+  </data>
+  <data name="επιλογήΓραμματοσειράςToolStripMenuItem.Text" xml:space="preserve">
+    <value>Επιλογή Γραμματοσειράς</value>
+  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -702,6 +708,18 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 16</value>
+  </metadata>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>Rich Text Format files|*.rtf</value>
+  </data>
+  <data name="saveFileDialog.Title" xml:space="preserve">
+    <value>Αποθήκευση αρχείου σε μορφή .rtf</value>
+  </data>
+  <metadata name="fontDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>247, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -791,6 +809,24 @@
   </data>
   <data name="&gt;&gt;toolStripComboBoxAnswerOrder.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Name" xml:space="preserve">
+    <value>saveFileDialog</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;επιλογήΓραμματοσειράςToolStripMenuItem.Name" xml:space="preserve">
+    <value>επιλογήΓραμματοσειράςToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;επιλογήΓραμματοσειράςToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Name" xml:space="preserve">
+    <value>fontDialog</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form2</value>

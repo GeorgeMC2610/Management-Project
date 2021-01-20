@@ -55,6 +55,9 @@
             this.ToolStripComboBoxMaxAnswers = new System.Windows.Forms.ToolStripComboBox();
             this.σειράΑπαντήσεωνToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBoxAnswerOrder = new System.Windows.Forms.ToolStripComboBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.επιλογήΓραμματοσειράςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,7 +165,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemThemaSelection,
             this.ToolStripMenuItemAdditionalOptions,
-            this.ToolStripMenuItemManageAnswers});
+            this.ToolStripMenuItemManageAnswers,
+            this.επιλογήΓραμματοσειράςToolStripMenuItem});
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
@@ -250,6 +254,17 @@
             this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
             resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "rtf";
+            this.saveFileDialog.FileName = "Diagonisma.rtf";
+            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+            // 
+            // επιλογήΓραμματοσειράςToolStripMenuItem
+            // 
+            this.επιλογήΓραμματοσειράςToolStripMenuItem.Name = "επιλογήΓραμματοσειράςToolStripMenuItem";
+            resources.ApplyResources(this.επιλογήΓραμματοσειράςToolStripMenuItem, "επιλογήΓραμματοσειράςToolStripMenuItem");
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
@@ -310,5 +325,8 @@
         private System.Windows.Forms.ToolStripMenuItem σειράΑπαντήσεωνToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxAnswerOrder;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReverse;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem επιλογήΓραμματοσειράςToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog;
     }
 }

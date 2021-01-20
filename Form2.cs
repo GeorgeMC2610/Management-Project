@@ -18,6 +18,7 @@ namespace Management_Project
         List<Thema> DummyThemaList = new List<Thema>();
         List<Thema> SelectedThemas = new List<Thema>();
         List<string> SelectedChapters = new List<string>();
+        Random random = new Random();
         bool SelectMode;
 
         public Form2(bool SelectMode)
@@ -163,6 +164,33 @@ namespace Management_Project
                         buttonPrev.PerformClick();
                     break;
             }
+        }
+
+        //μία συνάρτηση τυχαίας επιλογής
+        private List<T> RandomSelectionFromList<T>(List<T> list, int times)
+        {
+            //πρώτα ανακατεύουμε τη λίστα
+            for (int i = 1; i < list.Count; i++)
+            {
+                int rand = random.Next(0, 2);
+
+                if (rand == 0)
+                {
+                    T temp = list[i];
+                    list[i] = list[0];
+                    list[0] = temp;
+                }
+            }
+
+            if (times > list.Count)
+                return list;
+
+            //ύστερα κόβουμε στοιχεία, ώστε να έχει ακριβώς όσα μας είπε ο χρήστης.
+            int itemsToRemove = list.Count - times;
+            for (int i = 0; i < itemsToRemove; i++)
+                list.RemoveAt(0);
+
+            return list;
         }
 
         //to update the questions, I set all the labels to be the corresponding properties
