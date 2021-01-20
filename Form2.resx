@@ -126,7 +126,7 @@
     <value>Arial, 14.25pt</value>
   </data>
   <data name="labelQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 54</value>
+    <value>15, 69</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelQuestion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -136,15 +136,13 @@
     <value>No</value>
   </data>
   <data name="labelQuestion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 44</value>
+    <value>125, 22</value>
   </data>
   <data name="labelQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="labelQuestion.Text" xml:space="preserve">
-    <value>x) Ερώτηση...
-
-</value>
+    <value>x) Ερώτηση...</value>
   </data>
   <data name="labelQuestion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -159,7 +157,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelQuestion.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="labelAnswers.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -195,7 +193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelAnswers.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="labelRightAnswer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -231,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelRightAnswer.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="buttonPrev.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -264,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonPrev.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="labelDifficulty.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -276,7 +274,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelDifficulty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 104</value>
+    <value>16, 119</value>
   </data>
   <data name="labelDifficulty.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -300,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelDifficulty.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="buttonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -336,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonNext.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="labelChapter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -348,7 +346,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelChapter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 80</value>
+    <value>15, 95</value>
   </data>
   <data name="labelChapter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -372,7 +370,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelChapter.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="buttonEditQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -402,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonEditQuestion.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="buttonDeleteQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -435,7 +433,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonDeleteQuestion.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="buttonExit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt, style=Bold</value>
@@ -444,7 +442,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
+    <value>15, 30</value>
   </data>
   <data name="buttonExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 33</value>
@@ -465,7 +463,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonExit.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="buttonSelectQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -498,7 +496,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonSelectQuestion.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="buttonGenerateWord.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -531,82 +529,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonGenerateWord.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="comboBoxSorting.Items" xml:space="preserve">
-    <value>Ανά Κεφάλαιο</value>
-  </data>
-  <data name="comboBoxSorting.Items1" xml:space="preserve">
-    <value>Ανά Δυσκολία</value>
-  </data>
-  <data name="comboBoxSorting.Items2" xml:space="preserve">
-    <value>Ανά Αλφαβητική Σειρά (Ερωτήσεων)</value>
-  </data>
-  <data name="comboBoxSorting.Items3" xml:space="preserve">
-    <value>Ανά Αλφαβητική Σειρά (Κεφαλαίων)</value>
-  </data>
-  <data name="comboBoxSorting.Items4" xml:space="preserve">
-    <value>Σε Σειρά Προσθήκης</value>
-  </data>
-  <data name="comboBoxSorting.Items5" xml:space="preserve">
-    <value>Καμμία (Να ανακατευθούν)</value>
-  </data>
-  <data name="comboBoxSorting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 154</value>
-  </data>
-  <data name="comboBoxSorting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 24</value>
-  </data>
-  <data name="comboBoxSorting.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSorting.Name" xml:space="preserve">
-    <value>comboBoxSorting</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSorting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSorting.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;comboBoxSorting.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="labelSorting.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelSorting.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 14.25pt, style=Bold</value>
-  </data>
-  <data name="labelSorting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelSorting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 129</value>
-  </data>
-  <data name="labelSorting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
-  </data>
-  <data name="labelSorting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
-  </data>
-  <data name="labelSorting.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="labelSorting.Text" xml:space="preserve">
-    <value>ΤΑΞΙΝΟΜΗΣΗ ΘΕΜΑΤΩΝ</value>
-  </data>
-  <data name="&gt;&gt;labelSorting.Name" xml:space="preserve">
-    <value>labelSorting</value>
-  </data>
-  <data name="&gt;&gt;labelSorting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelSorting.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelSorting.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="labelOverview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
@@ -639,7 +562,139 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelOverview.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBoxToWord.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 11.25pt</value>
+  </data>
+  <data name="richTextBoxToWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 380</value>
+  </data>
+  <data name="richTextBoxToWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 121</value>
+  </data>
+  <data name="richTextBoxToWord.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="richTextBoxToWord.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBoxToWord.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxToWord.Name" xml:space="preserve">
+    <value>richTextBoxToWord</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxToWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxToWord.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxToWord.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="ToolStripMenuItemThemaSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 20</value>
+  </data>
+  <data name="ToolStripMenuItemThemaSelection.Text" xml:space="preserve">
+    <value>Επιλογή Θεμάτων</value>
+  </data>
+  <data name="ToolStripMenuItemAdditionalOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="ToolStripMenuItemAdditionalOptions.Text" xml:space="preserve">
+    <value>Ταξινόμηση Θεμάτων</value>
+  </data>
+  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Text" xml:space="preserve">
+    <value>(Max.) Απαντήσεις ανά θέμα</value>
+  </data>
+  <data name="toolStripComboBoxAnswerOrder.Items" xml:space="preserve">
+    <value>Σε σειρά</value>
+  </data>
+  <data name="toolStripComboBoxAnswerOrder.Items1" xml:space="preserve">
+    <value>Ανακατεμμένες</value>
+  </data>
+  <data name="toolStripComboBoxAnswerOrder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="σειράΑπαντήσεωνToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="σειράΑπαντήσεωνToolStripMenuItem.Text" xml:space="preserve">
+    <value>Σειρά Απαντήσεων</value>
+  </data>
+  <data name="ToolStripMenuItemManageAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 20</value>
+  </data>
+  <data name="ToolStripMenuItemManageAnswers.Text" xml:space="preserve">
+    <value>Ρυθμίσεις Απαντήσεων</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1417, 24</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>Επιπρόσθετες Επιλογές</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ToolStripMenuItemSelectAllThemas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 22</value>
+  </data>
+  <data name="ToolStripMenuItemSelectAllThemas.Text" xml:space="preserve">
+    <value>Να συμπεριληφθούν όλα τα θέματα από όλα τα κεφάλαια</value>
+  </data>
+  <data name="ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 22</value>
+  </data>
+  <data name="ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Text" xml:space="preserve">
+    <value>Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items" xml:space="preserve">
+    <value>Ανά Κεφάλαιο</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items1" xml:space="preserve">
+    <value>Ανά Δυσκολία</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items2" xml:space="preserve">
+    <value>Ανά Αλφαβητική Σειρά (Ερωτήσεων)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items3" xml:space="preserve">
+    <value>Ανά Αλφαβητική Σειρά (Κεφαλαίων)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items4" xml:space="preserve">
+    <value>Σε Σειρά Προσθήκης</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items5" xml:space="preserve">
+    <value>Καμμία (Να ανακατευθούν)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 23</value>
+  </data>
+  <data name="ToolStripComboBoxMaxAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -664,6 +719,66 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Προβολή Θεμάτων</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemThemaSelection.Name" xml:space="preserve">
+    <value>ToolStripMenuItemThemaSelection</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemThemaSelection.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemSelectAllThemas.Name" xml:space="preserve">
+    <value>ToolStripMenuItemSelectAllThemas</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemSelectAllThemas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Name" xml:space="preserve">
+    <value>ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemAdditionalOptions.Name" xml:space="preserve">
+    <value>ToolStripMenuItemAdditionalOptions</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemAdditionalOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxSorting.Name" xml:space="preserve">
+    <value>toolStripComboBoxSorting</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxSorting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemManageAnswers.Name" xml:space="preserve">
+    <value>ToolStripMenuItemManageAnswers</value>
+  </data>
+  <data name="&gt;&gt;ToolStripMenuItemManageAnswers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Name" xml:space="preserve">
+    <value>maxΑπαντήσειςΑνάΘέμαToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripComboBoxMaxAnswers.Name" xml:space="preserve">
+    <value>ToolStripComboBoxMaxAnswers</value>
+  </data>
+  <data name="&gt;&gt;ToolStripComboBoxMaxAnswers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;σειράΑπαντήσεωνToolStripMenuItem.Name" xml:space="preserve">
+    <value>σειράΑπαντήσεωνToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;σειράΑπαντήσεωνToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxAnswerOrder.Name" xml:space="preserve">
+    <value>toolStripComboBoxAnswerOrder</value>
+  </data>
+  <data name="&gt;&gt;toolStripComboBoxAnswerOrder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form2</value>

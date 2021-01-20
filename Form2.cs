@@ -24,20 +24,29 @@ namespace Management_Project
         {
             InitializeComponent();
             this.SelectMode = SelectMode;
-            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = comboBoxSorting.Visible = labelSorting.Visible = labelOverview.Visible = SelectMode;
-            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = comboBoxSorting.Enabled = labelSorting.Enabled = labelOverview.Enabled = SelectMode;
+            buttonSelectQuestion.Visible = buttonGenerateWord.Visible = labelOverview.Visible = menuStrip.Visible = SelectMode;
+            buttonSelectQuestion.Enabled = buttonGenerateWord.Enabled = labelOverview.Enabled = menuStrip.Visible = SelectMode;
 
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
 
             this.BackColor = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
             labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen : Color.LightGreen;
+
+            this.Text = (SelectMode)? "Χειροκίνητη Επιλογή Θεμάτων" : "Προβολή Θεμάτων";
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             DummyThemaList.AddRange(Thema.AllQuestions);
-            comboBoxSorting.SelectedIndex = 0;
+            toolStripComboBoxSorting.SelectedIndex     = 0;
+            toolStripComboBoxAnswerOrder.SelectedIndex = 0;
+
+            for (int i = 1; i <= Thema.mostAnswers; i++)
+                ToolStripComboBoxMaxAnswers.Items.Add(i.ToString());
+
+            ToolStripComboBoxMaxAnswers.SelectedIndex = Thema.mostAnswers - 1;
+
             updateQuestions();
             updateButtons();
             updateLabels();

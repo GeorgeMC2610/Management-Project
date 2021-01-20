@@ -463,7 +463,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Παραγωγή Αρχείου Word";
+            this.Text = "Τυχαία Επιλογή Θεμάτων";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).EndInit();

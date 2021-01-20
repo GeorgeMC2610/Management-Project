@@ -41,9 +41,20 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSelectQuestion = new System.Windows.Forms.Button();
             this.buttonGenerateWord = new System.Windows.Forms.Button();
-            this.comboBoxSorting = new System.Windows.Forms.ComboBox();
-            this.labelSorting = new System.Windows.Forms.Label();
             this.labelOverview = new System.Windows.Forms.Label();
+            this.richTextBoxToWord = new System.Windows.Forms.RichTextBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItemThemaSelection = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSelectAllThemas = new System.Windows.Forms.ToolStripMenuItem();
+            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAdditionalOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBoxSorting = new System.Windows.Forms.ToolStripComboBox();
+            this.ToolStripMenuItemManageAnswers = new System.Windows.Forms.ToolStripMenuItem();
+            this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripComboBoxMaxAnswers = new System.Windows.Forms.ToolStripComboBox();
+            this.σειράΑπαντήσεωνToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBoxAnswerOrder = new System.Windows.Forms.ToolStripComboBox();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelQuestion
@@ -132,39 +143,110 @@
             this.buttonGenerateWord.UseVisualStyleBackColor = false;
             this.buttonGenerateWord.Click += new System.EventHandler(this.AnyButtonClicked);
             // 
-            // comboBoxSorting
-            // 
-            this.comboBoxSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSorting.FormattingEnabled = true;
-            this.comboBoxSorting.Items.AddRange(new object[] {
-            resources.GetString("comboBoxSorting.Items"),
-            resources.GetString("comboBoxSorting.Items1"),
-            resources.GetString("comboBoxSorting.Items2"),
-            resources.GetString("comboBoxSorting.Items3"),
-            resources.GetString("comboBoxSorting.Items4"),
-            resources.GetString("comboBoxSorting.Items5")});
-            resources.ApplyResources(this.comboBoxSorting, "comboBoxSorting");
-            this.comboBoxSorting.Name = "comboBoxSorting";
-            // 
-            // labelSorting
-            // 
-            resources.ApplyResources(this.labelSorting, "labelSorting");
-            this.labelSorting.Name = "labelSorting";
-            // 
             // labelOverview
             // 
             resources.ApplyResources(this.labelOverview, "labelOverview");
             this.labelOverview.ForeColor = System.Drawing.SystemColors.GrayText;
             this.labelOverview.Name = "labelOverview";
             // 
+            // richTextBoxToWord
+            // 
+            this.richTextBoxToWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.richTextBoxToWord, "richTextBoxToWord");
+            this.richTextBoxToWord.Name = "richTextBoxToWord";
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemThemaSelection,
+            this.ToolStripMenuItemAdditionalOptions,
+            this.ToolStripMenuItemManageAnswers});
+            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.menuStrip.Name = "menuStrip";
+            // 
+            // ToolStripMenuItemThemaSelection
+            // 
+            this.ToolStripMenuItemThemaSelection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemSelectAllThemas,
+            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem});
+            this.ToolStripMenuItemThemaSelection.Name = "ToolStripMenuItemThemaSelection";
+            resources.ApplyResources(this.ToolStripMenuItemThemaSelection, "ToolStripMenuItemThemaSelection");
+            // 
+            // ToolStripMenuItemSelectAllThemas
+            // 
+            this.ToolStripMenuItemSelectAllThemas.Name = "ToolStripMenuItemSelectAllThemas";
+            resources.ApplyResources(this.ToolStripMenuItemSelectAllThemas, "ToolStripMenuItemSelectAllThemas");
+            // 
+            // ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem
+            // 
+            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Name = "ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem";
+            resources.ApplyResources(this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem, "ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem");
+            // 
+            // ToolStripMenuItemAdditionalOptions
+            // 
+            this.ToolStripMenuItemAdditionalOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBoxSorting});
+            this.ToolStripMenuItemAdditionalOptions.Name = "ToolStripMenuItemAdditionalOptions";
+            resources.ApplyResources(this.ToolStripMenuItemAdditionalOptions, "ToolStripMenuItemAdditionalOptions");
+            // 
+            // toolStripComboBoxSorting
+            // 
+            this.toolStripComboBoxSorting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBoxSorting.Items.AddRange(new object[] {
+            resources.GetString("toolStripComboBoxSorting.Items"),
+            resources.GetString("toolStripComboBoxSorting.Items1"),
+            resources.GetString("toolStripComboBoxSorting.Items2"),
+            resources.GetString("toolStripComboBoxSorting.Items3"),
+            resources.GetString("toolStripComboBoxSorting.Items4"),
+            resources.GetString("toolStripComboBoxSorting.Items5")});
+            this.toolStripComboBoxSorting.Name = "toolStripComboBoxSorting";
+            resources.ApplyResources(this.toolStripComboBoxSorting, "toolStripComboBoxSorting");
+            // 
+            // ToolStripMenuItemManageAnswers
+            // 
+            this.ToolStripMenuItemManageAnswers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem,
+            this.σειράΑπαντήσεωνToolStripMenuItem});
+            this.ToolStripMenuItemManageAnswers.Name = "ToolStripMenuItemManageAnswers";
+            resources.ApplyResources(this.ToolStripMenuItemManageAnswers, "ToolStripMenuItemManageAnswers");
+            // 
+            // maxΑπαντήσειςΑνάΘέμαToolStripMenuItem
+            // 
+            this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripComboBoxMaxAnswers});
+            this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Name = "maxΑπαντήσειςΑνάΘέμαToolStripMenuItem";
+            resources.ApplyResources(this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem, "maxΑπαντήσειςΑνάΘέμαToolStripMenuItem");
+            // 
+            // ToolStripComboBoxMaxAnswers
+            // 
+            this.ToolStripComboBoxMaxAnswers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ToolStripComboBoxMaxAnswers.Name = "ToolStripComboBoxMaxAnswers";
+            resources.ApplyResources(this.ToolStripComboBoxMaxAnswers, "ToolStripComboBoxMaxAnswers");
+            // 
+            // σειράΑπαντήσεωνToolStripMenuItem
+            // 
+            this.σειράΑπαντήσεωνToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripComboBoxAnswerOrder});
+            this.σειράΑπαντήσεωνToolStripMenuItem.Name = "σειράΑπαντήσεωνToolStripMenuItem";
+            resources.ApplyResources(this.σειράΑπαντήσεωνToolStripMenuItem, "σειράΑπαντήσεωνToolStripMenuItem");
+            // 
+            // toolStripComboBoxAnswerOrder
+            // 
+            this.toolStripComboBoxAnswerOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBoxAnswerOrder.Items.AddRange(new object[] {
+            resources.GetString("toolStripComboBoxAnswerOrder.Items"),
+            resources.GetString("toolStripComboBoxAnswerOrder.Items1")});
+            this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
+            resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
+            this.Controls.Add(this.richTextBoxToWord);
             this.Controls.Add(this.labelOverview);
-            this.Controls.Add(this.labelSorting);
-            this.Controls.Add(this.comboBoxSorting);
             this.Controls.Add(this.buttonGenerateWord);
             this.Controls.Add(this.buttonSelectQuestion);
             this.Controls.Add(this.buttonExit);
@@ -177,10 +259,14 @@
             this.Controls.Add(this.labelRightAnswer);
             this.Controls.Add(this.labelAnswers);
             this.Controls.Add(this.labelQuestion);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Resize += new System.EventHandler(this.Form2_Resize);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,8 +286,18 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSelectQuestion;
         private System.Windows.Forms.Button buttonGenerateWord;
-        private System.Windows.Forms.ComboBox comboBoxSorting;
-        private System.Windows.Forms.Label labelSorting;
         private System.Windows.Forms.Label labelOverview;
+        private System.Windows.Forms.RichTextBox richTextBoxToWord;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAdditionalOptions;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBoxSorting;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemThemaSelection;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectAllThemas;
+        private System.Windows.Forms.ToolStripMenuItem ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemManageAnswers;
+        private System.Windows.Forms.ToolStripMenuItem maxΑπαντήσειςΑνάΘέμαToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox ToolStripComboBoxMaxAnswers;
+        private System.Windows.Forms.ToolStripMenuItem σειράΑπαντήσεωνToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBoxAnswerOrder;
     }
 }
