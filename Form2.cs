@@ -30,8 +30,8 @@ namespace Management_Project
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
 
-            this.BackColor = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
-            labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen : Color.LightGreen;
+            this.BackColor             = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
+            labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen                      : Color.LightGreen;
 
             this.Text = (SelectMode)? "Χειροκίνητη Επιλογή Θεμάτων" : "Προβολή Θεμάτων";
         }
@@ -112,6 +112,56 @@ namespace Management_Project
                     break;
 
                 case "buttonGenerateWord":
+                    break;
+            }
+        }
+
+        private void AnyToolStripItemClickedOrChanged(object sender, EventArgs e)
+        {
+            string name;
+
+            if (sender.GetType() == typeof(ToolStripMenuItem))
+            {
+                ToolStripMenuItem toolStripItem  = (ToolStripMenuItem)sender;
+                name = toolStripItem.Name;
+            }
+            else
+            {
+                ToolStripComboBox comboBox = (ToolStripComboBox)sender;
+                name = comboBox.Name;
+            }
+
+            switch (name)
+            {
+                case "ToolStripMenuItemSelectAllThemas":
+                    int previous_index = index;
+
+                    while (index != 0)
+                        buttonPrev.PerformClick();
+
+                    for (int i = 0; i < DummyThemaList.Count; i++)
+                    {
+                        if (buttonSelectQuestion.Text.Equals("Επιλογή Θέματος"))
+                            buttonSelectQuestion.PerformClick();
+
+                        buttonNext.PerformClick();
+                    }
+
+                    while (index != previous_index)
+                        buttonPrev.PerformClick();
+
+                    break;
+
+                case "ToolStripMenuItemClearSelections":
+                    break;
+
+                case "toolStripComboBoxSorting":
+                    break;
+
+                case "ToolStripComboBoxMaxAnswers":
+                    break;
+
+                case "toolStripComboBoxAnswerOrder":
                     break;
             }
         }

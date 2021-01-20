@@ -46,7 +46,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItemThemaSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSelectAllThemas = new System.Windows.Forms.ToolStripMenuItem();
-            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemClearSelections = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAdditionalOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBoxSorting = new System.Windows.Forms.ToolStripComboBox();
             this.ToolStripMenuItemManageAnswers = new System.Windows.Forms.ToolStripMenuItem();
@@ -169,7 +169,7 @@
             // 
             this.ToolStripMenuItemThemaSelection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemSelectAllThemas,
-            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem});
+            this.ToolStripMenuItemClearSelections});
             this.ToolStripMenuItemThemaSelection.Name = "ToolStripMenuItemThemaSelection";
             resources.ApplyResources(this.ToolStripMenuItemThemaSelection, "ToolStripMenuItemThemaSelection");
             // 
@@ -177,11 +177,13 @@
             // 
             this.ToolStripMenuItemSelectAllThemas.Name = "ToolStripMenuItemSelectAllThemas";
             resources.ApplyResources(this.ToolStripMenuItemSelectAllThemas, "ToolStripMenuItemSelectAllThemas");
+            this.ToolStripMenuItemSelectAllThemas.Click += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
-            // ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem
+            // ToolStripMenuItemClearSelections
             // 
-            this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem.Name = "ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem";
-            resources.ApplyResources(this.ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem, "ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem");
+            this.ToolStripMenuItemClearSelections.Name = "ToolStripMenuItemClearSelections";
+            resources.ApplyResources(this.ToolStripMenuItemClearSelections, "ToolStripMenuItemClearSelections");
+            this.ToolStripMenuItemClearSelections.Click += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // ToolStripMenuItemAdditionalOptions
             // 
@@ -202,6 +204,7 @@
             resources.GetString("toolStripComboBoxSorting.Items5")});
             this.toolStripComboBoxSorting.Name = "toolStripComboBoxSorting";
             resources.ApplyResources(this.toolStripComboBoxSorting, "toolStripComboBoxSorting");
+            this.toolStripComboBoxSorting.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // ToolStripMenuItemManageAnswers
             // 
@@ -223,6 +226,7 @@
             this.ToolStripComboBoxMaxAnswers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ToolStripComboBoxMaxAnswers.Name = "ToolStripComboBoxMaxAnswers";
             resources.ApplyResources(this.ToolStripComboBoxMaxAnswers, "ToolStripComboBoxMaxAnswers");
+            this.ToolStripComboBoxMaxAnswers.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // σειράΑπαντήσεωνToolStripMenuItem
             // 
@@ -239,6 +243,7 @@
             resources.GetString("toolStripComboBoxAnswerOrder.Items1")});
             this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
             resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
+            this.toolStripComboBoxAnswerOrder.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // Form2
             // 
@@ -293,7 +298,7 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxSorting;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemThemaSelection;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectAllThemas;
-        private System.Windows.Forms.ToolStripMenuItem ναΜηνΣυμπεριληφθείΤίποταToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClearSelections;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemManageAnswers;
         private System.Windows.Forms.ToolStripMenuItem maxΑπαντήσειςΑνάΘέμαToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox ToolStripComboBoxMaxAnswers;
