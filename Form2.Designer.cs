@@ -49,6 +49,7 @@
             this.ToolStripMenuItemClearSelections = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAdditionalOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBoxSorting = new System.Windows.Forms.ToolStripComboBox();
+            this.ToolStripMenuItemReverse = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemManageAnswers = new System.Windows.Forms.ToolStripMenuItem();
             this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripComboBoxMaxAnswers = new System.Windows.Forms.ToolStripComboBox();
@@ -188,7 +189,8 @@
             // ToolStripMenuItemAdditionalOptions
             // 
             this.ToolStripMenuItemAdditionalOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBoxSorting});
+            this.toolStripComboBoxSorting,
+            this.ToolStripMenuItemReverse});
             this.ToolStripMenuItemAdditionalOptions.Name = "ToolStripMenuItemAdditionalOptions";
             resources.ApplyResources(this.ToolStripMenuItemAdditionalOptions, "ToolStripMenuItemAdditionalOptions");
             // 
@@ -204,7 +206,12 @@
             resources.GetString("toolStripComboBoxSorting.Items5")});
             this.toolStripComboBoxSorting.Name = "toolStripComboBoxSorting";
             resources.ApplyResources(this.toolStripComboBoxSorting, "toolStripComboBoxSorting");
-            this.toolStripComboBoxSorting.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
+            // 
+            // ToolStripMenuItemReverse
+            // 
+            this.ToolStripMenuItemReverse.CheckOnClick = true;
+            this.ToolStripMenuItemReverse.Name = "ToolStripMenuItemReverse";
+            resources.ApplyResources(this.ToolStripMenuItemReverse, "ToolStripMenuItemReverse");
             // 
             // ToolStripMenuItemManageAnswers
             // 
@@ -226,7 +233,6 @@
             this.ToolStripComboBoxMaxAnswers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ToolStripComboBoxMaxAnswers.Name = "ToolStripComboBoxMaxAnswers";
             resources.ApplyResources(this.ToolStripComboBoxMaxAnswers, "ToolStripComboBoxMaxAnswers");
-            this.ToolStripComboBoxMaxAnswers.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // σειράΑπαντήσεωνToolStripMenuItem
             // 
@@ -243,7 +249,6 @@
             resources.GetString("toolStripComboBoxAnswerOrder.Items1")});
             this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
             resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
-            this.toolStripComboBoxAnswerOrder.SelectedIndexChanged += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
             // 
             // Form2
             // 
@@ -304,5 +309,6 @@
         private System.Windows.Forms.ToolStripComboBox ToolStripComboBoxMaxAnswers;
         private System.Windows.Forms.ToolStripMenuItem σειράΑπαντήσεωνToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxAnswerOrder;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReverse;
     }
 }

@@ -118,23 +118,13 @@ namespace Management_Project
 
         private void AnyToolStripItemClickedOrChanged(object sender, EventArgs e)
         {
-            string name;
+            ToolStripMenuItem pressed = (ToolStripMenuItem)sender;
 
-            if (sender.GetType() == typeof(ToolStripMenuItem))
-            {
-                ToolStripMenuItem toolStripItem  = (ToolStripMenuItem)sender;
-                name = toolStripItem.Name;
-            }
-            else
-            {
-                ToolStripComboBox comboBox = (ToolStripComboBox)sender;
-                name = comboBox.Name;
-            }
-
-            switch (name)
+            int previous_index;
+            switch (pressed.Name)
             {
                 case "ToolStripMenuItemSelectAllThemas":
-                    int previous_index = index;
+                    previous_index = index;
 
                     while (index != 0)
                         buttonPrev.PerformClick();
@@ -153,15 +143,24 @@ namespace Management_Project
                     break;
 
                 case "ToolStripMenuItemClearSelections":
-                    break;
+                    if (MessageBox.Show("Είστε σίγουρος ότι θέλετε να γίνει εκκαθάριση των επιλογών σας;", "Εκκαθάριση Επιλογών", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        return;
 
-                case "toolStripComboBoxSorting":
-                    break;
+                    previous_index = index;
 
-                case "ToolStripComboBoxMaxAnswers":
-                    break;
+                    while (index != 0)
+                        buttonPrev.PerformClick();
 
-                case "toolStripComboBoxAnswerOrder":
+                    for (int i = 0; i < DummyThemaList.Count; i++)
+                    {
+                        if (buttonSelectQuestion.Text.Equals("Απόρριψη Θέματος"))
+                            buttonSelectQuestion.PerformClick();
+
+                        buttonNext.PerformClick();
+                    }
+
+                    while (index != previous_index)
+                        buttonPrev.PerformClick();
                     break;
             }
         }
