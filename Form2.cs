@@ -45,7 +45,7 @@ namespace Management_Project
             for (int i = 2; i <= Thema.mostAnswers; i++)
                 ToolStripComboBoxMaxAnswers.Items.Add(i.ToString());
 
-            ToolStripComboBoxMaxAnswers.SelectedIndex = 0;
+            ToolStripComboBoxMaxAnswers.SelectedIndex = ToolStripComboBoxMaxAnswers.Items.Count - 1;
 
             updateQuestions();
             updateButtons();
@@ -60,6 +60,13 @@ namespace Management_Project
             switch (buttonClicked.Name)
             {
                 case "buttonExit":
+                    if (SelectMode)
+                    {
+                        new Form1().Show();
+                        Close();
+                        return;
+                    }
+
                     Thema.SaveQuestions();
                     new Form1().Show();
                     Close();
@@ -102,7 +109,7 @@ namespace Management_Project
                         if (!SelectedChapters.Contains(DummyThemaList[index].Chapter))
                             SelectedChapters.Add(DummyThemaList[index].Chapter);
                     }
-                        
+
                     else
                     {
                         SelectedThemas.Remove(DummyThemaList[index]);
@@ -110,7 +117,7 @@ namespace Management_Project
                         if (SelectedChapters.Contains(DummyThemaList[index].Chapter))
                             SelectedChapters.Remove(DummyThemaList[index].Chapter);
                     }
-                    
+
                     updateLabels();
                     updateButtons();
                     break;
@@ -207,8 +214,17 @@ namespace Management_Project
                     }
 
                     richTextBoxToWord.SaveFile(saveFileDialog.FileName);
+
                     DummyThemaList.Clear();
+                    Thema.AcquireQuestions();
                     DummyThemaList.AddRange(Thema.AllQuestions);
+
+                    for (i = 0; i < SelectedThemas.Count; i++)
+                        for (int j = 0; j < DummyThemaList.Count; j++)
+                            if (SelectedThemas[i].Question.Equals(DummyThemaList[j].Question))
+                                SelectedThemas[i] = DummyThemaList[j];
+                        
+
                     break;
             }
         }

@@ -290,6 +290,7 @@ namespace Management_Project
             }
 
             richTextBoxToWord.SaveFile(saveFileDialog1.FileName);
+            Thema.AcquireQuestions();
         }
 
         //μία συνάρτηση τυχαίας επιλογής
