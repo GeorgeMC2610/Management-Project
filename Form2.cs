@@ -163,6 +163,13 @@ namespace Management_Project
                     while (index != previous_index)
                         buttonPrev.PerformClick();
                     break;
+
+                case "ToolStripMenuItemSelectFont":
+                    if (fontDialog.ShowDialog() == DialogResult.Cancel)
+                        return;
+
+                    richTextBoxToWord.Font = fontDialog.Font;
+                    break;
             }
         }
 

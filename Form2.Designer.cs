@@ -55,8 +55,8 @@
             this.ToolStripComboBoxMaxAnswers = new System.Windows.Forms.ToolStripComboBox();
             this.σειράΑπαντήσεωνToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBoxAnswerOrder = new System.Windows.Forms.ToolStripComboBox();
+            this.ToolStripMenuItemSelectFont = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.επιλογήΓραμματοσειράςToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +166,7 @@
             this.ToolStripMenuItemThemaSelection,
             this.ToolStripMenuItemAdditionalOptions,
             this.ToolStripMenuItemManageAnswers,
-            this.επιλογήΓραμματοσειράςToolStripMenuItem});
+            this.ToolStripMenuItemSelectFont});
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
@@ -254,16 +254,17 @@
             this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
             resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
             // 
+            // ToolStripMenuItemSelectFont
+            // 
+            this.ToolStripMenuItemSelectFont.Name = "ToolStripMenuItemSelectFont";
+            resources.ApplyResources(this.ToolStripMenuItemSelectFont, "ToolStripMenuItemSelectFont");
+            this.ToolStripMenuItemSelectFont.Click += new System.EventHandler(this.AnyToolStripItemClickedOrChanged);
+            // 
             // saveFileDialog
             // 
             this.saveFileDialog.DefaultExt = "rtf";
             this.saveFileDialog.FileName = "Diagonisma.rtf";
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
-            // 
-            // επιλογήΓραμματοσειράςToolStripMenuItem
-            // 
-            this.επιλογήΓραμματοσειράςToolStripMenuItem.Name = "επιλογήΓραμματοσειράςToolStripMenuItem";
-            resources.ApplyResources(this.επιλογήΓραμματοσειράςToolStripMenuItem, "επιλογήΓραμματοσειράςToolStripMenuItem");
             // 
             // Form2
             // 
@@ -326,7 +327,7 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxAnswerOrder;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReverse;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.ToolStripMenuItem επιλογήΓραμματοσειράςToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectFont;
         private System.Windows.Forms.FontDialog fontDialog;
     }
 }
