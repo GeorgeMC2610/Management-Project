@@ -42,10 +42,10 @@ namespace Management_Project
             DummyThemaList.AddRange(Thema.AllQuestions);
             toolStripComboBoxSorting.SelectedIndex = 0;
 
-            for (int i = 1; i <= Thema.mostAnswers; i++)
+            for (int i = 2; i <= Thema.mostAnswers; i++)
                 ToolStripComboBoxMaxAnswers.Items.Add(i.ToString());
 
-            ToolStripComboBoxMaxAnswers.SelectedIndex = Thema.mostAnswers - 1;
+            ToolStripComboBoxMaxAnswers.SelectedIndex = 0;
 
             updateQuestions();
             updateButtons();
@@ -120,14 +120,14 @@ namespace Management_Project
                     foreach (Thema th in SelectedThemas)
                     {
                         //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
-                        if (th.Answers.Count > ToolStripComboBoxMaxAnswers.SelectedIndex + 1)
+                        if (th.Answers.Count > int.Parse(ToolStripComboBoxMaxAnswers.SelectedItem.ToString()))
                         {
                             //αν πρέπει να έχουμε ανακτεμμένες απαντήσεις
                             if (ToolStripMenuItemRandomizedAnswers.Checked)
                             {
                                 //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
                                 string rightAnswer = th.Answers[th.RightAnswerIndex];
-                                th.Answers = RandomSelectionFromList(th.Answers, ToolStripComboBoxMaxAnswers.SelectedIndex + 1);
+                                th.Answers = RandomSelectionFromList(th.Answers, int.Parse(ToolStripComboBoxMaxAnswers.SelectedItem.ToString()));
                                 //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
                                 if (!th.Answers.Contains(rightAnswer))
                                     th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
@@ -137,11 +137,11 @@ namespace Management_Project
                             {
                                 //κράτα την σωστή απάντηση και μετά κόψε τις υπόλοιπες
                                 string rightAnswer = th.Answers[th.RightAnswerIndex];
-                                int count = th.Answers.Count - ToolStripComboBoxMaxAnswers.SelectedIndex + 1;
+                                int count = th.Answers.Count - int.Parse(ToolStripComboBoxMaxAnswers.SelectedItem.ToString());
                                 for (int AA = 0; AA < count; AA++)
                                     th.Answers.RemoveAt(th.Answers.Count - 1);
                                 //αν η απάντηση βρισκόταν σε μεγαλύτερη θέση από τις απαντήσεις που κόψαμε, τη βάζουμε ως τελευταία.
-                                th.Answers[th.Answers.Count - 1] = (th.RightAnswerIndex + 1 > ToolStripComboBoxMaxAnswers.SelectedIndex + 1) ? rightAnswer : th.Answers[th.Answers.Count - 1];
+                                th.Answers[th.Answers.Count - 1] = (th.RightAnswerIndex + 1 > int.Parse(ToolStripComboBoxMaxAnswers.SelectedItem.ToString())) ? rightAnswer : th.Answers[th.Answers.Count - 1];
                             }
                         }
                         //αλλιώς ανάκατεψε τις απαντήσεις αν πρέπει. Αν δεν πρέπει, σημαίνει ότι τις αφήνουμε όπως είναι.
@@ -182,7 +182,10 @@ namespace Management_Project
                     int i = 0;
                     foreach (Thema th in SelectedThemas)
                     {
-                        richTextBoxToWord.AppendText((i + 1).ToString() + ") " + th.Question + Environment.NewLine + Environment.NewLine);
+                        string Question = (i + 1).ToString() + ") " + th.Question + Environment.NewLine;
+                        int length = richTextBoxToWord.Text.Length;
+                        richTextBoxToWord.AppendText(Question);
+
                         int j = 0;
                         string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
                         string[] GreekNumerals = stringGreekNumerals.Split(',');
@@ -191,7 +194,11 @@ namespace Management_Project
                             richTextBoxToWord.AppendText(GreekNumerals[j] + ". " + answer + Environment.NewLine);
                             j++;
                         }
-                        richTextBoxToWord.AppendText(Environment.NewLine + Environment.NewLine + Environment.NewLine);
+                        richTextBoxToWord.AppendText(Environment.NewLine);
+
+                        richTextBoxToWord.Select(length, Question.Length - 1);
+                        richTextBoxToWord.SelectionFont = new Font(richTextBoxToWord.Font, FontStyle.Bold);
+
                         i++;
                     }
 
