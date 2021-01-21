@@ -597,17 +597,71 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ToolStripMenuItemSelectAllThemas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 22</value>
+  </data>
+  <data name="ToolStripMenuItemSelectAllThemas.Text" xml:space="preserve">
+    <value>Να συμπεριληφθούν όλα τα θέματα από όλα τα κεφάλαια</value>
+  </data>
+  <data name="ToolStripMenuItemClearSelections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>384, 22</value>
+  </data>
+  <data name="ToolStripMenuItemClearSelections.Text" xml:space="preserve">
+    <value>Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο</value>
+  </data>
   <data name="ToolStripMenuItemThemaSelection.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 20</value>
   </data>
   <data name="ToolStripMenuItemThemaSelection.Text" xml:space="preserve">
     <value>Επιλογή Θεμάτων</value>
   </data>
+  <data name="toolStripComboBoxSorting.Items" xml:space="preserve">
+    <value>Ανά Κεφάλαιο</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items1" xml:space="preserve">
+    <value>Ανά Δυσκολία</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items2" xml:space="preserve">
+    <value>Ανά Αλφαβητική Σειρά (Ερωτήσεων)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items3" xml:space="preserve">
+    <value>Ανά Αλφαβητική Σειρά (Κεφαλαίων)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items4" xml:space="preserve">
+    <value>Σε Σειρά Προσθήκης</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Items5" xml:space="preserve">
+    <value>Καμμία (Να ανακατευθούν)</value>
+  </data>
+  <data name="toolStripComboBoxSorting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 23</value>
+  </data>
+  <data name="ToolStripMenuItemReverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 22</value>
+  </data>
+  <data name="ToolStripMenuItemReverse.Text" xml:space="preserve">
+    <value>Αντίστροφα</value>
+  </data>
   <data name="ToolStripMenuItemAdditionalOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 20</value>
   </data>
   <data name="ToolStripMenuItemAdditionalOptions.Text" xml:space="preserve">
     <value>Ταξινόμηση Θεμάτων</value>
+  </data>
+  <data name="ToolStripComboBoxMaxAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Text" xml:space="preserve">
+    <value>(Max.) Απαντήσεις ανά θέμα</value>
+  </data>
+  <data name="ToolStripMenuItemRandomizedAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="ToolStripMenuItemRandomizedAnswers.Text" xml:space="preserve">
+    <value>Ανακατεμμένες Απαντήσεις</value>
   </data>
   <data name="ToolStripMenuItemManageAnswers.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 20</value>
@@ -644,69 +698,6 @@
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>14</value>
-  </data>
-  <data name="ToolStripMenuItemSelectAllThemas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 22</value>
-  </data>
-  <data name="ToolStripMenuItemSelectAllThemas.Text" xml:space="preserve">
-    <value>Να συμπεριληφθούν όλα τα θέματα από όλα τα κεφάλαια</value>
-  </data>
-  <data name="ToolStripMenuItemClearSelections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>384, 22</value>
-  </data>
-  <data name="ToolStripMenuItemClearSelections.Text" xml:space="preserve">
-    <value>Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items" xml:space="preserve">
-    <value>Ανά Κεφάλαιο</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items1" xml:space="preserve">
-    <value>Ανά Δυσκολία</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items2" xml:space="preserve">
-    <value>Ανά Αλφαβητική Σειρά (Ερωτήσεων)</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items3" xml:space="preserve">
-    <value>Ανά Αλφαβητική Σειρά (Κεφαλαίων)</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items4" xml:space="preserve">
-    <value>Σε Σειρά Προσθήκης</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Items5" xml:space="preserve">
-    <value>Καμμία (Να ανακατευθούν)</value>
-  </data>
-  <data name="toolStripComboBoxSorting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 23</value>
-  </data>
-  <data name="ToolStripMenuItemReverse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>290, 22</value>
-  </data>
-  <data name="ToolStripMenuItemReverse.Text" xml:space="preserve">
-    <value>Αντίστροφα</value>
-  </data>
-  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Text" xml:space="preserve">
-    <value>(Max.) Απαντήσεις ανά θέμα</value>
-  </data>
-  <data name="ToolStripComboBoxMaxAnswers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="σειράΑπαντήσεωνToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="σειράΑπαντήσεωνToolStripMenuItem.Text" xml:space="preserve">
-    <value>Σειρά Απαντήσεων</value>
-  </data>
-  <data name="toolStripComboBoxAnswerOrder.Items" xml:space="preserve">
-    <value>Σε σειρά</value>
-  </data>
-  <data name="toolStripComboBoxAnswerOrder.Items1" xml:space="preserve">
-    <value>Ανακατεμμένες</value>
-  </data>
-  <data name="toolStripComboBoxAnswerOrder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
   </data>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 16</value>
@@ -798,17 +789,11 @@
   <data name="&gt;&gt;ToolStripComboBoxMaxAnswers.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;σειράΑπαντήσεωνToolStripMenuItem.Name" xml:space="preserve">
-    <value>σειράΑπαντήσεωνToolStripMenuItem</value>
+  <data name="&gt;&gt;ToolStripMenuItemRandomizedAnswers.Name" xml:space="preserve">
+    <value>ToolStripMenuItemRandomizedAnswers</value>
   </data>
-  <data name="&gt;&gt;σειράΑπαντήσεωνToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStripMenuItemRandomizedAnswers.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAnswerOrder.Name" xml:space="preserve">
-    <value>toolStripComboBoxAnswerOrder</value>
-  </data>
-  <data name="&gt;&gt;toolStripComboBoxAnswerOrder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolStripMenuItemSelectFont.Name" xml:space="preserve">
     <value>ToolStripMenuItemSelectFont</value>

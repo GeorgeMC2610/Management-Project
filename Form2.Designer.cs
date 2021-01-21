@@ -53,8 +53,7 @@
             this.ToolStripMenuItemManageAnswers = new System.Windows.Forms.ToolStripMenuItem();
             this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripComboBoxMaxAnswers = new System.Windows.Forms.ToolStripComboBox();
-            this.σειράΑπαντήσεωνToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBoxAnswerOrder = new System.Windows.Forms.ToolStripComboBox();
+            this.ToolStripMenuItemRandomizedAnswers = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSelectFont = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
@@ -221,7 +220,7 @@
             // 
             this.ToolStripMenuItemManageAnswers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.maxΑπαντήσειςΑνάΘέμαToolStripMenuItem,
-            this.σειράΑπαντήσεωνToolStripMenuItem});
+            this.ToolStripMenuItemRandomizedAnswers});
             this.ToolStripMenuItemManageAnswers.Name = "ToolStripMenuItemManageAnswers";
             resources.ApplyResources(this.ToolStripMenuItemManageAnswers, "ToolStripMenuItemManageAnswers");
             // 
@@ -238,21 +237,11 @@
             this.ToolStripComboBoxMaxAnswers.Name = "ToolStripComboBoxMaxAnswers";
             resources.ApplyResources(this.ToolStripComboBoxMaxAnswers, "ToolStripComboBoxMaxAnswers");
             // 
-            // σειράΑπαντήσεωνToolStripMenuItem
+            // ToolStripMenuItemRandomizedAnswers
             // 
-            this.σειράΑπαντήσεωνToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBoxAnswerOrder});
-            this.σειράΑπαντήσεωνToolStripMenuItem.Name = "σειράΑπαντήσεωνToolStripMenuItem";
-            resources.ApplyResources(this.σειράΑπαντήσεωνToolStripMenuItem, "σειράΑπαντήσεωνToolStripMenuItem");
-            // 
-            // toolStripComboBoxAnswerOrder
-            // 
-            this.toolStripComboBoxAnswerOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBoxAnswerOrder.Items.AddRange(new object[] {
-            resources.GetString("toolStripComboBoxAnswerOrder.Items"),
-            resources.GetString("toolStripComboBoxAnswerOrder.Items1")});
-            this.toolStripComboBoxAnswerOrder.Name = "toolStripComboBoxAnswerOrder";
-            resources.ApplyResources(this.toolStripComboBoxAnswerOrder, "toolStripComboBoxAnswerOrder");
+            this.ToolStripMenuItemRandomizedAnswers.CheckOnClick = true;
+            this.ToolStripMenuItemRandomizedAnswers.Name = "ToolStripMenuItemRandomizedAnswers";
+            resources.ApplyResources(this.ToolStripMenuItemRandomizedAnswers, "ToolStripMenuItemRandomizedAnswers");
             // 
             // ToolStripMenuItemSelectFont
             // 
@@ -323,8 +312,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemManageAnswers;
         private System.Windows.Forms.ToolStripMenuItem maxΑπαντήσειςΑνάΘέμαToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox ToolStripComboBoxMaxAnswers;
-        private System.Windows.Forms.ToolStripMenuItem σειράΑπαντήσεωνToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBoxAnswerOrder;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemRandomizedAnswers;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemReverse;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSelectFont;

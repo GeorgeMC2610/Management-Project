@@ -40,8 +40,7 @@ namespace Management_Project
         private void Form2_Load(object sender, EventArgs e)
         {
             DummyThemaList.AddRange(Thema.AllQuestions);
-            toolStripComboBoxSorting.SelectedIndex     = 0;
-            toolStripComboBoxAnswerOrder.SelectedIndex = 0;
+            toolStripComboBoxSorting.SelectedIndex = 0;
 
             for (int i = 1; i <= Thema.mostAnswers; i++)
                 ToolStripComboBoxMaxAnswers.Items.Add(i.ToString());
@@ -113,6 +112,90 @@ namespace Management_Project
                     break;
 
                 case "buttonGenerateWord":
+                    if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                        return;
+
+                    richTextBoxToWord.Text = "";
+
+                    foreach (Thema th in SelectedThemas)
+                    {
+                        //Αν οι απαντήσεις που πρόκειται να μπουν είναι μεγαλύτερες σε πλήθος από τις μέγιστες επιτρεπόμενες
+                        if (th.Answers.Count > ToolStripComboBoxMaxAnswers.SelectedIndex + 1)
+                        {
+                            //αν πρέπει να έχουμε ανακτεμμένες απαντήσεις
+                            if (ToolStripMenuItemRandomizedAnswers.Checked)
+                            {
+                                //κράτα την σωστή απάντηση και μετά κόψε μερικά στοιχεία από τη λίστα
+                                string rightAnswer = th.Answers[th.RightAnswerIndex];
+                                th.Answers = RandomSelectionFromList(th.Answers, ToolStripComboBoxMaxAnswers.SelectedIndex + 1);
+                                //αν δεν βρεις την σωστή απάντηση μέσα στη λίστα, βάλ' την
+                                if (!th.Answers.Contains(rightAnswer))
+                                    th.Answers[random.Next(th.Answers.Count)] = rightAnswer;
+                            }
+                            //αν δεν πρέπει να 'χουμε ανακατεμμένες απαντήσεις
+                            else
+                            {
+                                //κράτα την σωστή απάντηση και μετά κόψε τις υπόλοιπες
+                                string rightAnswer = th.Answers[th.RightAnswerIndex];
+                                int count = th.Answers.Count - ToolStripComboBoxMaxAnswers.SelectedIndex + 1;
+                                for (int AA = 0; AA < count; AA++)
+                                    th.Answers.RemoveAt(th.Answers.Count - 1);
+                                //αν η απάντηση βρισκόταν σε μεγαλύτερη θέση από τις απαντήσεις που κόψαμε, τη βάζουμε ως τελευταία.
+                                th.Answers[th.Answers.Count - 1] = (th.RightAnswerIndex + 1 > ToolStripComboBoxMaxAnswers.SelectedIndex + 1) ? rightAnswer : th.Answers[th.Answers.Count - 1];
+                            }
+                        }
+                        //αλλιώς ανάκατεψε τις απαντήσεις αν πρέπει. Αν δεν πρέπει, σημαίνει ότι τις αφήνουμε όπως είναι.
+                        else if (ToolStripMenuItemRandomizedAnswers.Checked)
+                            th.Answers = RandomSelectionFromList(th.Answers, th.Answers.Count);
+                    }
+
+                    switch (toolStripComboBoxSorting.SelectedIndex)
+                    {
+                        //στην περίπτωση που ο χρήστης έχει επιλέξει κανονική κατάταξη, δεν κάνουμε τίποτα. Τα θέματα είναι ήδη ανά κεφάλαιο
+                        case 0:
+                            break;
+                        //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute ερώτησης
+                        case 1:
+                            SelectedThemas = SelectedThemas.OrderBy(th => th.Difficulty).ToList();
+                            break;
+                        //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute κεφαλαίου
+                        case 2:
+                            SelectedThemas = SelectedThemas.OrderBy(th => th.Question).ToList();
+                            break;
+                        case 3:
+                            SelectedThemas = SelectedThemas.OrderBy(th => th.Chapter).ToList();
+                            break;
+                        //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute δυσκολίας
+                        case 4:
+                            SelectedThemas = SelectedThemas.OrderBy(th => Thema.AllQuestions).ToList();
+                            break;
+                        //χρησιμοποιούμε την φτιαχτή RandomSelectionFromList για να παραχθεί μία τυχαία λίστα.
+                        case 5:
+                            SelectedThemas = RandomSelectionFromList(SelectedThemas, SelectedThemas.Count);
+                            break;
+                    }
+
+                    if (ToolStripMenuItemReverse.Checked)
+                        SelectedThemas.Reverse();
+
+                    //ύστερα παράγουμε το αρχείο μέσω του richtextbox
+                    int i = 0;
+                    foreach (Thema th in SelectedThemas)
+                    {
+                        richTextBoxToWord.AppendText((i + 1).ToString() + ") " + th.Question + Environment.NewLine + Environment.NewLine);
+                        int j = 0;
+                        string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
+                        string[] GreekNumerals = stringGreekNumerals.Split(',');
+                        foreach (string answer in th.Answers)
+                        {
+                            richTextBoxToWord.AppendText(GreekNumerals[j] + ". " + answer + Environment.NewLine);
+                            j++;
+                        }
+                        richTextBoxToWord.AppendText(Environment.NewLine + Environment.NewLine + Environment.NewLine);
+                        i++;
+                    }
+
+                    richTextBoxToWord.SaveFile(saveFileDialog.FileName);
                     break;
             }
         }
@@ -125,6 +208,9 @@ namespace Management_Project
             switch (pressed.Name)
             {
                 case "ToolStripMenuItemSelectAllThemas":
+                    if (MessageBox.Show("Είστε σίγουρος ότι θέλετε να επιλέξετε όλα τα θέματα όλων των κεφαλαίων;", "Επιλογή Πάντων", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        return;
+
                     previous_index = index;
 
                     while (index != 0)
@@ -233,8 +319,11 @@ namespace Management_Project
                     j++;
             }
 
-            labelAnswers.Text = sb.ToString();
+            labelAnswers.Text     = sb.ToString();
             labelRightAnswer.Text = GreekNumerals[th.RightAnswerIndex] + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
+
+            labelAnswers.Location     = new Point((Width / 2 - labelAnswers.Width / 2), labelAnswers.Location.Y);
+            labelRightAnswer.Location = new Point((Width / 2 - labelAnswers.Width / 2), labelRightAnswer.Location.Y);
 
             labelChapter.Text = "Κεφάλαιο: " + th.Chapter;
 
