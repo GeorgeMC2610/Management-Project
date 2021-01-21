@@ -84,8 +84,12 @@ namespace Management_Project
                     if (MessageBox.Show("Αν διαγραφεί το θέμα από την τράπεζα, δεν υπάρχει τρόπος επαναφοράς. Έχετε σιγουρευτεί για αυτήν την ενέργεια;", "Διαγραφή Θέματος", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                         return;
 
-                    DummyThemaList.RemoveAt(index);
-                    index = (index == 0) ? DummyThemaList.Count - 1 : index - 1;
+                    Thema.AllQuestions.RemoveAt(index);
+                    index = (index == 0) ? Thema.AllQuestions.Count - 1 : index - 1;
+
+                    DummyThemaList.Clear();
+                    DummyThemaList.AddRange(Thema.AllQuestions);
+
                     updateButtons();
                     updateQuestions();
                     break;
@@ -153,6 +157,7 @@ namespace Management_Project
                     {
                         //στην περίπτωση που ο χρήστης έχει επιλέξει κανονική κατάταξη, δεν κάνουμε τίποτα. Τα θέματα είναι ήδη ανά κεφάλαιο
                         case 0:
+                            SelectedThemas = SelectedThemas.OrderBy(th => Thema.QuestionsByChapter).ToList();
                             break;
                         //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute ερώτησης
                         case 1:
@@ -167,7 +172,6 @@ namespace Management_Project
                             break;
                         //χρησιμοποιούμε Linq για την ταξινόμηση ανά attribute δυσκολίας
                         case 4:
-                            SelectedThemas = SelectedThemas.OrderBy(th => Thema.AllQuestions).ToList();
                             break;
                         //χρησιμοποιούμε την φτιαχτή RandomSelectionFromList για να παραχθεί μία τυχαία λίστα.
                         case 5:
@@ -203,6 +207,8 @@ namespace Management_Project
                     }
 
                     richTextBoxToWord.SaveFile(saveFileDialog.FileName);
+                    DummyThemaList.Clear();
+                    DummyThemaList.AddRange(Thema.AllQuestions);
                     break;
             }
         }

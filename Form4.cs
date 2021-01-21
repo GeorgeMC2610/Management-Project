@@ -269,7 +269,10 @@ namespace Management_Project
             i = 0;
             foreach (Thema th in QuestionsToBeIncluded)
             {
-                richTextBoxToWord.AppendText((i + 1).ToString() + ") " + th.Question + Environment.NewLine);
+                string Question = (i + 1).ToString() + ") " + th.Question + Environment.NewLine;
+                int length = richTextBoxToWord.Text.Length;
+                richTextBoxToWord.AppendText(Question);
+
                 int j = 0;
                 string stringGreekNumerals = "α,β,γ,δ,ε,στ,ζ,η,θ,ι,ια,ιβ,ιγ,ιδ,ιε,ιστ,ιζ,ιη,ιθ,κ,κα,κβ,κγ,κδ,κε,κστ,κζ,κη,κθ";
                 string[] GreekNumerals = stringGreekNumerals.Split(',');
@@ -279,6 +282,10 @@ namespace Management_Project
                     j++;
                 }
                 richTextBoxToWord.AppendText(Environment.NewLine);
+
+                richTextBoxToWord.Select(length, Question.Length - 1);
+                richTextBoxToWord.SelectionFont = new Font(richTextBoxToWord.Font, FontStyle.Bold);
+
                 i++;
             }
 
