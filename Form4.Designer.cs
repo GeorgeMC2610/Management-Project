@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.buttonGenerateWordFile = new System.Windows.Forms.Button();
             this.richTextBoxToWord = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -460,10 +461,12 @@
             this.Controls.Add(this.buttonGenerateWordFile);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Τυχαία Επιλογή Θεμάτων";
+            this.Text = "Τράπεζα Θεμάτων - Παραγωγή Αρχείου Word - Τυχαία Επιλογή Θεμάτων";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form4_FormClosed);
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEasyQuestions)).EndInit();

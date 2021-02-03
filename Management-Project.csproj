@@ -123,5 +123,20 @@
   <ItemGroup>
     <None Include="datastream.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editicon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="editicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="provoli.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="university_logo_small.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

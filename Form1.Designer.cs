@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.wordFileButton = new System.Windows.Forms.Button();
             this.editQuestionsButton = new System.Windows.Forms.Button();
             this.deleteAllQuestionsButton = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.wordFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wordFileButton.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.wordFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.wordFileButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wordFileButton.ForeColor = System.Drawing.Color.White;
             this.wordFileButton.Location = new System.Drawing.Point(10, 461);
@@ -290,11 +292,12 @@
             this.Controls.Add(this.wordFileButton);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Κύριο Μενού";
+            this.Text = "Τράπεζα Θεμάτων - Κύριο Μενού";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -20,6 +20,7 @@ namespace Management_Project
         int index, rightIndex, difficulty;
         string[] answers;
         bool editing;
+        bool controlledExit = false;
 
         public FormAddQuestion()
         {
@@ -233,11 +234,25 @@ namespace Management_Project
                     break;
 
                 case "buttonExit":
+                    if (MessageBox.Show("Θέλετε, πράγματι, να επιστρέψετε στο μενού;", "Επιστροφή Στο Μενού", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        return;
+
+                    controlledExit = true;
                     Thema.SaveQuestions();
                     new Form1().Show();
                     Close();
                     break;
             }
+        }
+        private void FormAddQuestion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (controlledExit)
+                return;
+
+            if (MessageBox.Show("Ενδεχομένως, να έχετε τροποποιήσεις στην Τράπεζα Θεμάτων. Θα θέλατε να αποθηκευτούν αυτές οι αλλαγές;", "Αποθήκευση Αλλαγών", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Thema.SaveQuestions();
+
+            new Form1().Show();
         }
 
         private void AnyTextBoxChanged(object sender, EventArgs e)

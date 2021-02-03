@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddQuestion));
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.labelQuestion = new System.Windows.Forms.Label();
             this.buttonAddQuestion = new System.Windows.Forms.Button();
@@ -287,10 +288,12 @@
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.textBoxQuestion);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddQuestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Προσθήκη Νέου Θέματος";
+            this.Text = "Τράπεζα Θεμάτων - Προσθήκη Νέου Θέματος";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddQuestion_FormClosed);
             this.Load += new System.EventHandler(this.FormAddQuestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

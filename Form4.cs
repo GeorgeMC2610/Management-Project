@@ -121,12 +121,6 @@ namespace Management_Project
             }
         }
 
-        //κλείνουμε τη φόρμα με ασφαλή τρόπο
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new Form1().Show();
-            Close();
-        }
 
         private void buttonIncludeAllChapters_Click(object sender, EventArgs e)
         {
@@ -401,6 +395,16 @@ namespace Management_Project
             numericUpDownEasyQuestions.Value   = 0;
             numericUpDownNormalQuestions.Value = 0;
             numericUpDownHardQuestions.Value   = 0;
+        }
+
+        //κλείνουμε τη φόρμα με ασφαλή τρόπο
+        private void button1_Click(object sender, EventArgs e)
+        {  
+            Close();
+        }
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.OpenForms[0].Show();
         }
 
         private void Form4_Load(object sender, EventArgs e)

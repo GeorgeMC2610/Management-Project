@@ -71,12 +71,42 @@ namespace Management_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon editicon {
+            get {
+                object obj = ResourceManager.GetObject("editicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap haxbackground {
             get {
                 object obj = ResourceManager.GetObject("haxbackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon provoli {
+            get {
+                object obj = ResourceManager.GetObject("provoli", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -97,6 +127,16 @@ namespace Management_Project.Properties {
             get {
                 object obj = ResourceManager.GetObject("unipi2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon university_logo_small {
+            get {
+                object obj = ResourceManager.GetObject("university_logo_small", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

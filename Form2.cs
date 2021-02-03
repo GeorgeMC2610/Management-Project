@@ -19,7 +19,8 @@ namespace Management_Project
         List<Thema> SelectedThemas = new List<Thema>();
         List<string> SelectedChapters = new List<string>();
         Random random = new Random();
-        bool SelectMode;
+        bool SelectMode; 
+        bool controlledExit = false;
 
         public Form2(bool SelectMode)
         {
@@ -34,7 +35,7 @@ namespace Management_Project
             this.BackColor = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
             labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen : Color.LightGreen;
 
-            this.Text = (SelectMode) ? "Χειροκίνητη Επιλογή Θεμάτων" : "Προβολή Θεμάτων";
+            this.Text = (SelectMode) ? "Τράπεζα Θεμάτων - Παραγωγή Αρχείου Word - Χειροκίνητη Επιλογή Θεμάτων" : "Τράπεζα Θεμάτων - Προβολή Θεμάτων";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -52,14 +53,26 @@ namespace Management_Project
             updateLabels();
         }
 
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (controlledExit)
+                return;
+
+            if (MessageBox.Show("Ενδεχομένως η Τράπεζα Θεμάτων να είναι τροποποιημένη. Θα θέλατε να αποθηκευτούν αυτές οι αλλαγές;", "Αποθήκευση Πιθανών Αλλαγών", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Thema.SaveQuestions();
+
+            new Form1().Show();
+        }
+
         private void AnyButtonClicked(object sender, EventArgs e)
         {
             Button buttonClicked = (Button)sender;
 
-
             switch (buttonClicked.Name)
             {
                 case "buttonExit":
+                    controlledExit = true;
+
                     if (SelectMode)
                     {
                         new Form1().Show();
@@ -477,5 +490,6 @@ namespace Management_Project
                 labelQuestion.Font = f;
             }
         }
+
     }
 }
