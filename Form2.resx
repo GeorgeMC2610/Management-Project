@@ -234,6 +234,9 @@
   <data name="buttonPrev.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="buttonPrev.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
+  </data>
   <data name="buttonPrev.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 48pt, style=Bold</value>
   </data>
@@ -302,6 +305,9 @@
   </data>
   <data name="buttonNext.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
+  </data>
+  <data name="buttonNext.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
   </data>
   <data name="buttonNext.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 48pt, style=Bold</value>
@@ -374,6 +380,9 @@
   </data>
   <data name="buttonEditQuestion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="buttonEditQuestion.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>System</value>
   </data>
   <data name="buttonEditQuestion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 15.75pt, style=Bold</value>
@@ -475,7 +484,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonSelectQuestion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 698</value>
+    <value>13, 698</value>
   </data>
   <data name="buttonSelectQuestion.Size" type="System.Drawing.Size, System.Drawing">
     <value>669, 46</value>
@@ -597,6 +606,36 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1417, 24</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>Επιπρόσθετες Επιλογές</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ToolStripMenuItemThemaSelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 20</value>
+  </data>
+  <data name="ToolStripMenuItemThemaSelection.Text" xml:space="preserve">
+    <value>Επιλογή Θεμάτων</value>
+  </data>
   <data name="ToolStripMenuItemSelectAllThemas.Size" type="System.Drawing.Size, System.Drawing">
     <value>384, 22</value>
   </data>
@@ -609,11 +648,11 @@
   <data name="ToolStripMenuItemClearSelections.Text" xml:space="preserve">
     <value>Να μην συμπεριληφθεί τίποτα από κανένα κεφάλαιο</value>
   </data>
-  <data name="ToolStripMenuItemThemaSelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 20</value>
+  <data name="ToolStripMenuItemAdditionalOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
   </data>
-  <data name="ToolStripMenuItemThemaSelection.Text" xml:space="preserve">
-    <value>Επιλογή Θεμάτων</value>
+  <data name="ToolStripMenuItemAdditionalOptions.Text" xml:space="preserve">
+    <value>Ταξινόμηση Θεμάτων</value>
   </data>
   <data name="toolStripComboBoxSorting.Items" xml:space="preserve">
     <value>Ανά Κεφάλαιο</value>
@@ -642,14 +681,11 @@
   <data name="ToolStripMenuItemReverse.Text" xml:space="preserve">
     <value>Αντίστροφα</value>
   </data>
-  <data name="ToolStripMenuItemAdditionalOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 20</value>
+  <data name="ToolStripMenuItemManageAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 20</value>
   </data>
-  <data name="ToolStripMenuItemAdditionalOptions.Text" xml:space="preserve">
-    <value>Ταξινόμηση Θεμάτων</value>
-  </data>
-  <data name="ToolStripComboBoxMaxAnswers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="ToolStripMenuItemManageAnswers.Text" xml:space="preserve">
+    <value>Ρυθμίσεις Απαντήσεων</value>
   </data>
   <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -657,47 +693,20 @@
   <data name="maxΑπαντήσειςΑνάΘέμαToolStripMenuItem.Text" xml:space="preserve">
     <value>(Max.) Απαντήσεις ανά θέμα</value>
   </data>
+  <data name="ToolStripComboBoxMaxAnswers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="ToolStripMenuItemRandomizedAnswers.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="ToolStripMenuItemRandomizedAnswers.Text" xml:space="preserve">
     <value>Ανακατεμμένες Απαντήσεις</value>
   </data>
-  <data name="ToolStripMenuItemManageAnswers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
-  </data>
-  <data name="ToolStripMenuItemManageAnswers.Text" xml:space="preserve">
-    <value>Ρυθμίσεις Απαντήσεων</value>
-  </data>
   <data name="ToolStripMenuItemSelectFont.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
   </data>
   <data name="ToolStripMenuItemSelectFont.Text" xml:space="preserve">
     <value>Επιλογή Γραμματοσειράς</value>
-  </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1417, 24</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>Επιπρόσθετες Επιλογές</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 16</value>
