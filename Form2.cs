@@ -31,10 +31,10 @@ namespace Management_Project
             buttonEditQuestion.Visible = buttonDeleteQuestion.Visible = !SelectMode;
             buttonEditQuestion.Enabled = buttonDeleteQuestion.Enabled = !SelectMode;
 
-            this.BackColor             = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
-            labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen                      : Color.LightGreen;
+            this.BackColor = (SelectMode) ? SystemColors.GradientInactiveCaption : SystemColors.Menu;
+            labelRightAnswer.BackColor = (SelectMode) ? Color.LimeGreen : Color.LightGreen;
 
-            this.Text = (SelectMode)? "Χειροκίνητη Επιλογή Θεμάτων" : "Προβολή Θεμάτων";
+            this.Text = (SelectMode) ? "Χειροκίνητη Επιλογή Θεμάτων" : "Προβολή Θεμάτων";
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -85,6 +85,8 @@ namespace Management_Project
                     break;
 
                 case "buttonEditQuestion":
+                    new FormAddQuestion(DummyThemaList[index].Question, index, DummyThemaList[index].Difficulty, DummyThemaList[index].RightAnswerIndex, DummyThemaList[index].Chapter, DummyThemaList[index].Answers.ToArray()).Show();
+                    Close();
                     break;
 
                 case "buttonDeleteQuestion":
@@ -223,8 +225,6 @@ namespace Management_Project
                         for (int j = 0; j < DummyThemaList.Count; j++)
                             if (SelectedThemas[i].Question.Equals(DummyThemaList[j].Question))
                                 SelectedThemas[i] = DummyThemaList[j];
-                        
-
                     break;
             }
         }
@@ -348,10 +348,10 @@ namespace Management_Project
                     j++;
             }
 
-            labelAnswers.Text     = sb.ToString();
+            labelAnswers.Text = sb.ToString();
             labelRightAnswer.Text = GreekNumerals[th.RightAnswerIndex] + ") " + th.Answers[th.RightAnswerIndex]; //αυτό σημαίνει "η σωστή απάντηση" λμαο.
 
-            labelAnswers.Location     = new Point((Width / 2 - labelAnswers.Width / 2), labelAnswers.Location.Y);
+            labelAnswers.Location = new Point((Width / 2 - labelAnswers.Width / 2), labelAnswers.Location.Y);
             labelRightAnswer.Location = new Point((Width / 2 - labelAnswers.Width / 2), labelRightAnswer.Location.Y);
 
             labelChapter.Text = "Κεφάλαιο: " + th.Chapter;
@@ -400,26 +400,26 @@ namespace Management_Project
             if (SelectedThemas.Contains(DummyThemaList[index]))
             {
                 buttonSelectQuestion.BackColor = Color.Red;
-                buttonSelectQuestion.Text      = "Απόρριψη Θέματος";
-                labelQuestion.ForeColor        = Color.Green;
+                buttonSelectQuestion.Text = "Απόρριψη Θέματος";
+                labelQuestion.ForeColor = Color.Green;
             }
             else
             {
                 buttonSelectQuestion.BackColor = Color.Green;
-                buttonSelectQuestion.Text      = "Επιλογή Θέματος";
-                labelQuestion.ForeColor        = Color.Black;
+                buttonSelectQuestion.Text = "Επιλογή Θέματος";
+                labelQuestion.ForeColor = Color.Black;
             }
 
 
             if (SelectedThemas.Count > 0)
             {
-                buttonGenerateWord.Enabled   = true;
+                buttonGenerateWord.Enabled = true;
                 buttonGenerateWord.BackColor = Color.RoyalBlue;
                 buttonGenerateWord.ForeColor = Color.White;
             }
             else
             {
-                buttonGenerateWord.Enabled   = false;
+                buttonGenerateWord.Enabled = false;
                 buttonGenerateWord.BackColor = Color.DarkGray;
                 buttonGenerateWord.ForeColor = Color.White;
             }
@@ -453,7 +453,7 @@ namespace Management_Project
         private void CheckLabelSize()
         {
             Font f;
-            
+
             f = new Font("Arial", 16f);
             labelQuestion.Font = f;
 
