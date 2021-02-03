@@ -117,5 +117,8 @@
   <ItemGroup>
     <None Include="unipi.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="haxbackground.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

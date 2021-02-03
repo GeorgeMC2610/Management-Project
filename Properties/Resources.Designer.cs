@@ -63,6 +63,16 @@ namespace Management_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap haxbackground {
+            get {
+                object obj = ResourceManager.GetObject("haxbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unipi {
             get {
                 object obj = ResourceManager.GetObject("unipi", resourceCulture);

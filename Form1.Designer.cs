@@ -46,6 +46,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelAvailableQuestions = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.GeorgeMC = new System.Windows.Forms.Label();
+            this.Lefteris = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,8 +102,9 @@
             // 
             this.labelTrapezaThematon.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTrapezaThematon.AutoSize = true;
+            this.labelTrapezaThematon.BackColor = System.Drawing.Color.Transparent;
             this.labelTrapezaThematon.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.labelTrapezaThematon.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelTrapezaThematon.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.labelTrapezaThematon.Location = new System.Drawing.Point(444, 43);
             this.labelTrapezaThematon.Name = "labelTrapezaThematon";
             this.labelTrapezaThematon.Size = new System.Drawing.Size(228, 32);
@@ -215,6 +218,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.deleteAllQuestionsButton);
             this.groupBox1.Controls.Add(this.editQuestionsButton);
+            this.groupBox1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.groupBox1.Location = new System.Drawing.Point(803, 77);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(310, 286);
@@ -234,21 +238,54 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::Management_Project.Properties.Resources.unipi2;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(401, 78);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(331, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // GeorgeMC
+            // 
+            this.GeorgeMC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.GeorgeMC.AutoSize = true;
+            this.GeorgeMC.BackColor = System.Drawing.Color.Transparent;
+            this.GeorgeMC.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.GeorgeMC.ForeColor = System.Drawing.Color.DarkGreen;
+            this.GeorgeMC.Location = new System.Drawing.Point(7, 410);
+            this.GeorgeMC.Name = "GeorgeMC";
+            this.GeorgeMC.Size = new System.Drawing.Size(99, 19);
+            this.GeorgeMC.TabIndex = 8;
+            this.GeorgeMC.Text = "Γιώργος Σεϊμένης";
+            // 
+            // Lefteris
+            // 
+            this.Lefteris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Lefteris.AutoSize = true;
+            this.Lefteris.BackColor = System.Drawing.Color.Transparent;
+            this.Lefteris.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Lefteris.ForeColor = System.Drawing.Color.DarkGreen;
+            this.Lefteris.Location = new System.Drawing.Point(6, 429);
+            this.Lefteris.Name = "Lefteris";
+            this.Lefteris.Size = new System.Drawing.Size(123, 19);
+            this.Lefteris.TabIndex = 9;
+            this.Lefteris.Text = "Λευτέρης Λαμπράκος ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Management_Project.Properties.Resources.haxbackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1123, 524);
+            this.Controls.Add(this.Lefteris);
+            this.Controls.Add(this.GeorgeMC);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTrapezaThematon);
@@ -293,6 +330,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4_episkophsh_thematwn;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1_ti_einai_auth_h_egarmogh;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label GeorgeMC;
+        private System.Windows.Forms.Label Lefteris;
     }
 }
 
