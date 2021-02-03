@@ -120,5 +120,8 @@
   <ItemGroup>
     <None Include="haxbackground.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="datastream.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

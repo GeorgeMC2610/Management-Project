@@ -105,7 +105,7 @@
             this.labelTrapezaThematon.BackColor = System.Drawing.Color.Transparent;
             this.labelTrapezaThematon.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelTrapezaThematon.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.labelTrapezaThematon.Location = new System.Drawing.Point(444, 43);
+            this.labelTrapezaThematon.Location = new System.Drawing.Point(444, 28);
             this.labelTrapezaThematon.Name = "labelTrapezaThematon";
             this.labelTrapezaThematon.Size = new System.Drawing.Size(228, 32);
             this.labelTrapezaThematon.TabIndex = 3;
@@ -152,14 +152,14 @@
             // toolStripMenuItem1_Δημιουργοί
             // 
             this.toolStripMenuItem1_Δημιουργοί.Name = "toolStripMenuItem1_Δημιουργοί";
-            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1_Δημιουργοί.Text = "Δημιουργοί";
             this.toolStripMenuItem1_Δημιουργοί.Click += new System.EventHandler(this.toolStripMenuItem1_Δημιουργοί_Click);
             // 
             // toolStripMenuItem2_Σκοπός
             // 
             this.toolStripMenuItem2_Σκοπός.Name = "toolStripMenuItem2_Σκοπός";
-            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2_Σκοπός.Text = "Επικοινωνίες";
             this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
             // 
@@ -238,12 +238,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::Management_Project.Properties.Resources.unipi2;
-            this.pictureBox1.Location = new System.Drawing.Point(401, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(331, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -281,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Management_Project.Properties.Resources.haxbackground;
+            this.BackgroundImage = global::Management_Project.Properties.Resources.datastream;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1123, 524);
             this.Controls.Add(this.Lefteris);

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -98,7 +99,7 @@ namespace Management_Project
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            
         }
 
         private void toolStripMenuItem1_Δημιουργοί_Click(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace Management_Project
 
         private void toolStripMenuItem2_Σκοπός_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("κείμενο εντός του message box", "Σκοπός");
+            MessageBox.Show("Γιώργος Σεϊμένης: giorgosseimenis@gmail.com\nΛευτέρης Λαμπράκος: lefterislamprakos36@gmail.com", "Επικοινωνία Με Τους Δημιουργούς");
         }
 
         private void toolStripMenuItem2_prosthikh_neou_thematos_Click(object sender, EventArgs e)
@@ -145,9 +146,9 @@ namespace Management_Project
 
         private void toolStripMenuItem1_ti_einai_auth_h_egarmogh_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Αυτή η εφαρμογή σας παρέχει τη δυνατότητα να δημιουργήσετε τη δική σας Τράπεζα Θεμάτων!!" +
-                "Μπορείτε να δημιουργήσετε τις δικές σας ερωτήσεις ή να εισάγετε έτοιμες από ένα text αρχείο.Τα θέματα" +
-                " που θα δημιουργήσετε μπορούν να παραχτούν αργότερα σε ένα αρχείο word!"); 
+            MessageBox.Show("Αυτή η εφαρμογή σας παρέχει τη δυνατότητα να δημιουργήσετε τη δική σας Τράπεζα Θεμάτων! " +
+                "Μπορείτε να δημιουργήσετε τις δικές σας ερωτήσεις ή να εισάγετε έτοιμες από ένα text αρχείο. Τα θέματα" +
+                " που θα δημιουργήσετε μπορούν να παραχτούν αργότερα σε ένα αρχείο word!", "ΕΦΑΡΜΟΓΗ"); 
         }
     }
 }

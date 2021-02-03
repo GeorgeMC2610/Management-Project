@@ -62,7 +62,7 @@ namespace Management_Project
                 ChapterIndex++;
             }
 
-            domainUpDownChapters.SelectedIndex = ChapterIndex + 1;
+            domainUpDownChapters.SelectedIndex = ChapterIndex;
             CheckIfButtonCanBeEnabled();
         }
 
@@ -82,9 +82,10 @@ namespace Management_Project
             domainUpDownChapters.SelectedIndex = 0;
 
             if (editing)
+            {
+                buttonAddQuestion.Text = "ΤΡΟΠΟΙΗΣΗ ΘΕΜΑΤΟΣ";
                 EnableEditQuestions();
-
-            buttonAddQuestion.Text = "ΤΡΟΠΟΙΗΣΗ ΘΕΜΑΤΟΣ";
+            }
         }
 
         private void AnyButtonClicked(object sender, EventArgs e)
@@ -297,12 +298,14 @@ namespace Management_Project
         private void UpdateChapters()
         {
             domainUpDownChapters.Items.Clear();
-            domainUpDownChapters.Items.Add("");
             foreach (Thema th in Thema.AllQuestions)
             {
                 if (!domainUpDownChapters.Items.Contains(th.Chapter))
                     domainUpDownChapters.Items.Add(th.Chapter);
             }
+
+            if (domainUpDownChapters.Items.Count == 0)
+                domainUpDownChapters.Items.Add("");
         }
 
         private void ClearFields()
