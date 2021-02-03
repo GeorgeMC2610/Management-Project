@@ -15,9 +15,55 @@ namespace Management_Project
         List<string> possibleAnswers = new List<string>();
         int answerIndex = 1, rightAnswerIndex = 1;
 
+        //for editing
+        string Question, Chapter;
+        int index, rightIndex, difficulty;
+        string[] answers;
+        bool editing;
+
         public FormAddQuestion()
         {
             InitializeComponent();
+            editing = false;
+        }
+
+        public FormAddQuestion(string Question, int index, int difficulty, int rightIndex, string Chapter, params string[] answers)
+        {
+            InitializeComponent();
+            this.Question = Question;
+            this.index = index;
+            this.rightIndex = rightIndex;
+            this.answers = answers;
+            this.difficulty = difficulty;
+            this.Chapter = Chapter;
+            editing = true;
+        }
+
+        private void EnableEditQuestions()
+        {
+            textBoxQuestion.Text = Question;
+            numericUpDown1.Value = difficulty;
+
+            possibleAnswers[0] = answers[0];
+            possibleAnswers[1] = answers[1];
+            for (int i = 2; i < answers.Length; i++)
+                possibleAnswers.Add(answers[i]);
+
+            rightAnswerIndex = rightIndex;
+            rightAnswerIndex++;
+            buttonPrev.PerformClick();
+
+            int ChapterIndex = 0;
+            foreach (string ch in Thema.Chapters)
+            {
+                if (ch.Equals(Chapter))
+                    break;
+
+                ChapterIndex++;
+            }
+
+            domainUpDownChapters.SelectedIndex = ChapterIndex+1;
+            CheckIfButtonCanBeEnabled();
         }
 
         private void FormAddQuestion_Load(object sender, EventArgs e)
@@ -34,6 +80,11 @@ namespace Management_Project
             //βάζω και τα κεφάλαια στο λιστμποξ
             UpdateChapters();
             domainUpDownChapters.SelectedIndex = 0;
+
+            if (editing)
+                EnableEditQuestions();
+
+            buttonAddQuestion.Text = "ΤΡΟΠΟΙΗΣΗ ΘΕΜΑΤΟΣ";
         }
 
         private void AnyButtonClicked(object sender, EventArgs e)
@@ -156,6 +207,19 @@ namespace Management_Project
                     break;
 
                 case "buttonAddQuestion":
+                    if (editing)
+                    {
+                        Thema.AllQuestions[index].Question         = textBoxQuestion.Text;
+                        Thema.AllQuestions[index].Answers          = possibleAnswers;
+                        Thema.AllQuestions[index].Difficulty       = (int)numericUpDown1.Value;
+                        Thema.AllQuestions[index].Chapter          = domainUpDownChapters.SelectedItem.ToString();
+                        Thema.AllQuestions[index].RightAnswerIndex = rightAnswerIndex - 1;
+
+                        new Form2(false).Show();
+                        Close();
+                        return;
+                    }
+
                     if (MessageBox.Show("Έχετε σιγουρευτεί για όλες τις ιδιότητες του θέματος και θέλετε πράγματι να το προσθέσετε;", "Επιβεβαίωση Θέματος", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         Thema thema = new Thema((int)numericUpDown1.Value, rightAnswerIndex - 1, textBoxQuestion.Text, domainUpDownChapters.Text, possibleAnswers.ToArray());
