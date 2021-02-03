@@ -85,8 +85,6 @@ namespace Management_Project
                     break;
 
                 case "buttonEditQuestion":
-                    new FormAddQuestion(DummyThemaList[index].Question, index, DummyThemaList[index].Difficulty, DummyThemaList[index].RightAnswerIndex, DummyThemaList[index].Chapter, DummyThemaList[index].Answers.ToArray()).Show();
-                    Close();
                     break;
 
                 case "buttonDeleteQuestion":
@@ -225,6 +223,8 @@ namespace Management_Project
                         for (int j = 0; j < DummyThemaList.Count; j++)
                             if (SelectedThemas[i].Question.Equals(DummyThemaList[j].Question))
                                 SelectedThemas[i] = DummyThemaList[j];
+                        
+
                     break;
             }
         }
