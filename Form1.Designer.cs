@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.wordFileButton = new System.Windows.Forms.Button();
             this.editQuestionsButton = new System.Windows.Forms.Button();
             this.deleteAllQuestionsButton = new System.Windows.Forms.Button();
@@ -102,10 +101,11 @@
             this.labelTrapezaThematon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTrapezaThematon.AutoSize = true;
-            this.labelTrapezaThematon.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelTrapezaThematon.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.labelTrapezaThematon.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelTrapezaThematon.Location = new System.Drawing.Point(444, 43);
             this.labelTrapezaThematon.Name = "labelTrapezaThematon";
-            this.labelTrapezaThematon.Size = new System.Drawing.Size(166, 22);
+            this.labelTrapezaThematon.Size = new System.Drawing.Size(228, 32);
             this.labelTrapezaThematon.TabIndex = 3;
             this.labelTrapezaThematon.Text = "Τράπεζα Θεμάτων";
             this.labelTrapezaThematon.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -235,10 +235,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(65, 100);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::Management_Project.Properties.Resources.unipi2;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 43);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 188);
+            this.pictureBox1.Size = new System.Drawing.Size(331, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
