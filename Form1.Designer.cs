@@ -152,14 +152,14 @@
             // toolStripMenuItem1_Δημιουργοί
             // 
             this.toolStripMenuItem1_Δημιουργοί.Name = "toolStripMenuItem1_Δημιουργοί";
-            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(144, 22);
             this.toolStripMenuItem1_Δημιουργοί.Text = "Δημιουργοί";
             this.toolStripMenuItem1_Δημιουργοί.Click += new System.EventHandler(this.toolStripMenuItem1_Δημιουργοί_Click);
             // 
             // toolStripMenuItem2_Σκοπός
             // 
             this.toolStripMenuItem2_Σκοπός.Name = "toolStripMenuItem2_Σκοπός";
-            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(144, 22);
             this.toolStripMenuItem2_Σκοπός.Text = "Επικοινωνίες";
             this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
             // 
@@ -253,11 +253,11 @@
             this.GeorgeMC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.GeorgeMC.AutoSize = true;
             this.GeorgeMC.BackColor = System.Drawing.Color.Transparent;
-            this.GeorgeMC.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.GeorgeMC.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.GeorgeMC.ForeColor = System.Drawing.Color.DarkGreen;
             this.GeorgeMC.Location = new System.Drawing.Point(7, 410);
             this.GeorgeMC.Name = "GeorgeMC";
-            this.GeorgeMC.Size = new System.Drawing.Size(99, 19);
+            this.GeorgeMC.Size = new System.Drawing.Size(106, 21);
             this.GeorgeMC.TabIndex = 8;
             this.GeorgeMC.Text = "Γιώργος Σεϊμένης";
             // 
@@ -266,11 +266,11 @@
             this.Lefteris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lefteris.AutoSize = true;
             this.Lefteris.BackColor = System.Drawing.Color.Transparent;
-            this.Lefteris.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.Lefteris.Font = new System.Drawing.Font("Bahnschrift Condensed", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.Lefteris.ForeColor = System.Drawing.Color.DarkGreen;
             this.Lefteris.Location = new System.Drawing.Point(6, 429);
             this.Lefteris.Name = "Lefteris";
-            this.Lefteris.Size = new System.Drawing.Size(123, 19);
+            this.Lefteris.Size = new System.Drawing.Size(132, 21);
             this.Lefteris.TabIndex = 9;
             this.Lefteris.Text = "Λευτέρης Λαμπράκος ";
             // 
