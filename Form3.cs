@@ -212,7 +212,7 @@ namespace Management_Project
                         Thema.AllQuestions[index].Question = textBoxQuestion.Text;
                         Thema.AllQuestions[index].Answers = possibleAnswers;
                         Thema.AllQuestions[index].Difficulty = (int)numericUpDown1.Value;
-                        Thema.AllQuestions[index].Chapter = domainUpDownChapters.SelectedItem.ToString();
+                        Thema.AllQuestions[index].Chapter = domainUpDownChapters.Text;
                         Thema.AllQuestions[index].RightAnswerIndex = rightAnswerIndex - 1;
 
                         new Form2(false).Show();
