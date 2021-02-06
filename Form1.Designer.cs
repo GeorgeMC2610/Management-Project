@@ -65,7 +65,7 @@
             this.wordFileButton.Location = new System.Drawing.Point(10, 461);
             this.wordFileButton.Name = "wordFileButton";
             this.wordFileButton.Size = new System.Drawing.Size(1102, 50);
-            this.wordFileButton.TabIndex = 0;
+            this.wordFileButton.TabIndex = 4;
             this.wordFileButton.Text = "ΠΑΡΑΓΩΓΗ ΑΡΧΕΙΟΥ WORD";
             this.wordFileButton.UseVisualStyleBackColor = false;
             this.wordFileButton.Click += new System.EventHandler(this.wordFileButton_Click);
@@ -80,7 +80,7 @@
             this.editQuestionsButton.Location = new System.Drawing.Point(6, 115);
             this.editQuestionsButton.Name = "editQuestionsButton";
             this.editQuestionsButton.Size = new System.Drawing.Size(297, 39);
-            this.editQuestionsButton.TabIndex = 1;
+            this.editQuestionsButton.TabIndex = 3;
             this.editQuestionsButton.Text = "ΕΠΙΣΚΟΠΗΣΗ ΘΕΜΑΤΩΝ";
             this.editQuestionsButton.UseVisualStyleBackColor = false;
             this.editQuestionsButton.Click += new System.EventHandler(this.editQuestionsButton_Click);
@@ -124,13 +124,14 @@
             this.button1.Location = new System.Drawing.Point(6, 23);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(297, 39);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 1;
             this.button1.Text = "ΠΡΟΣΘΗΚΗ ΝΕΟΥ ΘΕΜΑΤΟΣ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.About,
@@ -154,14 +155,14 @@
             // toolStripMenuItem1_Δημιουργοί
             // 
             this.toolStripMenuItem1_Δημιουργοί.Name = "toolStripMenuItem1_Δημιουργοί";
-            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem1_Δημιουργοί.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1_Δημιουργοί.Text = "Δημιουργοί";
             this.toolStripMenuItem1_Δημιουργοί.Click += new System.EventHandler(this.toolStripMenuItem1_Δημιουργοί_Click);
             // 
             // toolStripMenuItem2_Σκοπός
             // 
             this.toolStripMenuItem2_Σκοπός.Name = "toolStripMenuItem2_Σκοπός";
-            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(144, 22);
+            this.toolStripMenuItem2_Σκοπός.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2_Σκοπός.Text = "Επικοινωνίες";
             this.toolStripMenuItem2_Σκοπός.Click += new System.EventHandler(this.toolStripMenuItem2_Σκοπός_Click);
             // 

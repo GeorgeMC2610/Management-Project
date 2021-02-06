@@ -250,7 +250,7 @@
             this.domainUpDownChapters.Location = new System.Drawing.Point(45, 124);
             this.domainUpDownChapters.Name = "domainUpDownChapters";
             this.domainUpDownChapters.Size = new System.Drawing.Size(339, 22);
-            this.domainUpDownChapters.TabIndex = 2;
+            this.domainUpDownChapters.TabIndex = 1;
             // 
             // labelNotification
             // 
