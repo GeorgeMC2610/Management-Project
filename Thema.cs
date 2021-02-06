@@ -119,13 +119,13 @@ namespace Management_Project
 
                 RearrangeThemata();
             }
-            catch (FileNotFoundException e1)
+            catch (FileNotFoundException)
             {
-                MessageBox.Show("Μήνυμα σφάλματος: " + e1.Message + "\n\nΤο αρχείο με τις ερωτήσεις (Questions.ser) δεν βρέθηκε. Θέλετε να τρέξετε την εφαρμογή, ώστε να φτιάξει από μόνη της νέο αρχείο;", "Αρχείο Ερωτήσεων", MessageBoxButtons.OKCancel);
+                MessageBox.Show("ΠΡΟΣΟΧΗ: Δεν βρέθηκε το αρχείο με τις ερωτήσεις (Questions.ser). Θα παραχθεί αυτόματα καινούργιο.", "Αρχείο Ερωτήσεων", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (SerializationException)
+            catch (SerializationException e2)
             {
-                //do nothing.
+                MessageBox.Show("Κάτι πήγε στραβά, κατά την ανάκτηση των Θεμάτων της βάσης. Προσπαθήστε ξανά, κατά προτίμηση με άλλο αρχείο.\n\nΜήνυμα σφάλματος: " + e2.Message, "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -58,9 +58,7 @@ namespace Management_Project
             if (controlledExit)
                 return;
 
-            if (MessageBox.Show("Ενδεχομένως η Τράπεζα Θεμάτων να είναι τροποποιημένη. Θα θέλατε να αποθηκευτούν αυτές οι αλλαγές;", "Αποθήκευση Πιθανών Αλλαγών", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                Thema.SaveQuestions();
-
+            Thema.SaveQuestions();
             new Form1().Show();
         }
 
@@ -99,6 +97,7 @@ namespace Management_Project
 
                 case "buttonEditQuestion":
                     new FormAddQuestion(DummyThemaList[index].Question, index, DummyThemaList[index].Difficulty, DummyThemaList[index].RightAnswerIndex, DummyThemaList[index].Chapter, DummyThemaList[index].Answers.ToArray()).Show();
+                    controlledExit = true;
                     Close();
                     break;
 

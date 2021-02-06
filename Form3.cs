@@ -218,6 +218,7 @@ namespace Management_Project
                         Thema.AllQuestions[index].RightAnswerIndex = rightAnswerIndex - 1;
 
                         new Form2(false).Show();
+                        controlledExit = true;
                         Close();
                         return;
                     }
