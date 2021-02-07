@@ -404,7 +404,7 @@ namespace Management_Project
         }
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.OpenForms[0].Show();
+            new Form1().Show();
         }
 
         private void Form4_Load(object sender, EventArgs e)

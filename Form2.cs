@@ -98,6 +98,7 @@ namespace Management_Project
                 case "buttonEditQuestion":
                     new FormAddQuestion(DummyThemaList[index].Question, index, DummyThemaList[index].Difficulty, DummyThemaList[index].RightAnswerIndex, DummyThemaList[index].Chapter, DummyThemaList[index].Answers.ToArray()).Show();
                     controlledExit = true;
+                    Thema.SaveQuestions();
                     Close();
                     break;
 
