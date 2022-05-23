@@ -1,5 +1,4 @@
-# Management-Project
-### Project for creating multiple choice tests.
+# Τράπεζα Θεμάτων
+### Αυτή η εφαρμογή απευθύνεται κυρίως σε καθηγητές. Μπορεί να χρησιμοποιηθεί για την παραγωγή ενός διαγωνίσματος με ερωτήσεις πολλαπλής επιλογής.
 
-__Summary__: This Project was made for a course called "Management". The application has nothing to do with the content of the lecture. It is rather an optional "bonus points" Project
-made in Windows Forms in Visual Studio 2019.
+Κατεβάζοντας αυτήν την εφαρμογή, ο χρήστης μπορεί να παράγει διαγωνίσματα, βάζοντας δικές του ερωτήσεις σε μία βάση δεδομένων. Ο χρήστης μπορεί να δημιουργήσει ερωτήσεις, βασιζόμενες σε κεφάλαια, να τις τροποποιήσει ή και να τις διαγράψει, έχοντας πλήρη έλεγχο στην παραγωγή του διαγωνίσματος.
